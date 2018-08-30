@@ -1,0 +1,33 @@
+uuid: f758819f-ba41-48e8-85e2-627ce06d0f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_block
+    - paragraphs.paragraphs_type.categories_listing
+  module:
+    - plugin
+_core:
+  default_config_hash: YdR3CvPOEFDIiZLRWtT5M5L6fNI7MTF7-jh8Jv8s16A
+id: paragraph.categories_listing.field_prgf_block
+field_name: field_prgf_block
+entity_type: paragraph
+bundle: categories_listing
+label: Block
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    plugin_id: 'views_block:categories_listing-categories_listing'
+    plugin_configuration:
+      id: 'views_block:categories_listing-categories_listing'
+      label: Block
+      provider: null
+      label_display: null
+      views_label: ''
+      items_per_page: none
+    plugin_configuration_schema_id: 'block.settings.views_block:categories_listing-categories_listing'
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:block'

@@ -1,0 +1,11 @@
+uuid: 33704e9a-c7c6-45ec-b6be-89cfb02ce122
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: l-PvfH4lw7DuCVy4RSzgr_RDMOYYkaieqUpNEHgIfog
+name: 'Media Tags'
+vid: media_tags
+description: 'Tags for media objects.'
+hierarchy: 0
+weight: 0

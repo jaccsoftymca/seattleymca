@@ -1,0 +1,4 @@
+services:
+  ygs_camp.menu_handler:
+    class: Drupal\ygs_camp\CampMenuService
+    arguments: ['@entity_type.manager']

@@ -1,0 +1,12 @@
+uuid: a578778d-7e31-4137-857e-3a65d5581af8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: e4bciEc3dJkfxP8KN8q5kTzbOg3XIcsL6Pw9BhYfwCs
+id: media.node_blog_teaser
+label: 'Node blog teaser'
+targetEntityType: media
+cache: true

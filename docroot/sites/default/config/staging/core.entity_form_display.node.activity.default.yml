@@ -1,0 +1,153 @@
+uuid: 17e0864e-5e76-492e-9612-9aa220a7dd62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.activity.field_activenet_age_category
+    - field.field.node.activity.field_activenet_category
+    - field.field.node.activity.field_activenet_detailed_categor
+    - field.field.node.activity.field_activity_category
+    - field.field.node.activity.field_activity_description
+    - field.field.node.activity.scheduled_update
+    - node.type.activity
+  module:
+    - field_group
+    - inline_entity_form
+    - path
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_content_area:
+      children:
+        - field_activity_description
+      parent_name: ''
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Content Area'
+    group_activenet:
+      children:
+        - field_activenet_detailed_categor
+        - field_activenet_category
+        - field_activenet_age_category
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: ActiveNet
+_core:
+  default_config_hash: V056of0h6PXcC9psDjqcUULSDp-50TLENESL-twJBuM
+id: node.activity.default
+targetEntityType: node
+bundle: activity
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_activenet_age_category:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_activenet_category:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_activenet_detailed_categor:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_activity_category:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_activity_description:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+    region: content
+  scheduled_update:
+    type: inline_entity_form_complex
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

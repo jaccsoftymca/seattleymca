@@ -1,0 +1,76 @@
+uuid: 70c3e1f6-cebd-4ba9-862b-87a3d00ab7f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.facility.field_body_no_summary
+    - field.field.node.facility.field_collection_hours
+    - field.field.node.facility.field_content
+    - field.field.node.facility.field_facility_loc
+    - field.field.node.facility.field_facility_type
+    - field.field.node.facility.field_location_address
+    - field.field.node.facility.field_location_area
+    - field.field.node.facility.field_location_coordinates
+    - field.field.node.facility.field_location_directions
+    - field.field.node.facility.field_location_email
+    - field.field.node.facility.field_location_fax
+    - field.field.node.facility.field_location_phone
+    - field.field.node.facility.field_sidebar_content
+    - field.field.node.facility.scheduled_update
+    - node.type.facility
+  module:
+    - address
+    - link
+    - telephone
+    - user
+_core:
+  default_config_hash: 2OuijykRJZF12b07sqh3tyNfoVAMShpbX8S-a9mGa_E
+id: node.facility.teaser
+targetEntityType: node
+bundle: facility
+mode: teaser
+content:
+  field_location_address:
+    type: address_plain
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_location_area:
+    type: entity_reference_label
+    weight: 0
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_location_directions:
+    type: link
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_location_phone:
+    type: telephone_link
+    weight: 2
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+hidden:
+  field_body_no_summary: true
+  field_collection_hours: true
+  field_content: true
+  field_facility_loc: true
+  field_facility_type: true
+  field_location_coordinates: true
+  field_location_email: true
+  field_location_fax: true
+  field_sidebar_content: true
+  links: true
+  scheduled_update: true

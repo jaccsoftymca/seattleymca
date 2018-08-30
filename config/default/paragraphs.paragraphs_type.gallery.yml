@@ -1,0 +1,8 @@
+uuid: 0349a848-9416-490c-be08-c5057f380b87
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GTumT2xDJqDDeCfpyhKFa12oD3ABHSfDWpNK8lMh8uA
+id: gallery
+label: Gallery

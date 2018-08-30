@@ -1,0 +1,41 @@
+uuid: 5020b2f1-30ac-495a-b27e-7746ede96055
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_session_time_collection.field_session_actual
+    - field.field.field_collection_item.field_session_time_collection.field_session_date
+    - field.field.field_collection_item.field_session_time_collection.field_session_days
+    - field.field.field_collection_item.field_session_time_collection.field_session_frequency
+    - field_collection.field_collection.field_session_time_collection
+  module:
+    - datetime_range
+_core:
+  default_config_hash: LfqjPrwESGDx78elZkBhQY0rllZbYjPEyoKZtajWDD0
+id: field_collection_item.field_session_time_collection.default
+targetEntityType: field_collection_item
+bundle: field_session_time_collection
+mode: default
+content:
+  field_session_actual:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_session_date:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+  field_session_days:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_session_frequency:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden: {  }

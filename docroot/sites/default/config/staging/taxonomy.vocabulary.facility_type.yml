@@ -1,0 +1,9 @@
+uuid: 798101f5-64d8-4c1a-abfc-0bba59050901
+langcode: en
+status: true
+dependencies: {  }
+name: 'Facility Type'
+vid: facility_type
+description: ''
+hierarchy: 0
+weight: 0

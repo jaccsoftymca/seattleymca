@@ -1,0 +1,8 @@
+uuid: a83099ff-3f94-4921-b6f4-2033d24962a2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HPzx3m3rXb7VwrvM0z6L7IGnGFS9Zm5cpjPFdsmodiM
+id: latest_blog_posts_camp
+label: 'Latest blog posts (camp)'

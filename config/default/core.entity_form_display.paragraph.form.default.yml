@@ -1,0 +1,25 @@
+uuid: 3fef2561-5142-4799-8fab-8ab4d9cf0695
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.form.field_paragraph_form
+    - paragraphs.paragraphs_type.form
+  module:
+    - workbench_moderation
+    - yamlform
+id: paragraph.form.default
+targetEntityType: paragraph
+bundle: form
+mode: default
+content:
+  field_paragraph_form:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: yamlform_entity_reference_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

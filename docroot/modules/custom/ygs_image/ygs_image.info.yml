@@ -1,0 +1,7 @@
+name: YGS Image
+type: module
+description: Image related cusomizations.
+core: 8.x
+package: YGS
+dependencies:
+  - image

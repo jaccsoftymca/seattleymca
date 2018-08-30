@@ -1,0 +1,15 @@
+services:
+  logger.channel.ygs_locations_data_wrapper:
+    parent: logger.channel_base
+    arguments: ['ygs_locations_data_wrapper']
+  ygs_locations_data_wrapper:
+    class: Drupal\ygs_locations_data_wrapper\DataWrapper
+    arguments:
+      - '@entity.query'
+      - '@renderer'
+      - '@entity.manager'
+      - '@socrates'
+      - '@cache.data'
+      - '@logger.channel.openy_data_wrapper'
+    tags:
+      - { name: "openy_data_service", priority: 115 }

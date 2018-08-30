@@ -1,0 +1,23 @@
+uuid: 716d5d50-572d-44d1-a0ad-8ead3ed0706b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: DTYytvpaK6dNSlGoC7NU_QAsAYPUYbFL9ep7oK_lcs4
+id: paragraph.field_prgf_headline
+field_name: field_prgf_headline
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

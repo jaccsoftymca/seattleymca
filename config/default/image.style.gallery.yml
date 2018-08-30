@@ -1,0 +1,24 @@
+uuid: de0da710-aaed-4ddf-a670-4750c012eb9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+_core:
+  default_config_hash: BoxtuppvT-jGMRjkVp4vX4yiFfDNofFyBkjyi-Oeek4
+name: gallery
+label: Gallery
+effects:
+  86d387be-7b2a-4c21-bbef-3acc88239103:
+    uuid: 86d387be-7b2a-4c21-bbef-3acc88239103
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: gallery
+  f3a2396c-e514-4921-aa2d-77796cd4b2f2:
+    uuid: f3a2396c-e514-4921-aa2d-77796cd4b2f2
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 700

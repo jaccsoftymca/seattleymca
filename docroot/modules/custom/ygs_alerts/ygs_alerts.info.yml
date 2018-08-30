@@ -1,0 +1,5 @@
+name: YGS Alerts
+type: module
+description: Provides Alerts specific functionallity.
+core: 8.x
+package: YGS

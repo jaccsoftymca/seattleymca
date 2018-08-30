@@ -1,0 +1,52 @@
+uuid: b6c24ae9-7f11-4c2a-a3af-47cd47177732
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar
+    - field.field.node.program.field_content
+    - field.field.node.program.field_meta_tags
+    - field.field.node.program.field_program_color
+    - field.field.node.program.field_program_description
+    - field.field.node.program.field_program_icon
+    - field.field.node.program.field_program_id
+    - field.field.node.program.field_program_image
+    - field.field.node.program.field_sidebar_content
+    - field.field.node.program.scheduled_update
+    - node.type.program
+  module:
+    - entity_reference_revisions
+    - user
+_core:
+  default_config_hash: 1T9bJ2zxpFYQe8Vy98ZW1ycz08CymEuz1UoOJV6oao4
+id: node.program.sidebar
+targetEntityType: node
+bundle: program
+mode: sidebar
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_sidebar_content:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_color_program: true
+  field_content: true
+  field_meta_tags: true
+  field_program_color: true
+  field_program_description: true
+  field_program_icon: true
+  field_program_id: true
+  field_program_image: true
+  links: true
+  scheduled_update: true

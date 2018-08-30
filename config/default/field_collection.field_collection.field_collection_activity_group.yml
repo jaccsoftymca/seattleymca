@@ -1,0 +1,6 @@
+uuid: ad446d7f-a7f7-47d1-985d-5660db115d85
+langcode: en
+status: true
+dependencies: {  }
+id: field_collection_activity_group
+label: field_collection_activity_group

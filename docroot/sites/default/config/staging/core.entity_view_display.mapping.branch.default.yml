@@ -1,0 +1,54 @@
+uuid: bc9e493f-d2a9-49aa-924f-955def1a9e8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.mapping.branch.field_activenet_location_id
+    - field.field.mapping.branch.field_activenet_location_name
+    - field.field.mapping.branch.field_branch_mapping_location
+    - ymca_mappings.mapping_type.branch
+  module:
+    - user
+_core:
+  default_config_hash: KOCC7fLbBKcTU6I9gGkjRx_8Uj46GskBXWpbT-EOXNs
+id: mapping.branch.default
+targetEntityType: mapping
+bundle: branch
+mode: default
+content:
+  field_activenet_location_id:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_activenet_location_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_branch_mapping_location:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  name:
+    label: above
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

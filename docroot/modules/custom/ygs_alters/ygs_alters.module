@@ -1,0 +1,676 @@
+<?php
+
+/**
+ * @file
+ * Contains ygs_alters.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\ygs_alters\Ajax\PushHistoryCommand;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ygs_alters_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-sub-category-classes-search-form') {
+    $user_input = $form_state->getUserInput();
+
+    // If a location hasn't been defined yet, provide a null one to prevent
+    // error messages, while preserving load speed.
+    if (!$user_input['location']) {
+      $user_input['location'] = false;
+    }
+
+    // Pre-define context.
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      if (!isset($user_input['category_s']) && empty($user_input['category'])) {
+        $user_input['category'] = $node->id();
+        $user_input['category_s'] = $user_input['category'];
+      }
+      if (!empty($node->field_category_program->target_id)) {
+        if (!isset($user_input['program_s']) && empty($user_input['program'])) {
+          $user_input['program'] = $node->field_category_program->target_id;
+          $user_input['program_s'] = $user_input['program'];
+        }
+      }
+      $form_state->setUserInput($user_input);
+    }
+
+    if (isset($user_input['location_s'])) {
+      $user_input['location'] = $user_input['location_s'];
+    }
+    if (!empty($user_input['program_s'])) {
+      $user_input['program'] = $user_input['program_s'] == 'all' ? '' : $user_input['program_s'];
+    }
+    if (!empty($user_input['field_physical_location_text_value_s'])) {
+      $user_input['field_physical_location_text_value'] = $user_input['field_physical_location_text_value_s'] == 'all' ? '' : $user_input['field_physical_location_text_value_s'];
+    }
+    if (!empty($user_input['category_s'])) {
+      $user_input['category'] = $user_input['category_s'] == 'all' ? '' : $user_input['category_s'];
+    }
+    if (!empty($user_input['activity_s'])) {
+      $user_input['activity'] = $user_input['activity_s'] == 'all' ? '' : $user_input['activity_s'];
+    }
+    if (!empty($user_input['age_s'])) {
+      $user_input['age'] = $user_input['age_s'] == 'all' ? '' : $user_input['age_s'];
+    }
+    $form_state->setUserInput($user_input);
+
+    // Load all nodes of types (Branch, Program, Program Subcategory, Activity).
+    $types = ['branch', 'camp', 'program', 'program_subcategory', 'activity'];
+    $nodes = ygs_alters_load_multiple_nodes($types, $form_state->getUserInput());
+
+    $session_query = \Drupal::entityQuery('node')
+      ->condition('type', 'session')
+      ->condition('status', 1);
+    if (!empty($user_input['location']) && $user_input['location'] != 'all') {
+      $session_query->condition('field_session_location', $user_input['location']);
+    }
+    $session_ids = $session_query->execute();
+    $physical_locations = [];
+    if (!empty($session_ids)) {
+      $query = \Drupal::database()
+        ->select('node__field_physical_location_text', 'loc')
+        ->distinct()
+        ->fields('loc', ['field_physical_location_text_value'])
+        ->condition('entity_id', $session_ids, 'IN')
+        ->condition('deleted', 0);
+      $query->join('node_field_data', 'fd', 'fd.nid = loc.entity_id AND fd.status = 1');
+      $result = $query->execute();
+      $physical_locations = array_keys($result->fetchAllKeyed());
+    }
+    $physical_locations = array_combine($physical_locations, $physical_locations);
+    // Sort list alphabetically.
+    asort($physical_locations);
+    $physical_locations = ['all' => 'All'] + $physical_locations;
+
+    // Prevent illegal choice exception.
+    if (!empty($user_input['program']) && !isset($nodes['program'][$user_input['program']])) {
+      $user_input['program_s'] = 'all';
+      $user_input['program'] = '';
+    }
+    if (!empty($user_input['field_physical_location_text_value']) && !isset($physical_locations[$user_input['field_physical_location_text_value']])) {
+      $user_input['field_physical_location_text_value_s'] = 'all';
+      $user_input['field_physical_location_text_value'] = '';
+    }
+    if (!empty($user_input['category']) && !isset($nodes['program_subcategory'][$user_input['category']])) {
+      $user_input['category_s'] = 'all';
+      $user_input['category'] = '';
+    }
+    if (!empty($user_input['activity']) && !isset($nodes['activity'][$user_input['activity']])) {
+      $user_input['activity_s'] = 'all';
+      $user_input['activity'] = '';
+    }
+    $form_state->setUserInput($user_input);
+
+    // Fill the options by loaded data.
+    $location_options = [];
+    $program_options = $category_options = $activity_options = [];
+    if (!empty($nodes['branch'])) {
+      foreach ($nodes['branch'] as $nid => $node) {
+        $location_options['branches'][$nid] = $node->getTitle();
+      }
+    }
+    if (!empty($nodes['camp'])) {
+      foreach ($nodes['camp'] as $nid => $node) {
+        $location_options['camps'][$nid] = $node->getTitle();
+      }
+    }
+    if (!empty($nodes['program'])) {
+      foreach ($nodes['program'] as $nid => $node) {
+        $program_options[$nid] = $node->getTitle();
+      }
+      asort($program_options);
+      $program_options = ['all' => t('All')] + $program_options;
+    }
+    $category_options = ['all' => t('All')];
+    if (!empty($nodes['program_subcategory'])) {
+      foreach ($nodes['program_subcategory'] as $nid => $node) {
+        $category_options[$nid] = $node->getTitle();
+      }
+      asort($category_options);
+      $category_options = ['all' => t('All')] + $category_options;
+    }
+    if (!empty($nodes['activity'])) {
+      foreach ($nodes['activity'] as $nid => $node) {
+        $activity_options[$nid] = $node->getTitle();
+      }
+      asort($activity_options);
+      $activity_options = ['all' => t('All')] + $activity_options;
+    }
+
+    $ages_options = $form['age']['#options'];
+    asort($ages_options, SORT_NATURAL | SORT_FLAG_CASE);
+    $ages_options['All'] = t('All');
+    $form['#attributes']['class'][] = 'sub-category-classes-form';
+
+    $form['location']['#type'] = 'hidden';
+    $form['program']['#type'] = 'hidden';
+    $form['category']['#type'] = 'hidden';
+    $form['activity']['#type'] = 'hidden';
+    $form['age']['#type'] = 'hidden';
+    $form['field_physical_location_text_value']['#type'] = 'hidden';
+
+    $form['selects'] = [
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => [
+          'container',
+          'selects-container',
+          'hidden-xs',
+        ],
+      ),
+    ];
+
+    $user_input = $form_state->getUserInput();
+    $location_options = array('_none' => 'Select Location') + $location_options;
+      $form['selects']['location_s'] = [
+      '#type' => 'select',
+      '#prefix' => '<hr/>',
+      '#title' => t('Location:'),
+      '#options' => $location_options,
+      '#default_value' => $user_input['location'],
+    ];
+    // Physical location / Room / Area.
+    $form['selects']['field_physical_location_text_value_s'] = [
+      '#type' => 'select',
+      '#title' => t('Room / Area:'),
+      '#options' => $physical_locations,
+      '#default_value' => $user_input['field_physical_location_text_value'] ? $user_input['field_physical_location_text_value'] : 'all',
+      '#size' => 1,
+    ];
+    $form['selects']['program_s'] = [
+      '#type' => 'select',
+      '#title' => t('Program:'),
+      '#options' => $program_options,
+      '#default_value' => $user_input['program'] ? $user_input['program'] : 'all',
+    ];
+    $form['selects']['category_s'] = [
+      '#type' => 'select',
+      '#title' => t('Sub-Program:'),
+      '#options' => $category_options,
+      '#default_value' => $user_input['category'] ? $user_input['category'] : 'all',
+    ];
+    $form['selects']['activity_s'] = [
+      '#type' => 'select',
+      '#title' => t('Activity:'),
+      '#options' => $activity_options,
+      '#default_value' => $user_input['activity'],
+    ];
+    $form['selects']['age_s'] = [
+      '#type' => 'select',
+      '#title' => t('Age:'),
+      '#options' => $ages_options,
+      '#default_value' => $user_input['age'],
+    ];
+
+    $form['actions']['#prefix'] = '<div class="actions-wrapper hidden-xs hidden-sm hidden-md hidden-lg">';
+    $form['actions']['#suffix'] = '</div>';
+    $form['actions']['#attributes']['class'][] = 'container';
+    $form['actions']['#weight'] = 99;
+    $form['actions']['submit']['#attributes']['class'][] = 'btn';
+    $form['actions']['submit']['#attributes']['class'][] = 'blue';
+    $form['actions']['submit']['#value'] = t('Apply filters');
+
+    $filters = [];
+    $required_filters = [];
+    if (!empty($user_input['location'])) {
+      if (isset($nodes['branch'][$user_input['location']])) {
+        $filters[$user_input['location']] = $nodes['branch'][$user_input['location']]->getTitle();
+      }
+      elseif (isset($nodes['camp'][$user_input['location']])) {
+        $filters[$user_input['location']] = $nodes['camp'][$user_input['location']]->getTitle();
+      }
+      $required_filters = [$user_input['location'] => $user_input['location']];
+    }
+    if (!empty($user_input['program'])) {
+      $filters[$user_input['program']] = $nodes['program'][$user_input['program']]->getTitle();
+    }
+    if (!empty($user_input['field_physical_location_text_value'])) {
+      $filters[$user_input['field_physical_location_text_value']] = $user_input['field_physical_location_text_value'];
+    }
+    if (!empty($user_input['category'])) {
+      $filters[$user_input['category']] = $nodes['program_subcategory'][$user_input['category']]->getTitle();
+    }
+    if (!empty($user_input['activity'])) {
+      $filters[$user_input['activity']] = $nodes['activity'][$user_input['activity']]->getTitle();
+    }
+    if (!empty($user_input['age']) && $user_input['age'] != 'All') {
+      $filters[$user_input['age']] = $ages_options[$user_input['age']];
+    }
+    if (!empty($filters)) {
+      $form['filters'] = [
+        '#type' => 'container',
+        '#prefix' => '<div class="filters-main-wrapper">',
+        '#suffix' => '</div>',
+        '#attributes' => array(
+          'class' => [
+            'container',
+            'filters-container',
+          ],
+        ),
+        'filters' => [
+          '#theme' => 'subcategory_filters',
+          '#filters' => $filters,
+          '#required_filters' => $required_filters,
+        ],
+        '#weight' => 100,
+      ];
+
+      $ajax_alters = &drupal_static('ygs_alters_views_ajax_response_alter', []);
+      $view_dom_id = $form_state->getStorage()['view']->dom_id;
+      $params_values = [
+        'location' => $user_input['location'],
+        'program' => $user_input['program'] ? $user_input['program'] : 'all',
+        'field_physical_location_text_value' => $user_input['field_physical_location_text_value'] ? $user_input['field_physical_location_text_value'] : 'all',
+        'category' => $user_input['category'] ? $user_input['category'] : 'all',
+        'activity' => $user_input['activity'],
+        'age' => $user_input['age'] ? $user_input['age'] : 'All',
+      ];
+      $command = new PushHistoryCommand(http_build_query(array_filter($params_values)));
+      $ajax_alters[$view_dom_id][] = $command;
+    }
+    $form['#attached']['library'][] = 'ygs_alters/ygs_alters';
+  }
+  elseif ($form['#id'] == 'views-exposed-form-global-search-global-search') {
+    _ygs_alters_global_search_form_alter($form, $form_state, $form_id);
+  }
+}
+
+/**
+ * Alter hook for global search exposed form.
+ */
+function _ygs_alters_global_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user_input = $form_state->getUserInput();
+  if (!empty($user_input['query'])) {
+    $message = t('Showing Results for "%term"', ['%term' => $user_input['query']]);
+    $form['query']['#prefix'] = '<h2 class="view-results-summary">' . $message . '</h2>';
+  }
+  $form['query']['#placeholder'] = t('Search again');
+}
+
+/**
+ * Implements hook_views_ajax_response_alter().
+ */
+function ygs_alters_views_ajax_response_alter(&$response, $view) {
+  $ajax_alters = drupal_static('ygs_alters_views_ajax_response_alter', []);
+  if (isset($ajax_alters[$view->dom_id])) {
+    foreach ($ajax_alters[$view->dom_id] as $command) {
+      $response->addCommand($command);
+    }
+  }
+}
+
+/**
+ * Provides helper function for nodes load.
+ *
+ * @param array $types
+ *   Array of node type bundles.
+ * @param array $restrictions
+ *   Array of restrictions for subcategories and activities.
+ *
+ * @return array
+ *   List of nodes.
+ */
+function ygs_alters_load_multiple_nodes(array $types, array $restrictions = []) {
+  $nodes = [];
+  foreach ($types as $type) {
+    $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('type', $type);
+    switch ($type) {
+      case 'program_subcategory':
+        if (!empty($restrictions['program'])) {
+          $query->condition('field_category_program', $restrictions['program']);
+        }
+        break;
+
+      case 'activity':
+        if (!empty($restrictions['program'])) {
+          // If program restriction is set, we should first load all the categories.
+          if (!isset($nodes['program_subcategory'])) {
+            $nodes['program_subcategory'] = ygs_alters_load_multiple_nodes(['program_subcategory'], $restrictions);
+          }
+          $categories_ids = array_keys($nodes['program_subcategory']);
+          // If category restriction is set and it fits program filter.
+          if (!empty($restrictions['category']) && in_array($restrictions['category'], $categories_ids)) {
+            $query->condition('field_activity_category', $restrictions['category']);
+          }
+          elseif (!empty($categories_ids)) {
+            // If category restriction doesn't fit program filter, ignore.
+            $query->condition('field_activity_category', $categories_ids, 'IN');
+          }
+        }
+        elseif (!empty($restrictions['category'])) {
+          $query->condition('field_activity_category', $restrictions['category']);
+        }
+
+        break;
+    }
+    $entity_ids = $query->execute();
+    $nodes[$type] = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadMultiple($entity_ids);
+  }
+  return $nodes;
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function ygs_alters_menu_local_tasks_alter(&$data, $route_name) {
+  if (strpos($route_name, 'entity.node.canonical_node_view-panels_variant') !== FALSE) {
+    // Fix tabs for panels variants.
+    $manager = \Drupal::service('plugin.manager.menu.local_task');
+    $data['tabs'] = $manager->getTasksBuild('entity.node.canonical', $data['cacheability']);
+    if ($route_name == 'entity.node.canonical_node_view-panels_variant-4' && isset($data['tabs'][0]['entity.node.edit_form'])) {
+      // If this is class page variant add sessions tab.
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $data['tabs'][0]['entity.node.sessions'] = [
+        '#theme' => 'menu_local_task',
+        '#link' => [
+          'title' => t('Sessions'),
+          'url' => Url::fromRoute('view.sessions.page_1', ['node' => $node->id()]),
+        ],
+        '#weight' => 50,
+        '#access' => $data['tabs'][0]['entity.node.edit_form']['#access'],
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ygs_alters_theme($existing, $type, $theme, $path) {
+  return [
+    'subcategory_filters' => [
+      'variables' => [
+        'filters' => [],
+        'required_filters' => [],
+      ],
+      'template' => 'subcategory-filters',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_tokens_alter().
+ */
+function ygs_alters_tokens_alter(array &$replacements, array $context) {
+  if ($context['type'] == 'node' && !empty($context['data']['node'])) {
+    // Replace only where both tokens are present.
+    if (isset($context['tokens']['field_body_no_summary']) &&
+      isset($context['tokens']['summary']) &&
+      isset($replacements[$context['tokens']['field_body_no_summary']])
+    ) {
+      $summary_text = strip_tags($replacements[$context['tokens']['field_body_no_summary']]->__toString());
+      $summary = text_summary($summary_text, "plain_text", 160);
+      $replacements[$context['tokens']['field_body_no_summary']] = $summary;
+    }
+  }
+}
+
+/**
+ * Implements hook_xmlsitemap_link_info_alter().
+ */
+function ygs_alters_xmlsitemap_link_info_alter(&$link_info) {
+  unset($link_info['field_collection']['xmlsitemap']);
+  unset($link_info['field_collection_item']['xmlsitemap']);
+}
+
+/**
+ * Implements hook_tokens_alter().
+ */
+function ygs_alters_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'sub_category_classes' && $view->current_display == 'search_form') {
+    // Remove duplicates.
+    $ids = $filtered_result = [];
+    $i = 0;
+    foreach ($view->result as $key => $row) {
+      /** @var \Drupal\views\ResultRow $row */
+      if (isset($row->nid, $row->node_field_data_node__field_class_activity_nid)) {
+        $id = $row->nid;
+        $activity_id = $row->node_field_data_node__field_class_activity_nid;
+        if (empty($ids[$activity_id][$id])) {
+          $row->index = $i;
+          $filtered_result[] = $row;
+          $ids[$activity_id][$id] = $id;
+          $i++;
+        }
+      }
+    }
+    if (!empty($filtered_result)) {
+      $total_rows = count($filtered_result);
+      $view->result = $filtered_result;
+      $view->pager->total_items = $total_rows;
+      $view->pager->updatePageInfo();
+      $view->total_rows = $total_rows;
+    }
+  }
+}
+
+/**
+ * Implements hook_field_group_build_pre_render_alter().
+ */
+function ygs_alters_field_group_build_pre_render_alter(&$element) {
+  if ($element['#id'] == "node-landing-page-edit-form" || $element['#id'] == "node-landing-page-form") {
+    if (isset($element['group_sidebar_area'])) {
+      $element['group_sidebar_area'] += [
+        '#states' => [
+          'visible' => [
+            [
+              'select[name="field_lp_layout"]' => ['value' => 'two_column_fixed'],
+            ],
+            [
+              'select[name="field_lp_layout"]' => ['value' => 'two_column'],
+            ],
+          ],
+        ],
+        '#id' => 'group_sidebar_area',
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function ygs_alters_entity_insert(EntityInterface $entity) {
+  global $_activenet_sync_disable_entity_hooks;
+  if (!$_activenet_sync_disable_entity_hooks && $entity->getEntityTypeId() == 'node' && $entity->bundle() == 'session') {
+    _ygs_alters_class_ages_update($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function ygs_alters_entity_update(EntityInterface $entity) {
+  global $_activenet_sync_disable_entity_hooks;
+  if (function_exists('ygs_moderation_wrapper_active_module')) {
+    $moderation = ygs_moderation_wrapper_active_module();
+  }
+  else {
+    $moderation = 'workbench_moderation';
+  }
+
+  if (!$_activenet_sync_disable_entity_hooks && $entity->getEntityTypeId() == $moderation . '_state' && $entity->content_entity_type_id->value == 'node') {
+    $sessions = \Drupal::service('entity_type.manager')->getStorage('node')
+      ->loadByProperties(['type' => 'session', 'nid' => $entity->content_entity_id->value]);
+    if (!$sessions) {
+      return;
+    }
+    _ygs_alters_class_ages_update(reset($sessions));
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function ygs_alters_entity_delete(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'session') {
+    _ygs_alters_class_ages_update($entity);
+  }
+}
+
+/**
+ * Helper function to act on updated/deleted sessions.
+ *
+ * @param Drupal\Core\Entity\EntityInterface $entity
+ *   Node being updated/deleted.
+ */
+function _ygs_alters_class_ages_update(EntityInterface $entity) {
+  $entities = $entity->get('field_session_class')->referencedEntities();
+  $class = $entities ? reset($entities) : FALSE;
+
+  // Update class if it exists.
+  if ($class) {
+    _ygs_alters_class_ages_calculate($class);
+  }
+}
+
+/**
+ * Calculate field_age for related class.
+ */
+function _ygs_alters_class_ages_calculate($class) {
+  // Get related sessions.
+  $query = \Drupal::service('entity.query')
+    ->get('node')
+    ->condition('status', 1)
+    ->condition('type', 'session')
+    ->condition('field_session_class', $class->id());
+  $entity_ids = $query->execute();
+  $sessions = \Drupal::service('entity_type.manager')->getStorage('node')->loadMultiple($entity_ids);
+
+  // Get age terms.
+  $query = \Drupal::service('entity.query')
+    ->get('taxonomy_term')
+    ->condition('vid', 'age');
+  $entity_ids = $query->execute();
+  $terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadMultiple($entity_ids);
+
+  $age_ids = [];
+  foreach ($sessions as $session) {
+    $s_min = !empty($session->field_session_min_age->value) ? $session->field_session_min_age->value : 0;
+    $s_max = !empty($session->field_session_max_age->value) ? $session->field_session_max_age->value : 100;
+
+    foreach ($terms as $id => $term) {
+      $ag_min = !empty($term->field_session_min_age->value) ? $term->field_session_min_age->value : 0;
+      $ag_max = !empty($term->field_session_max_age->value) ? $term->field_session_max_age->value : 100;
+      if (($s_min <= $ag_max || !$s_min || !$ag_max) && ($s_max >= $ag_min || !$s_max || !$ag_min)) {
+        $age_ids[$id] = $id;
+      }
+    }
+  }
+
+  // Get the old age categories ids.
+  $old_ids = array_map(function ($item) {
+    return $item['target_id'];
+  }, $class->field_age->getValue());
+
+  sort($old_ids);
+  sort($age_ids);
+
+  // Don't save the class in case the set of age categories wasn't changed.
+  if ($age_ids == $old_ids) {
+    return;
+  }
+
+  $class->set('field_age', array_unique($age_ids));
+  $class->save();
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ygs_alters_preprocess_page(&$variables) {
+  $route = \Drupal::routeMatch()->getRouteName();
+  if ($route != 'entity.node.canonical_node_view-http_status_code-0') {
+    // Skip if this is not session page.
+    return;
+  }
+  $session = $variables['node'];
+  // Redirect all sessions to related class page.
+  $options = [
+    'absolute' => TRUE,
+    'query' => ['session' => $session->id()],
+  ];
+  if ($session->field_session_location->target_id) {
+    $options['query']['location'] = $session->field_session_location->target_id;
+  }
+  $url = Url::fromUserInput('/node/' . $session->field_session_class->target_id, $options)->toString();
+  $response = new RedirectResponse($url);
+  $response->send();
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ygs_alters_form_node_program_subcategory_edit_form_alter(&$form, $form_state, $form_id) {
+
+  // Page access settings don't work correctly on Program Subcategory nodes, so
+  // we want to disable that functionality on this content type. Unfortunately,
+  // the module doesn't provide a setting for that, so we do so here manually.
+  $form['page_access']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function ygs_alters_field_widget_inline_entity_form_complex_form_alter(&$element, $form_state, $context) {
+  if (isset($context['items']) && $context['items']->getName() == 'scheduled_update') {
+    $entity = $context['items']->getEntity();
+    $user = \Drupal::currentUser();
+    $page_access = \Drupal::service('page_access.default')->get_user_node_access($entity, $user);
+    if ($page_access && in_array('update', $page_access)) {
+      // Allow user to create scheduled updates if he isset in page access list.
+      $access = TRUE;
+    }
+    else {
+      // Allow user to create scheduled updates if he has next permissions.
+      $permissions_list = [
+        'use needs_review_published transition',
+        'use draft_published transition',
+        'use published_published transition',
+      ];
+      $access = TRUE;
+      foreach ($permissions_list as $permission) {
+        $access = $access && $user->hasPermission($permission);
+      }
+    }
+    $element['#access'] = $access;
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function ygs_alters_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_content' && $variables['element']['#bundle'] == 'blog') {
+    // Use 'content_gallery' view mode in field_content paragraph gallery.
+    foreach ($variables['items'] as $key => $item) {
+      if (isset($item['content']['#paragraph']) && $item['content']['#paragraph']->getType() == 'gallery') {
+        $variables['items'][$key]['content']['#view_mode'] = 'content_gallery';
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view.
+ */
+function ygs_alters_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() != 'sub_category_classes') {
+    return;
+  }
+
+  // Add Alerts to programs view.
+  $branch_id = $variables['view']->filter['field_session_location_target_id']->value['value'];
+  $variables['location_alerts'] = views_embed_view('header_alerts', 'specific_alerts_block', $branch_id);
+}

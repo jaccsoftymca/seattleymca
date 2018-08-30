@@ -1,0 +1,28 @@
+uuid: f65f9f01-24cd-4a73-ae86-260f887b7e85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category_description
+    - node.type.program_subcategory
+  module:
+    - datalayer
+    - text
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_category_description
+_core:
+  default_config_hash: V2pD7X1X3PLjsKGcZn7ANLjP96ju45zvEZ7n78LJH9s
+id: node.program_subcategory.field_category_description
+field_name: field_category_description
+entity_type: node
+bundle: program_subcategory
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

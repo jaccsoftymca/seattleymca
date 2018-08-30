@@ -1,0 +1,21 @@
+uuid: d62febcc-0121-4baa-8fa6-1b1f52b40e42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.classes_listing.field_prgf_block
+    - paragraphs.paragraphs_type.classes_listing
+  module:
+    - workbench_moderation
+_core:
+  default_config_hash: ZhASg2aRFO3eu0HovSNgK9gN3D5hNK9zkiqQbKpdgSY
+id: paragraph.classes_listing.default
+targetEntityType: paragraph
+bundle: classes_listing
+mode: default
+content: {  }
+hidden:
+  created: true
+  field_prgf_block: true
+  status: true
+  uid: true

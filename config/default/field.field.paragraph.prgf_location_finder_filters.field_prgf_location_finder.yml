@@ -1,0 +1,31 @@
+uuid: f266e06a-fc59-43c8-8d79-a9ef803c005a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_location_finder
+    - paragraphs.paragraphs_type.prgf_location_finder_filters
+  module:
+    - plugin
+_core:
+  default_config_hash: fP62fUoUlAozdjf-TdQk9zVXjg7BH7l7QX7ilglwbig
+id: paragraph.prgf_location_finder_filters.field_prgf_location_finder
+field_name: field_prgf_location_finder
+entity_type: paragraph
+bundle: prgf_location_finder_filters
+label: 'Location finder'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    plugin_id: location_finder_filters
+    plugin_configuration:
+      id: location_finder_filters
+      label: 'Location finder'
+      provider: null
+      label_display: null
+    plugin_configuration_schema_id: block.settings.location_finder_filters
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:block'

@@ -1,0 +1,28 @@
+uuid: 7c8caa33-b5da-413e-b55f-cdc90d2841d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.video
+  content:
+    - 'file:file:175dfb32-7dd7-4dd5-9e17-dbceec84b0a1'
+  module:
+    - entity_embed
+    - media_entity
+_core:
+  default_config_hash: baZpYmfViGlq_O89FTlo0AnRNyWCbtzZlb1QrpYdDqU
+label: Video
+id: embed_video
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - video
+  display_plugins:
+    - 'view_mode:media.embedded_full'
+    - 'view_mode:media.embedded_half'
+    - 'view_mode:media.embedded_link'
+  entity_browser: videos_library_embed
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 175dfb32-7dd7-4dd5-9e17-dbceec84b0a1

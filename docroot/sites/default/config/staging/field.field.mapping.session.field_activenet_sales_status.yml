@@ -1,0 +1,23 @@
+uuid: 27720e4a-141e-48d6-961b-0e873b4d6acc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_sales_status
+    - ymca_mappings.mapping_type.session
+  module:
+    - options
+_core:
+  default_config_hash: 2Q07hshpVRzHVFMwTfzXE7bQzv7A7wNUBZgpLDyxpM0
+id: mapping.session.field_activenet_sales_status
+field_name: field_activenet_sales_status
+entity_type: mapping
+bundle: session
+label: 'ActiveNet: Sales Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

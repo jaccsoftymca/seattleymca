@@ -1,0 +1,12 @@
+uuid: 9146d0c5-1fed-45f7-a273-539ff82f40de
+langcode: en
+status: true
+dependencies: {  }
+label: 'Banner image 2x (mobile)'
+id: banner_image_2x_mobile
+description: ''
+aspect_ratio: '1500:1020'
+soft_limit_width: 1500
+soft_limit_height: 1020
+hard_limit_width: null
+hard_limit_height: null

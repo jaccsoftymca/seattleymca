@@ -1,0 +1,25 @@
+uuid: b1108513-d0f0-4c42-9728-b936ba63e43a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block:8adec3a0-00d3-47eb-ac89-db0757027c41'
+  module:
+    - block_content
+  theme:
+    - ymca_seattle
+id: footercopyright
+theme: ymca_seattle
+region: footer_social
+weight: 20
+provider: null
+plugin: 'block_content:8adec3a0-00d3-47eb-ac89-db0757027c41'
+settings:
+  id: 'block_content:8adec3a0-00d3-47eb-ac89-db0757027c41'
+  label: ''
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

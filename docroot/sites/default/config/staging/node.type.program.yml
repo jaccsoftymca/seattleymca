@@ -1,0 +1,29 @@
+uuid: afdd4825-01ef-443d-ad15-ff0823150da1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: CRMuk69AmQ7OETOGtg1_uWi2g68DMyS1pbzp2PpOA88
+name: Program
+type: program
+description: 'Program content type is used for adding Programs on the site.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

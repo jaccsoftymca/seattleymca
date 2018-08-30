@@ -1,0 +1,22 @@
+uuid: d39bf2a1-5d84-487f-b5e7-dafc1dac3a31
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: gallery_mobile
+label: 'Gallery Mobile'
+effects:
+  a8bc2afd-1e78-47f8-b03e-401c078f32ca:
+    uuid: a8bc2afd-1e78-47f8-b03e-401c078f32ca
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: gallery_mobile
+  cdeeab97-1fd3-4df8-8235-2832fe68d80a:
+    uuid: cdeeab97-1fd3-4df8-8235-2832fe68d80a
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 750
+      height: 510

@@ -1,0 +1,28 @@
+uuid: 806736c4-c90e-4ba1-a849-544fc6be3755
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_image
+    - media_entity.bundle.image
+    - node.type.announcement
+id: node.announcement.field_blog_image
+field_name: field_blog_image
+entity_type: node
+bundle: announcement
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

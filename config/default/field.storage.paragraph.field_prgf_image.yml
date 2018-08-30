@@ -1,0 +1,22 @@
+uuid: c3803d3f-faa2-4edf-837d-ae6e6bb2eec7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+    - paragraphs
+_core:
+  default_config_hash: 3G6KXVGU9WE4FZRCSJBEmpcxET6g_YRUO42frZ5gAl0
+id: paragraph.field_prgf_image
+field_name: field_prgf_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\Core\Field\WidgetBase;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function openy_calc_theme() {
+  return [
+    'form_element_membership_type' => [
+      'render element' => 'element',
+    ],
+    'openy_calc_form_header' => [
+      'variables' => [
+        'steps' => [],
+      ],
+      'template' => 'openy-calc-form-header',
+    ],
+    'openy_calc_form_summary' => [
+      'variables' => [
+        'result' => [],
+        'map' => [],
+      ],
+      'template' => 'openy-calc-form-summary',
+    ],
+  ];
+}
+
+/**
+ * Preprocess variables.
+ */
+function template_preprocess_form_element_membership_type(&$variables) {
+  template_preprocess_form_element($variables);
+  $element = $variables['element'];
+  $variables['element_variables'] = $element['#element_variables'];
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Add styles to hide unnecessary fields in the node paragraph form.
+ */
+function openy_calc_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
+  /** @var \Drupal\field\Entity\FieldConfig $field_definition */
+  $field_definition = $context['items']->getFieldDefinition();
+  $parent_field_name = $field_definition->getName();
+  if (empty($parent_field_name)) {
+    return;
+  }
+  /** @see \Drupal\paragraphs\Plugin\Field\FieldWidget\ParagraphsWidget::formElement() */
+  $widget_state = WidgetBase::getWidgetState($element['#field_parents'], $parent_field_name, $form_state);
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph_instance = $widget_state['paragraphs'][$element['#delta']]['entity'];
+  $paragraph_type = $paragraph_instance->bundle();
+  if ($paragraph_type !== 'openy_prgf_mbrshp_calc') {
+    return;
+  }
+  $element['#attached']['library'][] = 'openy_calc/calc-block';
+}

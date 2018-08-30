@@ -1,0 +1,26 @@
+uuid: 10fb8f20-743e-4da2-b5ec-8f2c09591012
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.alerts
+  module:
+    - views
+  theme:
+    - ymca_seattle
+_core:
+  default_config_hash: f2mcXewoeEKaosV_lQ-Z03wWWSSyLpQhQLhgx7Nv-wQ
+id: views_block__alerts_footer_alerts
+theme: ymca_seattle
+region: pre_footer
+weight: -7
+provider: null
+plugin: 'views_block:alerts-footer_alerts'
+settings:
+  id: 'views_block:alerts-footer_alerts'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

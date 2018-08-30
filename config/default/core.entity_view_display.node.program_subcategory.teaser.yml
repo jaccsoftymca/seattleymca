@@ -1,0 +1,63 @@
+uuid: c2fa4386-87a9-40a6-8c74-b7a6562bca13
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.program_subcategory.field_bottom_content
+    - field.field.node.program_subcategory.field_category_color
+    - field.field.node.program_subcategory.field_category_description
+    - field.field.node.program_subcategory.field_category_image
+    - field.field.node.program_subcategory.field_category_program
+    - field.field.node.program_subcategory.field_content
+    - field.field.node.program_subcategory.field_header_content
+    - field.field.node.program_subcategory.field_meta_tags
+    - field.field.node.program_subcategory.field_program_subcategory_id
+    - field.field.node.program_subcategory.field_sidebar_content
+    - field.field.node.program_subcategory.scheduled_update
+    - node.type.program_subcategory
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: XtaUu0vYloI3T9vUxFuQbnUw-AvqQWSuv1DLV-8L8X4
+id: node.program_subcategory.teaser
+targetEntityType: node
+bundle: program_subcategory
+mode: teaser
+content:
+  field_category_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 450
+    third_party_settings: {  }
+    region: content
+  field_category_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: node_program_subcategory_teaser
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_bottom_content: true
+  field_category_color: true
+  field_category_program: true
+  field_content: true
+  field_header_content: true
+  field_meta_tags: true
+  field_program_subcategory_id: true
+  field_sidebar_content: true
+  scheduled_update: true

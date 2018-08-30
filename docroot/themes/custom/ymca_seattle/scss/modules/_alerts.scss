@@ -1,0 +1,75 @@
+$alert-black: #231f20;
+
+$module: 'site-alert';
+
+.specific-alerts-list {
+  @include rem(padding, 20px 0);
+
+  .container {
+    width: auto;
+  }
+
+  .#{$module}__cta {
+    @include rem(line-height, 23px);
+    text-align: right;
+
+    @include breakpoint($screen-tablet) {
+      @include rem(padding-right, 40px);
+      @include rem(padding-top, 40px);
+    }
+  }
+}
+
+// Schedules depending alerts.
+#schedules-search-form-wrapper {
+
+  .alerts-wrapper {
+    background-color: $white;
+    margin-bottom: 30px;
+
+    .site-alert--header--blue {
+      background-color: $white;
+      border: 1px solid $blue;
+    }
+
+    .site-alert--header--dark_blue {
+      background-color: $white;
+      border: 1px solid $dark_blue;
+    }
+
+    .site-alert--header--blue,
+    .site-alert--header--dark_blue {
+
+      .site-alert__title {
+        color: $default-grey;
+      }
+
+      .site-alert__content {
+        color: $default-grey;
+      }
+
+      .site-alert__cta {
+
+        a {
+          @include rem(font-size, 14px);
+          color: $blue;
+          text-transform: uppercase;
+        }
+      }
+
+      .site-alert__icon {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.program-subcategory-location-alerts {
+
+  .specific-alerts-list{
+
+    &.header-alerts-list {
+      padding-top: 0;
+    }
+  }
+}

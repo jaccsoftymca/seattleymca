@@ -1,0 +1,25 @@
+uuid: 10e58944-7cbd-4532-a877-92d8bf874bec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_updates_queue.field_updates_queue_home
+    - paragraphs.paragraphs_type.frontpage_updates_queue
+  module:
+    - field_collection
+id: paragraph.frontpage_updates_queue.default
+targetEntityType: paragraph
+bundle: frontpage_updates_queue
+mode: default
+content:
+  field_updates_queue_home:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: field_collection_items
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,8 @@
+ymca_hours_formatter:
+  version: VERSION
+  js:
+    js/ymca_hours_formatter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

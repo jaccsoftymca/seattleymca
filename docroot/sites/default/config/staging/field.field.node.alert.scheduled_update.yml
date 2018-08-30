@@ -1,0 +1,26 @@
+uuid: a84f95e7-1400-4e70-94f2-9ce7d7f7860f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.scheduled_update
+    - node.type.alert
+    - scheduled_updates.scheduled_update_type.publishing
+    - scheduled_updates.scheduled_update_type.unpublishing
+id: node.alert.scheduled_update
+field_name: scheduled_update
+entity_type: node
+bundle: alert
+label: 'Scheduled update'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    target_bundles:
+      - unpublishing
+      - publishing
+  handler: 'default:scheduled_update'
+field_type: entity_reference

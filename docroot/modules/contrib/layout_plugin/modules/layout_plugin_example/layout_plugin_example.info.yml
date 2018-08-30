@@ -1,0 +1,14 @@
+name: Example Layouts
+type: module
+description: 'Registers a few example layouts to use for testing or demonstration.'
+# core: 8.x
+package: Examples
+hidden: true
+dependencies:
+  - layout_plugin
+
+# Information added by Drupal.org packaging script on 2016-07-23
+version: '8.x-1.0-alpha22+8-dev'
+core: '8.x'
+project: 'layout_plugin'
+datestamp: 1469275740

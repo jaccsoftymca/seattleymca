@@ -1,0 +1,28 @@
+uuid: ea41c4d6-e7b7-4963-ac8c-c0e174eb3b7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_color
+    - node.type.announcement
+    - taxonomy.vocabulary.color
+id: node.announcement.field_blog_color
+field_name: field_blog_color
+entity_type: node
+bundle: announcement
+label: 'Background color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

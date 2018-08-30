@@ -1,0 +1,30 @@
+{
+  "require": {
+    "exacttarget/fuel-sdk-php": "v0.9",
+    "mybuilder/conductor": "*@dev",
+    "ymca/salesforcemcloud": "*@dev"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "./bin/conductor update -c ./"
+    ],
+    "pre-update-cmd": [
+      "./bin/conductor update -c ./"
+    ],
+    "post-update-cmd": [
+      "./bin/conductor fix-composer-lock -c ./"
+    ],
+    "pre-autoload-dump": [
+      "./bin/conductor symlink -c ./"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "artifact",
+      "url": "./artifact/"
+    }
+  ]
+}

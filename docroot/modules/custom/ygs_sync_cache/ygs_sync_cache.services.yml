@@ -1,0 +1,4 @@
+services:
+  sync_cache.manager:
+    class: Drupal\ygs_sync_cache\SyncCacheManager
+    arguments: ['@entity.manager', '@entity.query', '@logger.factory']

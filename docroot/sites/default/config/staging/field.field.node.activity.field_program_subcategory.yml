@@ -1,0 +1,30 @@
+uuid: 8d22f9f6-3b4d-41bc-a316-12195fa77098
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_subcategory
+    - node.type.activity
+    - node.type.program_subcategory
+_core:
+  default_config_hash: wdcZL1bSpZfXq14JwuP7k_jbJifIDKeprHwlSIwCGg0
+id: node.activity.field_program_subcategory
+field_name: field_program_subcategory
+entity_type: node
+bundle: activity
+label: 'Program Subcategory'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      program_subcategory: program_subcategory
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

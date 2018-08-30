@@ -1,0 +1,17 @@
+uuid: 624a6dfb-c9b6-4d2e-89a2-9660cc0ceafa
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8IYlvxGAzi9fgcyCwe5kYfjitVqpRvJdCE20fVkA1cw
+name: media_half
+label: 'Media Half'
+effects:
+  dcfb6c34-88c2-4cdd-9c6b-50c6e5c17a94:
+    uuid: dcfb6c34-88c2-4cdd-9c6b-50c6e5c17a94
+    id: image_scale
+    weight: 1
+    data:
+      width: 570
+      height: null
+      upscale: false

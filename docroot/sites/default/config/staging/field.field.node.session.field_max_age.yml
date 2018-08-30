@@ -1,0 +1,25 @@
+uuid: 3abed0f0-121f-4dae-8869-8a10f7a1bcbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_max_age
+    - node.type.session
+_core:
+  default_config_hash: if4HHIG4-vTVwhuwg2-NShK3HjlOFwx2FI5kCmG8DHc
+id: node.session.field_max_age
+field_name: field_max_age
+entity_type: node
+bundle: session
+label: 'Max Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

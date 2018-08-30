@@ -1,0 +1,10 @@
+uuid: 838b7180-8d2e-42cc-b34c-d33e7c5e279a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.embedded_video
+label: 'Embedded video'
+targetEntityType: media
+cache: true

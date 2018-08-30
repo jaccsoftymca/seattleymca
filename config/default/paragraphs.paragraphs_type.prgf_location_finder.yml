@@ -1,0 +1,8 @@
+uuid: 2507d972-b7f6-410b-8d27-631214115087
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OFnPX9wIjGnpTfaWOplnuaUf7Ot1vppLqTWNAeXYc8I
+id: prgf_location_finder
+label: 'Location finder'

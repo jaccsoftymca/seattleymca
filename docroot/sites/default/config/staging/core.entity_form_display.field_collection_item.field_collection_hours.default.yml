@@ -1,0 +1,28 @@
+uuid: 68f66d0f-add3-48a0-a328-89fce12d256a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_collection_hours.field_day_of_the_week
+    - field.field.field_collection_item.field_collection_hours.field_start_end_time
+    - field_collection.field_collection.field_collection_hours
+_core:
+  default_config_hash: zZo2nSeyBVnynly4fr1CfuhR1eati3d4e6sjnSjRFHE
+id: field_collection_item.field_collection_hours.default
+targetEntityType: field_collection_item
+bundle: field_collection_hours
+mode: default
+content:
+  field_day_of_the_week:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_start_end_time:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden: {  }

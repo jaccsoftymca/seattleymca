@@ -1,0 +1,21 @@
+uuid: fed3d040-a0c5-418f-b3d5-2d2c6bbb86e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: b4o-5dxaUoAWgSE66TDd_MkOZHArNbI4HXZj1oVrLRo
+id: paragraph.field_cta_link
+field_name: field_cta_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

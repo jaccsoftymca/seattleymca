@@ -1,0 +1,6 @@
+uuid: f887dfab-4013-44a5-829c-2cfefe010298
+langcode: en
+status: true
+dependencies: {  }
+id: field_collection_activity_hours
+label: field_collection_activity_hours

@@ -1,0 +1,16 @@
+uuid: a909c401-830b-4298-af1e-0f0cadd0c978
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Ma1pqwBN1dT5pYf-AufA8Sn3uQfQHUS-SFYVz0OYQC0
+name: browser_thumbnail
+label: 'Browser thumbnail'
+effects:
+  272e64a7-b52e-47e2-9f9f-c647e31a3873:
+    uuid: 272e64a7-b52e-47e2-9f9f-c647e31a3873
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 270
+      height: 200

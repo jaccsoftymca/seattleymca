@@ -1,0 +1,25 @@
+uuid: b2e93389-2c65-406e-a3a4-e816e1f82758
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_add_to_branch_queue
+    - node.type.blog_post
+_core:
+  default_config_hash: TK7KILE74ilRx0DOQa_bgpK7jTRf82EC15nmcew_4u0
+id: node.blog_post.field_add_to_branch_queue
+field_name: field_add_to_branch_queue
+entity_type: node
+bundle: blog_post
+label: 'Add to Branch queue'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

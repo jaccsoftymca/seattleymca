@@ -1,0 +1,41 @@
+uuid: ad17ec6a-743e-40a7-afda-6ece0d727b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.calc_summary
+    - field.field.node.membership.field_mbrshp_description
+    - field.field.node.membership.field_mbrshp_image
+    - field.field.node.membership.field_mbrshp_info
+    - field.field.node.membership.scheduled_update
+    - node.type.membership
+  module:
+    - user
+_core:
+  default_config_hash: 8zY_DkEr4fCdbRauIr2d2eki8jGBmi6F7w0niHoHr2A
+id: node.membership.calc_summary
+targetEntityType: node
+bundle: membership
+mode: calc_summary
+content:
+  field_mbrshp_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: calc_summary
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_mbrshp_description: true
+  field_mbrshp_info: true
+  scheduled_update: true

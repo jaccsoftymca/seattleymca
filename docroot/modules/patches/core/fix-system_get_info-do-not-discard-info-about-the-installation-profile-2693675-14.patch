@@ -1,0 +1,18 @@
+diff --git a/core/modules/system/system.module b/core/modules/system/system.module
+index a1a6b715a3..7f66fc132b 100644
+--- a/core/modules/system/system.module
++++ b/core/modules/system/system.module
+@@ -962,6 +962,13 @@ function system_get_info($type, $name = NULL) {
+             $info[$module] = $data[$module]->info;
+           }
+         }
++
++        // Add info about the current installation profile
++        $profile = drupal_get_profile();
++        if ($profile) {
++          $info[$profile] = $data[$profile]->info;
++        }
++
+         // Store the module information in cache. This cache is cleared by
+         // calling system_rebuild_module_data(), for example, when listing
+         // modules, (un)installing modules, importing configuration, updating

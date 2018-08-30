@@ -1,0 +1,25 @@
+uuid: f4dac155-8314-4137-bb8f-9396a6d0559f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_class_id
+    - ymca_mappings.mapping_type.class
+_core:
+  default_config_hash: EmyLT7XTY-56d20wnxeVyzXjiOp5tyN8GmX3y-036MU
+id: mapping.class.field_activenet_class_id
+field_name: field_activenet_class_id
+entity_type: mapping
+bundle: class
+label: 'ActiveNet: Class ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

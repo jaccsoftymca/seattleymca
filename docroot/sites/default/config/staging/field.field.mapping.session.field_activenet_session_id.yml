@@ -1,0 +1,25 @@
+uuid: 3c3b6eed-309e-4fa5-ab53-5fc36fdea30f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_session_id
+    - ymca_mappings.mapping_type.session
+_core:
+  default_config_hash: Vt0vtrrvnOwlLgizEMc_bphn7uvQDr3c95j2DnD5o10
+id: mapping.session.field_activenet_session_id
+field_name: field_activenet_session_id
+entity_type: mapping
+bundle: session
+label: 'ActiveNet: Session ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

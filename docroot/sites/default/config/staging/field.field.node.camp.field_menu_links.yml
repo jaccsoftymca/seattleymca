@@ -1,0 +1,23 @@
+uuid: b96f94c9-39a3-4977-bc70-74acbf3a8325
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_links
+    - node.type.camp
+  module:
+    - link
+id: node.camp.field_menu_links
+field_name: field_menu_links
+entity_type: node
+bundle: camp
+label: 'Menu Item'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

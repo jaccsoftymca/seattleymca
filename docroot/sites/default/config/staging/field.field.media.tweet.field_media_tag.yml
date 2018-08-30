@@ -1,0 +1,28 @@
+uuid: 9c0ca670-5dd7-461a-8ea2-4d9fc21a033a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_tag
+    - media_entity.bundle.tweet
+    - taxonomy.vocabulary.media_tags
+id: media.tweet.field_media_tag
+field_name: field_media_tag
+entity_type: media
+bundle: tweet
+label: 'Media tag'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_tags: media_tags
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,32 @@
+---
+environment_name: 'prod'
+server: 'ded-18533'
+cloud_hosting: 'prod.hosting.acquia.com'
+git_branch: 'staging'
+deploy_type: 'tag'
+origin_environment: ''
+sync_files_with_origin: false
+sync_db_with_origin: false
+sync_code: true
+url: 'ymcaseattle.prod.acquia-sites.com'
+domains:
+  - 'ymcaseattle.prod.acquia-sites.com'
+  - 'prod.seattleymca.org'
+  - 'seattleymca.org'
+  - 'www.seattleymca.org'
+modules:
+  - { name: 'dblog', status: false }
+  - { name: 'stage_file_proxy', status: false }
+  - { name: 'devel', status: false }
+pre_drush_commands:
+  - { name: 'disable-syncers', status: true, arguments: "" }
+post_drush_commands:
+  - { name: 'status', status: true, arguments: "" }
+  - { name: 'cr', status: true, arguments: "" }
+  - { name: 'updb', status: true, arguments: "" }
+  - { name: 'entup', status: true, arguments: "" }
+  - { name: 'cr', status: true, arguments: "" }
+  - { name: 'enable-syncers', status: true, arguments: "" }
+cluster:
+  - { name: 'ded-18533', status: false }
+  - { name: 'ded-18534', status: true }

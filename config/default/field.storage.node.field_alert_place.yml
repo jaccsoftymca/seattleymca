@@ -1,0 +1,29 @@
+uuid: 2fa522c4-9405-4347-8e0e-e9fafca86188
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: DmcHE4W8QUEKNIcz-xelvmLcEsYoldHee2t03Jtf2Bg
+id: node.field_alert_place
+field_name: field_alert_place
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: header
+      label: Header
+    -
+      value: footer
+      label: Footer
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

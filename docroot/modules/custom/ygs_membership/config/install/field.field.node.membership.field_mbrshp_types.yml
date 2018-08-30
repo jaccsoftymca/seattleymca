@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbrshp_types
+    - node.type.membership
+    - taxonomy.vocabulary.membership_type
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_mbrshp_types
+id: node.membership.field_mbrshp_types
+field_name: field_mbrshp_types
+entity_type: node
+bundle: membership
+label: 'Membership Types'
+description: 'Relate this membership to a specific membership group. Type the name and if available it will show up as an option. If not, <a href="/admin/structure/taxonomy/manage/membership_type/overview">Add a Membership Type</a>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      membership_type: membership_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

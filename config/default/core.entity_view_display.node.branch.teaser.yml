@@ -1,0 +1,113 @@
+uuid: e19dc50c-a49e-479e-a50a-6b56e3559cf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.branch.field_bottom_content
+    - field.field.node.branch.field_branch_hours
+    - field.field.node.branch.field_collection_activity_group
+    - field.field.node.branch.field_content
+    - field.field.node.branch.field_header_content
+    - field.field.node.branch.field_headline
+    - field.field.node.branch.field_location_address
+    - field.field.node.branch.field_location_area
+    - field.field.node.branch.field_location_coordinates
+    - field.field.node.branch.field_location_directions
+    - field.field.node.branch.field_location_email
+    - field.field.node.branch.field_location_fax
+    - field.field.node.branch.field_location_phone
+    - field.field.node.branch.field_location_state
+    - field.field.node.branch.field_location_temp_url
+    - field.field.node.branch.field_meta_tags
+    - field.field.node.branch.field_metatags
+    - field.field.node.branch.field_show_br_hours_schedule
+    - field.field.node.branch.field_ticket_required_info
+    - field.field.node.branch.scheduled_update
+    - node.type.branch
+  module:
+    - address
+    - link
+    - openy_field_custom_hours
+    - telephone
+    - user
+_core:
+  default_config_hash: TcBIKTl3qJBUTWsCjVGmRy4lyvZdc2pdglY3NMYTmKk
+id: node.branch.teaser
+targetEntityType: node
+bundle: branch
+mode: teaser
+content:
+  field_branch_hours:
+    type: openy_custom_hours_default
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location_address:
+    type: address_plain
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location_area:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_location_directions:
+    type: link
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_location_phone:
+    type: telephone_link
+    weight: 2
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    region: content
+  field_location_state:
+    type: boolean
+    weight: 4
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'coming soon!'
+      format_custom_false: ''
+    third_party_settings: {  }
+    region: content
+  workbench_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_bottom_content: true
+  field_collection_activity_group: true
+  field_content: true
+  field_header_content: true
+  field_headline: true
+  field_location_coordinates: true
+  field_location_email: true
+  field_location_fax: true
+  field_location_temp_url: true
+  field_meta_tags: true
+  field_metatags: true
+  field_show_br_hours_schedule: true
+  field_ticket_required_info: true
+  links: true
+  scheduled_update: true

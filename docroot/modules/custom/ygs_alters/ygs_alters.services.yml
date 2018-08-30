@@ -1,0 +1,11 @@
+services:
+  ygs_alters.site_information_route_subscriber:
+    class: Drupal\ygs_alters\Routing\SiteInformationRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  ygs_alters.grant_storage:
+    class: Drupal\ygs_alters\YgsAltersGrantDatabaseStorage
+    public: false
+    decorates: node.grant_storage
+    decoration_priority: 3
+    arguments: ['@database', '@module_handler', '@language_manager']

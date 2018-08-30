@@ -1,0 +1,25 @@
+uuid: 915b892f-354c-4e69-a975-e6bbef037ca1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_age
+    - node.type.session
+_core:
+  default_config_hash: 6cuKvow6C0Ee9ZRz2chVotXBm7jIGaaOUfrrNr9oDiE
+id: node.session.field_min_age
+field_name: field_min_age
+entity_type: node
+bundle: session
+label: 'Min Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

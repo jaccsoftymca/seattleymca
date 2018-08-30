@@ -1,0 +1,12 @@
+diff --git a/simple_menu_icons/simple_menu_icons.module b/simple_menu_icons/simple_menu_icons.module
+index 0f6f477..a6a8005 100755
+--- a/simple_menu_icons/simple_menu_icons.module
++++ b/simple_menu_icons/simple_menu_icons.module
+@@ -35,7 +35,6 @@ function simple_menu_icons_form_menu_link_content_form_alter(&$form, \Drupal\Cor
+   $form['icon_upload'] = array(
+     '#type' => 'managed_file',
+     '#title' => t('Icon image'),
+-    '#maxlength' => 40,
+     '#description' => t("If you'd like an image to display next to this menu item, upload it here."),
+     '#upload_validators'  => array(
+       'file_validate_extensions' => array('gif png jpg jpeg svg'),

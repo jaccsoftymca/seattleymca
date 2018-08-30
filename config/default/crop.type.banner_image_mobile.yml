@@ -1,0 +1,12 @@
+uuid: 635158dc-e21f-432d-8656-69695760a88b
+langcode: en
+status: true
+dependencies: {  }
+label: 'Banner image (mobile)'
+id: banner_image_mobile
+description: ''
+aspect_ratio: '750:510'
+soft_limit_width: 750
+soft_limit_height: 510
+hard_limit_width: null
+hard_limit_height: null

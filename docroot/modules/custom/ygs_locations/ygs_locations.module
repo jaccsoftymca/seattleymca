@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ * YGS Locations module file.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function ygs_locations_theme($existing, $type, $theme, $path) {
+  return [
+    'ygs_locations_map' => [
+      'variables' => [],
+      'template' => 'ygs-locations-map',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function ygs_locations_entity_view_alter(&$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if (
+    $entity->getEntityTypeID() != 'node' ||
+    !in_array($entity->getType(), ['branch', 'camp', 'facility']) ||
+    $display->getMode() != 'teaser'
+  ) {
+    return;
+  }
+
+  if ($entity->getType() == 'branch') {
+    $value = $build['#node']->field_location_state->getValue();
+    if ($value[0]['value'] == 1) {
+      $build['#attributes']['class'][] = 'new_branch';
+    }
+  }
+
+  // Add attribute with location data.
+  $tags = [];
+  $cache_tags = [];
+  $icon = file_create_url(drupal_get_path('module', 'ygs_locations') . '/img/map_icon_blue.png');
+  switch ($entity->getType()) {
+    case 'branch':
+      $tags[] = t('YMCA');
+      break;
+
+    case 'camp':
+      $tags[] = t('Camps');
+      $icon = file_create_url(drupal_get_path('module', 'ygs_locations') . '/img/map_icon_green.png');
+      break;
+
+    case 'facility':
+      if ($entity->get('field_facility_type')) {
+        // Get list of allowed facility types for location filter.
+        $allowed_facility_types = ygs_locations_get_location_facility_types();
+        $facility_types = $entity->get('field_facility_type')->referencedEntities();
+        foreach ($facility_types as $term) {
+          $cache_tags[] = 'taxonomy_term:' . $term->id();
+          if (in_array($term->id(), $allowed_facility_types)) {
+            // Add facility type title to tags if it in allowed list.
+            $tags[] = $term->getName();
+          }
+        }
+      }
+      $icon = file_create_url(drupal_get_path('module', 'ygs_locations') . '/img/map_icon_green.png');
+      break;
+  }
+
+  $values = [
+    'name' => $entity->getTitle(),
+    'tags' => $tags,
+    'latitude' => $entity->field_location_coordinates->first() ? $entity->field_location_coordinates->first()->get('lat')->getValue() : NULL,
+    'longitude' => $entity->field_location_coordinates->first() ? $entity->field_location_coordinates->first()->get('lng')->getValue() : NULL,
+    'icon' => $icon,
+  ];
+  $build['#attributes']['data-ygs-locations'] = json_encode($values);
+  $build['#cache']['tags'] = $cache_tags;
+
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function ygs_locations_library_info_alter(&$libraries, $extension) {
+  if ($extension != 'ygs_locations') {
+    return;
+  }
+
+  // Adding Google Maps API key.
+  foreach ($libraries['ygs_locations_map']['js'] as $key => $value) {
+    if ($key != 'https://maps.googleapis.com/maps/api/js') {
+      continue;
+    }
+
+    unset($libraries['ygs_locations_map']['js'][$key]);
+    $libraries['ygs_locations_map']['js'][$key . '?key=' . 'AIzaSyCEAofyJsyH72hr4h7wQkzQ8xi-AeIU9s0'] = $value;
+  }
+}
+
+/**
+ * Returns all location IDs.
+ *
+ * @return array
+ *   Array of Branch/Camp IDs.
+ */
+function ygs_locations_get_all_locations() {
+  $query = \Drupal::entityQuery('node');
+  if (!\Drupal::currentUser()->hasPermission('View any unpublished content')) {
+    $query->condition('status', NODE_PUBLISHED);
+  }
+  $query->condition('type', array('branch', 'camp'), 'IN');
+
+  return $query->execute();
+}
+
+/**
+ * Returns all facility types with checked "Location Filter".
+ *
+ * @return array
+ *   Array of facility types IDs.
+ */
+function ygs_locations_get_location_facility_types() {
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', 'facility_type');
+  $query->condition('field_location_filter', 1);
+
+  return $query->execute();
+}

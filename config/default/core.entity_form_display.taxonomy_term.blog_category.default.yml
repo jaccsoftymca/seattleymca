@@ -1,0 +1,52 @@
+uuid: cefc4246-a732-4198-b22b-07db7a7800eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.blog_category.field_taxonomy_content
+    - taxonomy.vocabulary.blog_category
+  module:
+    - paragraphs
+    - path
+    - text
+_core:
+  default_config_hash: iXe0ZggGW63CEGaYehKyeAlKrXGHyn16Tc59D86hgYI
+id: taxonomy_term.blog_category.default
+targetEntityType: taxonomy_term
+bundle: blog_category
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_taxonomy_content:
+    type: entity_reference_paragraphs
+    weight: 31
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

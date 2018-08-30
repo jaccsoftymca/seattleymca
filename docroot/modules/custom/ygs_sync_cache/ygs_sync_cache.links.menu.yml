@@ -1,0 +1,14 @@
+
+# Sync Cache menu items definition
+entity.sync_cache.collection:
+  title: 'Sync Dashboard'
+  route_name: entity.sync_cache.collection
+  description: 'List Sync Cache entities'
+  parent: system.admin_structure
+  weight: 100
+
+sync_cache.admin.structure.settings:
+  title: Sync Cache settings
+  description: 'Configure Sync Cache entities'
+  route_name: sync_cache.settings
+  parent: system.admin_structure

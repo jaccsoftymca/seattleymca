@@ -1,0 +1,21 @@
+uuid: 2793bd54-1d33-4916-8617-3d5e3a69c41d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ygs_sync_cache
+id: sync_cache.field_raw_data_hash
+field_name: field_raw_data_hash
+entity_type: sync_cache
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

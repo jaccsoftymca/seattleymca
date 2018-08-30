@@ -1,0 +1,22 @@
+uuid: 01e00b94-0e64-4661-85e9-023e2603aac5
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: subprogram_teaser_2x_mobile
+label: 'Subprogram Teaser 2x Mobile'
+effects:
+  4cb135cf-806a-44ce-a24e-bd4c265be939:
+    uuid: 4cb135cf-806a-44ce-a24e-bd4c265be939
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: subprogram_teaser_mobile_2x
+  d8336824-f7c1-4b76-9cd8-3a32a7831653:
+    uuid: d8336824-f7c1-4b76-9cd8-3a32a7831653
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 670
+      height: 500

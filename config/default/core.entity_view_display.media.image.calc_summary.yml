@@ -1,0 +1,38 @@
+uuid: c0df2216-25df-494d-9157-5dbf22872696
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.calc_summary
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_media_tags
+    - image.style.node_mbrshp_calc_summary
+    - media_entity.bundle.image
+  module:
+    - image
+_core:
+  default_config_hash: fzabCcpaffCWhVV9-HToResk1odaDxNyYf2rGTlrl3E
+id: media.image.calc_summary
+targetEntityType: media
+bundle: image
+mode: calc_summary
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: node_mbrshp_calc_summary
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  field_media_caption: true
+  field_media_in_library: true
+  field_media_tags: true
+  name: true
+  thumbnail: true
+  uid: true

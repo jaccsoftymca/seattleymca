@@ -1,0 +1,23 @@
+uuid: a0c44976-d596-4878-9000-d46ba35e32b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_link
+    - field_collection.field_collection.field_membership_info
+  module:
+    - link
+id: field_collection_item.field_membership_info.field_link
+field_name: field_link
+entity_type: field_collection_item
+bundle: field_membership_info
+label: Link
+description: 'Link field to provide the membership ActiveNet link.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

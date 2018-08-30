@@ -1,0 +1,4 @@
+services:
+  ygs_class_page.data_provider:
+    class: Drupal\ygs_class_page\ClassPageDataProvider
+    arguments: ['@entity_type.manager', '@entity.query']

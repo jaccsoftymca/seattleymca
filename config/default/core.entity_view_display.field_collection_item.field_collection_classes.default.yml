@@ -1,0 +1,47 @@
+uuid: 7e777b67-8524-47b9-98a6-60dcfcee0b7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_collection_classes.field_body_no_summary
+    - field.field.field_collection_item.field_collection_classes.field_cta_link
+    - field.field.field_collection_item.field_collection_classes.field_title
+    - field_collection.field_collection.field_collection_classes
+  module:
+    - text
+    - ymca_link_formatter
+id: field_collection_item.field_collection_classes.default
+targetEntityType: field_collection_item
+bundle: field_collection_classes
+mode: default
+content:
+  field_body_no_summary:
+    type: text_trimmed
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 140
+    third_party_settings: {  }
+    region: content
+  field_cta_link:
+    type: link_advanced_formatter
+    weight: 1
+    label: hidden
+    settings:
+      classes: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

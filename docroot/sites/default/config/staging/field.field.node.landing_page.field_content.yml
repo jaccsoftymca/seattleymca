@@ -1,0 +1,42 @@
+uuid: 0efc3ac5-129c-4432-8c03-4e3ea0a03835
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: '-mIct62gB3oyCytVJ9zzsCSdSP1J8Oo_KUflyGn0i9s'
+id: node.landing_page.field_content
+field_name: field_content
+entity_type: node
+bundle: landing_page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    target_bundles_drag_drop:
+      column_in_a_grid:
+        weight: 6
+        enabled: false
+      dynamic_content:
+        weight: 7
+        enabled: false
+      gallery:
+        weight: 8
+        enabled: false
+      promo_card:
+        weight: 9
+        enabled: false
+      story_card:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

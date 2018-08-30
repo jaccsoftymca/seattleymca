@@ -1,0 +1,29 @@
+---
+- name: Identify latest tag
+  shell: "git describe --tags `git rev-list --tags --max-count=1`"
+  register: latest_tag_output
+
+- name: Set latest tag
+  set_fact: latest_tag={{ latest_tag_output.stdout }}
+  when: latest_tag_output is defined
+
+- name: Tag to be deployed
+  debug: var=latest_tag
+  when: latest_tag_output is defined
+
+- name: Deploy tag to Acquia
+  shell: "git push {{ acquia_git_url }} {{ latest_tag }}"
+  when: latest_tag is defined
+
+- name: Deploy tag to environment
+  shell: "ssh -t {{ project_name }}.{{ environment_name }}@{{ server }}.{{ cloud_hosting }} \"drush @{{ project_name }}.{{ environment_name }} ac-code-path-deploy tags/{{ latest_tag }} -l {{ url }} --email={{ acquia_user_email }} --key={{ acquia_user_api_key }}\""
+  when: latest_tag is defined
+
+# Max execution time: 180*5/60 = 15mins.
+- name: Wait for code updates
+  shell: "ssh -t {{ project_name }}.{{ environment_name }}@{{ server }}.{{ cloud_hosting }} \"drush @{{ project_name }}.{{ environment_name }} ac-task-list --state=started -l {{ url }} --email={{ acquia_user_email }} --key={{ acquia_user_api_key }}\""
+  register: result
+  until: result.stdout == ""
+  retries: 180
+  delay: 5
+  when: latest_tag is defined

@@ -1,0 +1,28 @@
+uuid: 8d5a3b40-43ea-4ccb-a90b-5e378fbe24d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.camp
+    - node.type.landing_page
+id: node.landing_page.field_location
+field_name: field_location
+entity_type: node
+bundle: landing_page
+label: Camp
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      camp: camp
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

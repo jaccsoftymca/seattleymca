@@ -1,0 +1,23 @@
+uuid: 34ead8a2-da8b-400d-a899-1c4863eea080
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_grid_content
+    - field_collection.field_collection.field_featured_grid_content
+  module:
+    - text
+_core:
+  default_config_hash: UOfizTXRt7XVmsqT0vTxFIo1uFJVaL7YWqm2Zab4nxo
+id: field_collection_item.field_featured_grid_content.field_grid_content
+field_name: field_grid_content
+entity_type: field_collection_item
+bundle: field_featured_grid_content
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,95 @@
+uuid: 10ee0329-f47c-4047-8191-b8fb53e4fdf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header_branch
+    - field.field.node.branch.field_bottom_content
+    - field.field.node.branch.field_branch_hours
+    - field.field.node.branch.field_collection_activity_group
+    - field.field.node.branch.field_content
+    - field.field.node.branch.field_header_content
+    - field.field.node.branch.field_headline
+    - field.field.node.branch.field_location_address
+    - field.field.node.branch.field_location_area
+    - field.field.node.branch.field_location_coordinates
+    - field.field.node.branch.field_location_directions
+    - field.field.node.branch.field_location_email
+    - field.field.node.branch.field_location_fax
+    - field.field.node.branch.field_location_phone
+    - field.field.node.branch.field_location_state
+    - field.field.node.branch.field_location_temp_url
+    - field.field.node.branch.field_meta_tags
+    - field.field.node.branch.field_metatags
+    - field.field.node.branch.field_show_br_hours_schedule
+    - field.field.node.branch.field_ticket_required_info
+    - field.field.node.branch.scheduled_update
+    - node.type.branch
+  module:
+    - address
+    - entity_reference_revisions
+    - openy_hours_formatter
+    - telephone
+    - user
+_core:
+  default_config_hash: oBC45fbctzNsWjXsWbLoQ_qNROdXArB0AKwWb1-qOGE
+id: node.branch.header_branch
+targetEntityType: node
+bundle: branch
+mode: header_branch
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_branch_hours:
+    type: openy_today_custom_hours
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_header_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_location_address:
+    type: address_plain
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location_phone:
+    type: telephone_link
+    weight: 3
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_bottom_content: true
+  field_collection_activity_group: true
+  field_content: true
+  field_headline: true
+  field_location_area: true
+  field_location_coordinates: true
+  field_location_directions: true
+  field_location_email: true
+  field_location_fax: true
+  field_location_state: true
+  field_location_temp_url: true
+  field_meta_tags: true
+  field_metatags: true
+  field_show_br_hours_schedule: true
+  field_ticket_required_info: true
+  links: true
+  scheduled_update: true
+  workbench_moderation_control: true

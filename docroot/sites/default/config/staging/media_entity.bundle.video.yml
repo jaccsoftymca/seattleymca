@@ -1,0 +1,19 @@
+uuid: 1cf7dcb5-5caa-4b89-88f2-fef230efe249
+langcode: en
+status: true
+dependencies:
+  module:
+    - video_embed_media
+_core:
+  default_config_hash: MK9giuhKdn8BH9avKY8PSBsuo5AryR_ex4_y0OsmgQk
+id: video
+label: Video
+description: 'Use Video for embedding videos hosted by YouTube, Vimeo, or some other provider.'
+type: video_embed_field
+queue_thumbnail_downloads: false
+new_revision: true
+type_configuration:
+  source_field: field_video
+field_map:
+  id: field_id
+  source_name: field_source

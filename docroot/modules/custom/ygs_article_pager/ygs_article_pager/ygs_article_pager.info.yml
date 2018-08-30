@@ -1,0 +1,5 @@
+name: YGS Article Pager
+type: module
+description: Provides a pager block for articles, so that users can easily browser from one to another.
+core: 8.x
+package: YGS

@@ -1,0 +1,5 @@
+ygs_salesforce_mc.settings:
+  title: Salesforce MC Settings
+  route_name: ygs_salesforce_mc.settings
+  parent: system.admin_config_system
+  description: 'Salesforce MC configuration.'

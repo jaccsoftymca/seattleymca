@@ -1,0 +1,23 @@
+uuid: 659fee28-dc18-41dc-a6c0-dca3d78c2e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_program
+    - node.type.program
+  module:
+    - options
+_core:
+  default_config_hash: yu1rmCChUn1TJ460Wq9hmO0RkznX5yRSAMt_SsU5mNY
+id: node.program.field_color_program
+field_name: field_color_program
+entity_type: node
+bundle: program
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

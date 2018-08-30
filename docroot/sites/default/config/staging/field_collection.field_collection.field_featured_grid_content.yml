@@ -1,0 +1,8 @@
+uuid: ba62d4dc-8d22-42c3-8bdb-5ef5bd990234
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lQoapUTrmGn5DvxkPN7l1Y13-YNxXtrWKsMflNp5hDQ
+id: field_featured_grid_content
+label: field_featured_grid_content

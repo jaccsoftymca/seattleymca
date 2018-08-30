@@ -1,0 +1,30 @@
+uuid: 164e9308-2a97-4c77-afe2-92a4eddf351c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class
+    - node.type.class
+    - node.type.session
+_core:
+  default_config_hash: pb_qm2F8y8IdROp3CwRRdRALaw6OdAXT8-vWkUPFVkI
+id: node.session.field_class
+field_name: field_class
+entity_type: node
+bundle: session
+label: Class
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      class: class
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: class
+field_type: entity_reference

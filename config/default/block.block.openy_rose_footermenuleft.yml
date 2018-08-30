@@ -1,0 +1,26 @@
+uuid: 6fc6fb6e-2cb8-4ede-8439-a2df3dc1c970
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-menu-left
+  module:
+    - system
+  theme:
+    - openy_rose
+_core:
+  default_config_hash: bRiXZwDtmYavt3hkTmr1VUlWAm0taLHN3sqzsL6GCGo
+id: openy_rose_footermenuleft
+theme: openy_rose
+region: footer_menus
+weight: -1
+provider: null
+plugin: 'system_menu_block:footer-menu-left'
+settings:
+  id: 'system_menu_block:footer-menu-left'
+  label: 'Footer menu left'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: 7ce32205-bcbd-49d3-b5d4-b939212f9968
+langcode: en
+status: true
+dependencies: {  }
+label: 'Program Header'
+id: program_header
+description: ''
+aspect_ratio: '500:260'
+soft_limit_width: 500
+soft_limit_height: 260
+hard_limit_width: null
+hard_limit_height: null

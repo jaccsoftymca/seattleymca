@@ -1,0 +1,8 @@
+uuid: 59375bde-1bd4-4359-964d-690088200bf2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nG7HcUsqjR7tSzanXnGPzGanRPpsEwGEUK3vDC1hIrY
+id: openy_config_upgrade_logs
+label: 'OpenY config upgrade logs'

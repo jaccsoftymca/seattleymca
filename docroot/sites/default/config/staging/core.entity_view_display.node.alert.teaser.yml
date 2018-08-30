@@ -1,0 +1,33 @@
+uuid: 6ab8bd5d-af1e-45b2-9316-2159f8d5d7bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.field_body_no_summary
+    - field.field.node.alert.field_color
+    - field.field.node.alert.field_link
+    - field.field.node.alert.field_locations
+    - field.field.node.alert.field_placement
+    - node.type.alert
+  module:
+    - user
+_core:
+  default_config_hash: KZ4b4iVu5SHDQ76I9zL0-LDUhCXGbWHVldQRTm5t6Gk
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  links:
+    weight: 100
+  workbench_moderation_control:
+    weight: -20
+hidden:
+  field_alert_type_switcher: true
+  field_body_no_summary: true
+  field_color: true
+  field_link: true
+  field_locations: true
+  field_placement: true

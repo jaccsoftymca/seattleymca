@@ -1,0 +1,5 @@
+ygs_membership.admin:
+  title: 'YGS membership settings'
+  parent: system.admin_config_content
+  route_name: ygs_membership.settings
+  weight: 100

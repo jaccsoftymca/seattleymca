@@ -1,0 +1,19 @@
+datawarehouse_client.config:
+  type: config_object
+  label: 'Datawarehouse client config'
+  mapping:
+    dw_server:
+      type: text
+      label: 'Datawarehouse server'
+    dw_pass:
+      type: text
+      label: 'Datawarehouse pass'
+    dw_db:
+      type: text
+      label: 'Datawarehouse database'
+    dw_port:
+      type: text
+      label: 'Datawarehouse port'
+    dw_user:
+      type: text
+      label: 'Datawarehouse user'

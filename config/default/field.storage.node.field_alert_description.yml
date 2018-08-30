@@ -1,0 +1,21 @@
+uuid: be9d43a9-389d-4168-8a41-5cf64b0a860d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: Eo-jD0QE1G-mvzGJ-mTa6pQ8gJuw-1pCEucqrsoQM_A
+id: node.field_alert_description
+field_name: field_alert_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

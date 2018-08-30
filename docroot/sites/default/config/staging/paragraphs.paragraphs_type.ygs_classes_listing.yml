@@ -1,0 +1,6 @@
+uuid: a5d98891-6f60-4bad-ae01-324a02237442
+langcode: en
+status: true
+dependencies: {  }
+id: ygs_classes_listing
+label: 'YGS Classes Listing'

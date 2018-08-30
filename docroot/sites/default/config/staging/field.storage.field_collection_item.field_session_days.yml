@@ -1,0 +1,44 @@
+uuid: 366521e8-b491-44b0-b7e8-01083cb6347e
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+    - options
+_core:
+  default_config_hash: VaOea0bgquN8iYEz_i5-jaBwfbE7C21BchD_FnaczpM
+id: field_collection_item.field_session_days
+field_name: field_session_days
+entity_type: field_collection_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sunday
+      label: Sunday
+    -
+      value: monday
+      label: Monday
+    -
+      value: tuesday
+      label: Tuesday
+    -
+      value: wednesday
+      label: Wednesday
+    -
+      value: thursday
+      label: Thursday
+    -
+      value: friday
+      label: Friday
+    -
+      value: saturday
+      label: Saturday
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: c1fc3876-9c60-403e-b973-5518dedd4737
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_directions
+    - node.type.branch
+  module:
+    - datalayer
+    - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_location_directions
+_core:
+  default_config_hash: wECsSrrpKwpR9l0_0o0esc5NK7Rf-JTr46G-JOhFzEU
+id: node.branch.field_location_directions
+field_name: field_location_directions
+entity_type: node
+bundle: branch
+label: Directions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,7 @@
+ymca_analytics.settings:
+  path: 'admin/config/services/ymca_analytics'
+  defaults:
+    _form: '\Drupal\ymca_analytics\Form\SettingsForm'
+    _title: 'OpenY Analytics Settings'
+  requirements:
+    _permission: 'administer analytics'

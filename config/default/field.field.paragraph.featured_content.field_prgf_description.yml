@@ -1,0 +1,23 @@
+uuid: 544a39d5-fab6-4c78-ac70-52b93da98702
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_description
+    - paragraphs.paragraphs_type.featured_content
+  module:
+    - text
+_core:
+  default_config_hash: uYxDroYfRpnfhJuyhfIKXVk4teEa5tQ3JBF2pWykt0w
+id: paragraph.featured_content.field_prgf_description
+field_name: field_prgf_description
+entity_type: paragraph
+bundle: featured_content
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

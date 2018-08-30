@@ -1,0 +1,25 @@
+uuid: d7d43bac-fca8-4585-a3aa-f0085f8a3a7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_br_hours_schedule
+    - node.type.branch
+_core:
+  default_config_hash: sXMDVFt89gaKBm3thTlYlufX5zTrzRxEYIUXp4u7_Tk
+id: node.branch.field_show_br_hours_schedule
+field_name: field_show_br_hours_schedule
+entity_type: node
+bundle: branch
+label: 'Show the Branch hours on Schedule Page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

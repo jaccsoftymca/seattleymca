@@ -1,0 +1,125 @@
+uuid: 0e66bb1f-d77a-4cf8-b6a5-968e19247c06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_content
+    - node.type.camp
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - datalayer
+    - entity_reference_revisions
+_core:
+  default_config_hash: QgVNbCWIi6Fa4_mLV5GjbIspMBKdLgNqYfa60bHFAh8
+id: node.camp.field_header_content
+field_name: field_header_content
+entity_type: node
+bundle: camp
+label: 'Header content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+      camp_menu: camp_menu
+    target_bundles_drag_drop:
+      banner:
+        weight: 18
+        enabled: false
+      branch_updates_queue:
+        weight: 19
+        enabled: false
+      category_content:
+        weight: 20
+        enabled: false
+      class_content:
+        weight: 21
+        enabled: false
+      dynamic_content:
+        weight: 22
+        enabled: false
+      featured_content:
+        weight: 24
+        enabled: false
+      form:
+        weight: 25
+        enabled: false
+      frontpage_updates_queue:
+        weight: 26
+        enabled: false
+      gallery:
+        enabled: true
+        weight: 27
+      grid_columns:
+        weight: 28
+        enabled: false
+      grid_content:
+        weight: 29
+        enabled: false
+      promo_card:
+        weight: 30
+        enabled: false
+      simple_content:
+        weight: 31
+        enabled: false
+      blog_posts_listing:
+        weight: 32
+        enabled: false
+      small_banner:
+        weight: 32
+        enabled: false
+      story_card:
+        weight: 33
+        enabled: false
+      teaser:
+        weight: 34
+        enabled: false
+      camp_menu:
+        enabled: true
+        weight: 34
+      classes_listing:
+        weight: 36
+        enabled: false
+      classes_listing_filters:
+        weight: 37
+        enabled: false
+      facility_sessions_search_block:
+        weight: 40
+        enabled: false
+      featured_blogs:
+        weight: 41
+        enabled: false
+      latest_blog_posts:
+        weight: 48
+        enabled: false
+      latest_blog_posts_branch:
+        weight: 49
+        enabled: false
+      latest_blog_posts_camp:
+        weight: 50
+        enabled: false
+      membership_info:
+        weight: 51
+        enabled: false
+      openy_prgf_mbrshp_calc:
+        weight: 52
+        enabled: false
+      prgf_location_finder:
+        weight: 53
+        enabled: false
+      prgf_location_finder_filters:
+        weight: 54
+        enabled: false
+      session_time:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_header_content

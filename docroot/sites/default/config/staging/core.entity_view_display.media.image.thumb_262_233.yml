@@ -1,0 +1,37 @@
+uuid: 089d21b1-4a50-41c9-be2c-89f4c650459f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumb_262_233
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_media_tags
+    - media_entity.bundle.image
+    - responsive_image.styles.membership_cards
+  module:
+    - responsive_image
+_core:
+  default_config_hash: WpkcCZzfyBN54Rt3zphO0_DFM0w__D_2a241r9-L5vE
+id: media.image.thumb_262_233
+targetEntityType: media
+bundle: image
+mode: thumb_262_233
+content:
+  field_media_image:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: membership_cards
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_caption: true
+  field_media_in_library: true
+  field_media_tags: true
+  name: true
+  thumbnail: true
+  uid: true

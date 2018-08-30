@@ -1,0 +1,9 @@
+name: Activenet Sync
+type: module
+description: Activenet Sync services.
+core: 8.x
+package: YGS
+dependencies:
+  - ymca_sync
+  - activenet_client
+  - datawarehouse_client

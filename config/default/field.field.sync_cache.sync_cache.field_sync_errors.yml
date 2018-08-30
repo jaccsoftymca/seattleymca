@@ -1,0 +1,20 @@
+uuid: 2a0dfe8d-fb82-4db9-b6cd-fd3b3ff5ae57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sync_cache.field_sync_errors
+  module:
+    - ygs_sync_cache
+id: sync_cache.sync_cache.field_sync_errors
+field_name: field_sync_errors
+entity_type: sync_cache
+bundle: sync_cache
+label: 'Sync errors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

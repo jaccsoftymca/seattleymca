@@ -1,0 +1,7 @@
+activenet_client.settings:
+  path: '/admin/config/system/activenet-client-settings'
+  defaults:
+    _form: '\Drupal\activenet_client\Form\SettingsForm'
+    _title: 'Activenet Client settings'
+  requirements:
+    _permission: 'administer site configuration'

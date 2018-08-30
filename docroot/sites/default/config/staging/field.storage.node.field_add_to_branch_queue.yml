@@ -1,0 +1,20 @@
+uuid: 89916431-7814-4cd8-80ee-4490f2ddbdb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Ul_YCBBCNZF6gg7vy632CzRnz_ugg_2XabUX4z3pszg
+id: node.field_add_to_branch_queue
+field_name: field_add_to_branch_queue
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

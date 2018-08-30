@@ -1,0 +1,25 @@
+uuid: d5c1323c-83ef-4cab-af65-db4959ddd3fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_nmbr_price
+    - node.type.session
+_core:
+  default_config_hash: 1NTsN04_EZThD4dnjmQOFg-MbeMan4klqODo3TC5Z9I
+id: node.session.field_session_nmbr_price
+field_name: field_session_nmbr_price
+entity_type: node
+bundle: session
+label: 'Non Member Price'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

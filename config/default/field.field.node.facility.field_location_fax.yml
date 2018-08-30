@@ -1,0 +1,28 @@
+uuid: 8e4dcfe9-191b-46bd-ba17-1c8b9b822e93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_fax
+    - node.type.facility
+  module:
+    - datalayer
+    - telephone
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_location_fax
+_core:
+  default_config_hash: j71Ivwb3hXf9fUw12dPAlpQ112ih7JlEn53opz8UKQM
+id: node.facility.field_location_fax
+field_name: field_location_fax
+entity_type: node
+bundle: facility
+label: Fax
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

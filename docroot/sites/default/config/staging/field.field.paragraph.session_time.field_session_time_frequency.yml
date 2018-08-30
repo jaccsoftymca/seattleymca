@@ -1,0 +1,28 @@
+uuid: 12734254-5cfe-4d52-99db-fde2680171f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_session_time_frequency
+    - paragraphs.paragraphs_type.session_time
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_session_time_frequency
+id: paragraph.session_time.field_session_time_frequency
+field_name: field_session_time_frequency
+entity_type: paragraph
+bundle: session_time
+label: Frequency
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: weekly
+default_value_callback: ''
+settings: {  }
+field_type: list_string

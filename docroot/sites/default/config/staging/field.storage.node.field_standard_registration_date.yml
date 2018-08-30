@@ -1,0 +1,20 @@
+uuid: 68e91014-a366-4b6b-96a9-5fd245e598f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+id: node.field_standard_registration_date
+field_name: field_standard_registration_date
+entity_type: node
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

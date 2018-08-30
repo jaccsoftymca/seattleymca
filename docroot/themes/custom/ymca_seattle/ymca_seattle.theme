@@ -1,0 +1,237 @@
+<?php
+
+/**
+ * @file
+ * Theme file.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Element\RenderElement;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Prepares variables for select element templates.
+ *
+ * Default template: select.html.twig.
+ *
+ * It is possible to group options together; to do this, change the format of
+ * $options to an associative array in which the keys are group labels, and the
+ * values are associative arrays in the normal $options format.
+ *
+ * @param $vars
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ *     Properties used: #title, #value, #options, #description, #extra,
+ *     #multiple, #required, #name, #attributes, #size.
+ */
+function ymca_seattle_preprocess_select(&$vars) {
+  $element = $vars['element'];
+  Element::setAttributes($element, array('id', 'name', 'size'));
+  RenderElement::setAttributes($element, array('form-select'));
+
+  $vars['attributes'] = $element['#attributes'];
+  $vars['options'] = form_select_options($element);
+
+  $vars['attributes']['class'][] = 'form-control';
+  $vars['attributes']['class'][] = 'text';
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function ymca_seattle_preprocess_node(&$vars) {
+  $bundle = $vars['node']->bundle();
+  if (function_exists(__FUNCTION__ . '_' . $bundle)) {
+    $function = __FUNCTION__ . '_' . $bundle;
+    $function($vars);
+  }
+}
+
+/**
+ * Implement hook_preprocess_paragraph().
+ */
+function ymca_seattle_preprocess_paragraph(&$vars) {
+  $bundle = $vars['paragraph']->bundle();
+  if (function_exists(__FUNCTION__ . '_' . $bundle)) {
+    $function = __FUNCTION__ . '_' . $bundle;
+    $function($vars);
+  }
+
+  if ($vars['paragraph']->hasField('field_color')) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+    $paragraph = $vars['paragraph'];
+
+    if ($value = $paragraph->field_color->getValue()) {
+      $vars['color'] = reset($value)['value'];
+    }
+  }
+}
+
+/**
+ * Implement hook_preprocess_paragraph().
+ */
+function ymca_seattle_preprocess_paragraph_openy_prgf_mbrshp_calc(&$vars) {
+  $vars['#attached']['library'][] = 'ymca_seattle/membership_pg';
+}
+
+/**
+ * Helper function; removes unpublished and empty field collection items.
+ */
+function _ymca_seattle_preprocess_field__remove_unpublished_and_empty_fc_items(&$vars) {
+  $children = Element::children($vars['items']);
+  foreach ($children as $key) {
+    $item = $vars['items'][$key];
+    $entity = $item['content']['#field_collection_item'];
+    $referenced_entities = $entity->field_updates_queue_update->referencedEntities();
+    if (!$referenced_entities) {
+      // Remove empty items.
+      unset($vars['items'][$key]);
+    }
+    foreach ($referenced_entities as $referenced_entity) {
+      if (!$referenced_entity->moderation_state->entity || !$referenced_entity->moderation_state->entity->isPublishedState()) {
+        // Remove unpublished items for anonymous users.
+        unset($vars['items'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ymca_seattle_preprocess_field__paragraph__field_updates_queue_item_collect__branch_updates_queue(&$vars) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $branch = $node->getTitle();
+    $vars['block_title'] = t('What’s New at @branch?', ['@branch' => $branch]);
+  }
+
+  _ymca_seattle_preprocess_field__remove_unpublished_and_empty_fc_items($vars);
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ymca_seattle_preprocess_field__paragraph__field_updates_queue_home__frontpage_updates_queue(&$vars) {
+  _ymca_seattle_preprocess_field__remove_unpublished_and_empty_fc_items($vars);
+}
+
+/**
+ * Prepares variables for input templates.
+ *
+ * Default template: input.html.twig.
+ *
+ * @param array $vars
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ *     Properties used: #attributes.
+ */
+function ymca_seattle_preprocess_input(&$vars) {
+  $element = $vars['element'];
+  $vars['children'] = $element['#children'];
+
+  $types = array('url', 'textfield', 'tel', 'password', 'date');
+  if (in_array($element['#type'], $types)) {
+    $classes = array(
+      'form-control',
+      'text',
+    );
+  }
+  elseif ($element['#type'] == 'submit' && $element['#ajax_processed'] != TRUE) {
+    $classes = array(
+      'form_submit',
+      'btn',
+      'btn-lg',
+      'btn-primary',
+    );
+  }
+  elseif ($element['#type'] == 'email') {
+    $classes = array(
+      'form-control',
+      'text',
+      'email',
+    );
+  }
+
+  if (isset($classes)) {
+    $vars['attributes']['class'] = array_merge($vars['attributes']['class'], $classes);
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ymca_seattle_preprocess_field__node__field_locations(&$vars) {
+  if (function_exists('ygs_locations_get_all_locations')) {
+    $all_ids = ygs_locations_get_all_locations();
+    // Check if all fields are selected.
+    if (count($all_ids) == count($vars['items'])) {
+      $vars['all_selected'] = t("All");
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ymca_seattle_preprocess_field__node__field_location_directions(&$vars) {
+  // Change link title to Directions.
+  $vars['items'][0]['content']['#title'] = t('Directions');
+}
+
+/**
+ * Implements hook_preprocess_template().
+ */
+function ymca_seattle_preprocess_views_view_unformatted__membership__membership_locations(&$vars) {
+  $config = \Drupal::config('ygs_popups.settings');
+  $img_src = '';
+  if ($config->get('img')) {
+    $file = File::load($config->get('img'));
+    $img_src = ImageStyle::load('locations_popup')->buildUrl($file->getFileUri());
+  }
+  $vars['locations_image'] = $img_src;
+  $vars['locations_description'] = array(
+    '#markup' => $config->get('description'),
+  );
+}
+
+/**
+ * Implements hook_preprocess_radios().
+ */
+function ymca_seattle_preprocess_radios(&$vars) {
+  if (isset($vars['element']['#branches'], $vars['element']['#camps'])) {
+    $vars['children'] = [];
+    if ($vars['element']['#branches']) {
+      $vars['children'][] = [
+        '#markup' => '<h3>' . t('Branches') . '</h3>',
+      ];
+      foreach ($vars['element']['#branches'] as $id => $value) {
+        $vars['children'][] = [
+          '#markup' => $vars['element'][$id]['#markup'],
+        ];
+      }
+    }
+    if ($vars['element']['#camps']) {
+      $vars['children'][] = [
+        '#markup' => '<h3>' . t('Camps') . '</h3>',
+      ];
+      foreach ($vars['element']['#camps'] as $id => $value) {
+        $vars['children'][] = [
+          '#markup' => $vars['element'][$id]['#markup'],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_template().
+ */
+function ymca_seattle_preprocess_views_view__membership__membership_teasers(&$vars) {
+  $config = \Drupal::config('ygs_membership.settings');
+  $vars['membership_title'] = $config->get('title');
+  $vars['membership_description'] = $config->get('description');
+  $vars['membership_tab1_title'] = $config->get('tab1_title');
+  $vars['membership_tab2_title'] = $config->get('tab2_title');
+}

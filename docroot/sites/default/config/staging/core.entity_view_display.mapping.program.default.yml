@@ -1,0 +1,38 @@
+uuid: 6c23dd74-e9ce-4421-8506-72e4a9ed6f34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.mapping.program.field_activenet_program_id
+    - ymca_mappings.mapping_type.program
+  module:
+    - user
+_core:
+  default_config_hash: RYB35DgzBZ1IdP5lWnqzntbJPAhRPFoIi0WGkH0_SLg
+id: mapping.program.default
+targetEntityType: mapping
+bundle: program
+mode: default
+content:
+  field_activenet_program_id:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  name:
+    label: above
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

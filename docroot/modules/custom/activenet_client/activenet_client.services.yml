@@ -1,0 +1,7 @@
+services:
+  activenet.client:
+    class: Drupal\activenet_client\ActivenetClient
+    arguments: ['@config.factory', '@logger.channel.activenet_client', '@http_client']
+  logger.channel.activenet_client:
+    parent: logger.channel_base
+    arguments: ['activenet_client']

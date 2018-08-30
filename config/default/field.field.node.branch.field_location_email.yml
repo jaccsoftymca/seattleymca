@@ -1,0 +1,27 @@
+uuid: 724bc4b2-0f19-420e-b1b1-901ba25bc419
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_email
+    - node.type.branch
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_location_email
+_core:
+  default_config_hash: _LI7uW4EzU2dG78UDKC_iF9t19n85doQZXoVtGt6fA8
+id: node.branch.field_location_email
+field_name: field_location_email
+entity_type: node
+bundle: branch
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,12 @@
+uuid: b89a1d83-6443-48d2-ae7b-e9207771bbcd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - yamlform
+_core:
+  default_config_hash: K-feP8Fm5-auB0z2HYPoyJjNLGD-RVgqWmmoDcsLP7A
+id: likert_would_you
+label: 'Likert: Would You'
+options: "1: Definitely Not\n2: Probably Not\n3: Not Sure\n4: Probably\n5: Definitely\n"

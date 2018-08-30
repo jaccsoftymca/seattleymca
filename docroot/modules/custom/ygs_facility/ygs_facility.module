@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains ygs_facility module hooks.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ygs_facility_theme() {
+  return [
+    'ygs_facility_sessions' => [
+      'variables' => [
+        'teasers' => [],
+      ],
+    ],
+  ];
+}

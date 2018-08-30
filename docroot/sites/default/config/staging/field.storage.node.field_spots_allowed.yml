@@ -1,0 +1,20 @@
+uuid: 3f42d7cc-cce8-4a11-bff5-6d04a11b0aab
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_spots_allowed
+field_name: field_spots_allowed
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

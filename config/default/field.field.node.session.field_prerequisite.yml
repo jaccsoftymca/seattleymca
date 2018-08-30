@@ -1,0 +1,25 @@
+uuid: df58c223-be33-4efa-a570-fb0f8dcacba7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prerequisite
+    - node.type.session
+_core:
+  default_config_hash: wFtauXV4n_klHJclFVWJWLQ-PXXevnB2RFMm1A4Ozt0
+id: node.session.field_prerequisite
+field_name: field_prerequisite
+entity_type: node
+bundle: session
+label: Prerequisite
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

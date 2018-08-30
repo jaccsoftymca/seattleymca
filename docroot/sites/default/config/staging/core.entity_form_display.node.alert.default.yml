@@ -1,0 +1,113 @@
+uuid: e699e790-b70a-4dd3-8510-c8b80daf4ddb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.field_body_no_summary
+    - field.field.node.alert.field_color
+    - field.field.node.alert.field_link
+    - field.field.node.alert.field_locations
+    - field.field.node.alert.field_placement
+    - field.field.node.alert.scheduled_update
+    - node.type.alert
+  module:
+    - inline_entity_form
+    - link
+    - path
+    - text
+    - workbench_moderation
+_core:
+  default_config_hash: 45i-k24L6MoTXrr1_V3XIQSZT6kV7uAhGG_MveEXJq0
+id: node.alert.default
+targetEntityType: node
+bundle: alert
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  field_alert_type_switcher:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_body_no_summary:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_color:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_locations:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_placement:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  path:
+    type: path
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    third_party_settings: {  }
+  scheduled_update:
+    type: inline_entity_form_complex
+    weight: 12
+    settings:
+      override_labels: true
+      label_singular: 'Scheduled update'
+      label_plural: 'Scheduled updates'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      form_mode: default
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

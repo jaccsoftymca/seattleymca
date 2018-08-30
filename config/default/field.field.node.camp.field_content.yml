@@ -1,0 +1,100 @@
+uuid: 7ce73bd6-823f-421e-897d-f79375ac8035
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.camp
+    - paragraphs.paragraphs_type.branch_updates_queue
+    - paragraphs.paragraphs_type.dynamic_content
+    - paragraphs.paragraphs_type.grid_content
+    - paragraphs.paragraphs_type.latest_blog_posts_camp
+    - paragraphs.paragraphs_type.simple_content
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: idmKgpqEBEiYfFsspXglLbTmz6ZkPh7xlOshSsD6XR0
+id: node.camp.field_content
+field_name: field_content
+entity_type: node
+bundle: camp
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      branch_updates_queue: branch_updates_queue
+      dynamic_content: dynamic_content
+      grid_content: grid_content
+      simple_content: simple_content
+      latest_blog_posts_camp: latest_blog_posts_camp
+    target_bundles_drag_drop:
+      banner:
+        weight: 18
+        enabled: false
+      branch_updates_queue:
+        enabled: true
+        weight: 19
+      category_content:
+        weight: 20
+        enabled: false
+      class_content:
+        weight: 21
+        enabled: false
+      dynamic_content:
+        enabled: true
+        weight: 22
+      latest_blog_posts:
+        weight: 23
+        enabled: false
+      featured_content:
+        weight: 24
+        enabled: false
+      form:
+        weight: 25
+        enabled: false
+      blog_posts_listing:
+        weight: 25
+        enabled: false
+      frontpage_updates_queue:
+        weight: 26
+        enabled: false
+      gallery:
+        weight: 27
+        enabled: false
+      grid_columns:
+        weight: 28
+        enabled: false
+      grid_content:
+        enabled: true
+        weight: 29
+      promo_card:
+        weight: 30
+        enabled: false
+      simple_content:
+        enabled: true
+        weight: 31
+      small_banner:
+        weight: 32
+        enabled: false
+      story_card:
+        weight: 33
+        enabled: false
+      teaser:
+        weight: 34
+        enabled: false
+      latest_blog_posts_branch:
+        weight: 37
+        enabled: false
+      latest_blog_posts_camp:
+        enabled: true
+        weight: 38
+      membership_info:
+        weight: 39
+        enabled: false
+field_type: entity_reference_revisions

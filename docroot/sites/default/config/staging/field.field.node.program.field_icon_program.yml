@@ -1,0 +1,30 @@
+uuid: ff2bf81b-dd8f-4229-af87-d2b9b3f8b8a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon_program
+    - media_entity.bundle.image
+    - node.type.program
+_core:
+  default_config_hash: JWohzyFlq7HOJyNkHXXeoFo9K6C7uQsZ_lZdJtm_IPA
+id: node.program.field_icon_program
+field_name: field_icon_program
+entity_type: node
+bundle: program
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

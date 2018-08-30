@@ -1,0 +1,104 @@
+uuid: c4b1c4e8-9dac-4ef1-a4c7-3e28defb2495
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - yamlform_templates
+_core:
+  default_config_hash: qvMVmOQXMFTqqNvWR7rGhW30IvIqB-duSgclHta80wI
+uid: null
+template: true
+id: template_job_application
+title: 'Job Application'
+description: 'A job application form template.'
+elements: "information:\n  '#title': 'Your Information'\n  '#type': fieldset\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n    '#required': true\n  last_name:\n    '#title': 'Last Name'\n    '#type': textfield\n    '#required': true\n  gender:\n    '#type': radios\n    '#title': Gender\n    '#options': gender\n    '#required': true\ncontact_information:\n  '#title': 'Contact Information'\n  '#type': fieldset\n  contact:\n    '#type': contact\n    '#title': Contact\n    '#title_display': invisible\n    '#name__access': false\n    '#company__access': false\nresume:\n  '#title': 'Your Resume'\n  '#type': fieldset\n  resume_method:\n    '#type': radios\n    '#options':\n      attach: 'Attach resume file'\n      paste: 'Paste your resume'\n    '#prefix': '<div class=\"container-inline\">'\n    '#suffix': '</div>'\n    '#default_value': attach\n  resume_file_container:\n    '#type': container\n    '#title': Resume\n    '#title_display': invisible\n    '#states':\n      visible:\n        ':input[name=\"resume_method\"]':\n          value: attach\n      required:\n        ':input[name=\"resume_method\"]':\n          value: attach\n      enabled:\n        ':input[name=\"resume_method\"]':\n          value: attach\n    resume_file:\n      '#type': managed_file\n  resume_text:\n    '#type': textarea\n    '#title': Resume\n    '#title_display': invisible\n    '#states':\n      visible:\n        ':input[name=\"resume_method\"]':\n          value: paste\n      required:\n        ':input[name=\"resume_method\"]':\n          value: paste\n      enabled:\n        ':input[name=\"resume_method\"]':\n          value: paste\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: Apply
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: 'Thank you for applying.'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_notification:
+    id: email
+    label: 'Email Notification'
+    handler_id: email_notification
+    status: true
+    weight: 1
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email:raw]'
+      from_name: '[yamlform-submission:values:first_name] [yamlform-submission:values:last_name]'
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

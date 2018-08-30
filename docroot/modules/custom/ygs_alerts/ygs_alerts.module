@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Contains ygs_alerts module hooks.
+ */
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function ygs_alerts_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  if ($node->bundle() != 'alert') {
+    return;
+  }
+
+  $variables['#elements']['#attached'][] = 'ygs_alerts/alerts';
+
+  $variables['attributes']['data-nid'] = $node->id();
+
+  $variation_class_array = ['site-alert'];
+  $variables['attributes']['class'][] = implode('--', $variation_class_array);
+
+  $location_specific_alert = FALSE;
+  if ($node->hasField('field_locations')) {
+    if ($values = $node->field_locations->getValue()) {
+      $location_specific_alert = TRUE;
+    }
+  }
+
+  // For location specific alerts ignore Placement field value, use 'header'.
+  if ($location_specific_alert) {
+    $variables['placement'] = 'header';
+    $variation_class_array[] = $variables['placement'];
+    $variables['attributes']['class'][] = 'site-alert--location-specific';
+    $variables['attributes']['class'][] = implode('--', $variation_class_array);
+  }
+  elseif ($node->hasField('field_placement')) {
+    if ($values = $node->field_placement->getValue()) {
+      $variables['placement'] = $values['0']['value'];
+      $variation_class_array[] = $variables['placement'];
+      $variables['attributes']['class'][] = implode('--', $variation_class_array);
+    }
+  }
+
+  if ($node->hasField('field_color')) {
+    if ($values = $node->field_color->getValue()) {
+      $variables['color'] = $values['0']['value'];
+      $variation_class_array[] = $variables['color'];
+      $variables['attributes']['class'][] = implode('--', $variation_class_array);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view.
+ */
+function ygs_alerts_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() != 'sub_category_classes') {
+    return;
+  }
+
+  $branch_id = $variables['view']->filter['field_session_location_target_id']->value['value'];
+  $variables['location_alerts'] = views_embed_view('header_alerts', 'specific_alerts_block', $branch_id);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ygs_alerts_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'node-alert-form') {
+    $form['field_locations']['#states'] = array(
+      'visible' => array(
+        ':input[name="field_alert_type_switcher"]' => array('value' => 'location')
+      )
+    );
+    $form['field_placement']['#states'] = array(
+      'visible' => array(
+        ':input[name="field_alert_type_switcher"]' => array('value' => 'global')
+      )
+    );
+
+  }
+}

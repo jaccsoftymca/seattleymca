@@ -1,0 +1,75 @@
+uuid: eab44cc9-d554-4dc2-8c54-50c097fd7f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.field_body_no_summary
+    - field.field.node.alert.field_color
+    - field.field.node.alert.field_link
+    - field.field.node.alert.field_locations
+    - field.field.node.alert.field_placement
+    - node.type.alert
+  module:
+    - link
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: YhF7EGLi0YS-UbWQ3_-tBeoWa6Di_KLAPIzYZL2SY6k
+id: node.alert.default
+targetEntityType: node
+bundle: alert
+mode: default
+content:
+  content_moderation_control:
+    weight: -20
+  field_alert_type_switcher:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_body_no_summary:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_color:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_link:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_locations:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_placement:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+hidden: {  }

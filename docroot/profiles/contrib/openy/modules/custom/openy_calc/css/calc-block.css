@@ -1,0 +1,7 @@
+/* Hide fields from editor. */
+.field--name-field-prgf-block .plugin-selector-plugin-select-list-selector,
+.field--name-field-prgf-block div[class$="-plugin-form-admin-label"],
+.field--name-field-prgf-block div[class$="-plugin-form-label"],
+.field--name-field-prgf-block div[class$="-plugin-form-label-display"] {
+  display: none;
+}

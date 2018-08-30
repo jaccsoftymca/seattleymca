@@ -1,0 +1,38 @@
+uuid: c2c0f13f-6c38-42ff-a765-a2e2ba51484a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: Nal96YJspO2yGz6XiYD9hOChlfkEV9K77abL9vOBEx4
+id: paragraph.field_color
+field_name: field_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: purple
+      label: Purple
+    -
+      value: green
+      label: Green
+    -
+      value: dark-green
+      label: 'Dark Green'
+    -
+      value: grey
+      label: Grey
+    -
+      value: dark-blue
+      label: 'Dark Blue'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

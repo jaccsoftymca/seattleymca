@@ -1,0 +1,67 @@
+uuid: 6a5e42d1-553d-491f-a87e-d36999b98bb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.facility.field_body_no_summary
+    - field.field.node.facility.field_collection_hours
+    - field.field.node.facility.field_content
+    - field.field.node.facility.field_facility_loc
+    - field.field.node.facility.field_facility_type
+    - field.field.node.facility.field_location_address
+    - field.field.node.facility.field_location_area
+    - field.field.node.facility.field_location_coordinates
+    - field.field.node.facility.field_location_directions
+    - field.field.node.facility.field_location_email
+    - field.field.node.facility.field_location_fax
+    - field.field.node.facility.field_location_phone
+    - field.field.node.facility.field_sidebar_content
+    - field.field.node.facility.scheduled_update
+    - node.type.facility
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+_core:
+  default_config_hash: 83MYoAsEdZbEY2XlL9tEf8ic4e5ByLUSPBbeHBHwP3Y
+id: node.facility.full
+targetEntityType: node
+bundle: facility
+mode: full
+content:
+  field_body_no_summary:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_content:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_collection_hours: true
+  field_facility_loc: true
+  field_facility_type: true
+  field_location_address: true
+  field_location_area: true
+  field_location_coordinates: true
+  field_location_directions: true
+  field_location_email: true
+  field_location_fax: true
+  field_location_phone: true
+  field_sidebar_content: true
+  scheduled_update: true

@@ -1,0 +1,32 @@
+uuid: 8ef0305a-8910-492f-88ce-f8caf11049ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection_hours
+    - field_collection.field_collection.field_collection_hours
+    - node.type.facility
+  module:
+    - field_collection
+_core:
+  default_config_hash: Qv8ZerqctINWl4Vf1SMg_eSHgU9AeIqeOZ6pTemGAuQ
+id: node.facility.field_collection_hours
+field_name: field_collection_hours
+entity_type: node
+bundle: facility
+label: Hours
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_collection_hours: field_collection_hours
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

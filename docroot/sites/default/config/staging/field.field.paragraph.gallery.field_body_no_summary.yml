@@ -1,0 +1,23 @@
+uuid: 6db3b283-4fe5-4618-bdc3-1c46eb875ef4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_no_summary
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - text
+_core:
+  default_config_hash: go8P9Djoarpukl-IOeJ47yeZ_gF3Ohjey2TMLwnNWT4
+id: paragraph.gallery.field_body_no_summary
+field_name: field_body_no_summary
+entity_type: paragraph
+bundle: gallery
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

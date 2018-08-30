@@ -1,0 +1,21 @@
+uuid: df4f8ba2-5884-43b5-b16e-10322fd6c4b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sync_cache.field_updated_date
+  module:
+    - datetime
+    - ygs_sync_cache
+id: sync_cache.sync_cache.field_updated_date
+field_name: field_updated_date
+entity_type: sync_cache
+bundle: sync_cache
+label: 'Updated date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

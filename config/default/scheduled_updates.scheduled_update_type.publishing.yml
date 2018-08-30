@@ -1,0 +1,17 @@
+uuid: 23777490-21fb-4658-85d0-fc301e57c18f
+langcode: en
+status: true
+dependencies: {  }
+id: publishing
+label: Publishing
+update_entity_type: node
+update_types_supported:
+  - embedded
+field_map:
+  field_moderation_state_1: moderation_state
+update_runner:
+  id: latest_revision
+  after_run: DELETE
+  invalid_update_behavior: ARCHIVE
+  create_revisions: 'YES'
+  update_user: USER_UPDATE_RUNNER

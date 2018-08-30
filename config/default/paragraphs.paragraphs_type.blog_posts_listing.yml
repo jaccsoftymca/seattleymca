@@ -1,0 +1,8 @@
+uuid: 94e96276-1a19-40ad-9444-2bed393ddd91
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DmbvMwgCeCi3XeR9Spkg17e1AioK0zadIh8spyFnFpY
+id: blog_posts_listing
+label: 'Blog Posts Listing'

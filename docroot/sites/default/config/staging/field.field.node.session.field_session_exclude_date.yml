@@ -1,0 +1,23 @@
+uuid: bff1d23f-5db0-49ea-b628-6c2388c44bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_exclude_date
+    - node.type.session
+  module:
+    - datetime_range
+_core:
+  default_config_hash: 1TXQ6Fx-U9InK3AYJuddObdOHRYDAc80vHXq0xehMhQ
+id: node.session.field_session_exclude_date
+field_name: field_session_exclude_date
+entity_type: node
+bundle: session
+label: Exclusions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

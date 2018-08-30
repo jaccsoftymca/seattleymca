@@ -1,0 +1,30 @@
+uuid: 3e5234c7-0e01-4d76-b480-4498c7bffbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category_color
+    - node.type.program_subcategory
+    - taxonomy.vocabulary.color
+_core:
+  default_config_hash: fwsBln4Lql45ToSoxyXgEsPsM4RHYDXxmY9gF1bHhqc
+id: node.program_subcategory.field_category_color
+field_name: field_category_color
+entity_type: node
+bundle: program_subcategory
+label: Color
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

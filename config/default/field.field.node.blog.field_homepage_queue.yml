@@ -1,0 +1,23 @@
+uuid: 56b5e093-547b-47e6-a860-1afff74abd2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_homepage_queue
+    - node.type.blog
+id: node.blog.field_homepage_queue
+field_name: field_homepage_queue
+entity_type: node
+bundle: blog
+label: 'Add to Homepage queue'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,24 @@
+uuid: d233fad6-32d7-4e16-9a1d-44c95e3f8d5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ygs_classes_listing.field_prgf_block
+    - paragraphs.paragraphs_type.ygs_classes_listing
+  module:
+    - plugin
+id: paragraph.ygs_classes_listing.default
+targetEntityType: paragraph
+bundle: ygs_classes_listing
+mode: default
+content:
+  field_prgf_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_block_built
+    region: content
+hidden:
+  created: true
+  uid: true

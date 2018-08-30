@@ -1,0 +1,22 @@
+uuid: b1afc1b6-729b-4b9e-81e1-a5b19963edc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: jcie2HjcQ7eHojCM7m25i6hq6bzsnTpQwGV-hVqvaUs
+id: node.field_alert_icon_color
+field_name: field_alert_icon_color
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 5eb38af0-4671-498f-9eaa-44cd051fc5c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_min_age
+    - taxonomy.vocabulary.age
+id: taxonomy_term.age.field_min_age
+field_name: field_min_age
+entity_type: taxonomy_term
+bundle: age
+label: 'Min Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

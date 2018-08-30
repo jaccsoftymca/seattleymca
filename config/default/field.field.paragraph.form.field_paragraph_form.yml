@@ -1,0 +1,27 @@
+uuid: 36341059-63ba-4c9b-bde3-956a33aa2711
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_form
+    - paragraphs.paragraphs_type.form
+  module:
+    - yamlform
+id: paragraph.form.field_paragraph_form
+field_name: field_paragraph_form
+entity_type: paragraph
+bundle: form
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:yamlform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  default_data: ''
+  status: true
+field_type: yamlform

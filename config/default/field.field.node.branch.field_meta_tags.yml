@@ -1,0 +1,30 @@
+uuid: cea76905-d1b1-4312-aacd-9085190800d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.branch
+  module:
+    - datalayer
+    - metatag
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_meta_tags
+_core:
+  default_config_hash: Tv-SdYr47ghWTIVCTeolscNM9xaS7pDx4iL9Qlx_bEM
+id: node.branch.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: branch
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

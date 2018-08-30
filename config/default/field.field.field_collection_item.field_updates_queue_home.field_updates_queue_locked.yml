@@ -1,0 +1,23 @@
+uuid: 5f400b76-ccc1-490e-98a8-a36ef6f8966c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_updates_queue_locked
+    - field_collection.field_collection.field_updates_queue_home
+id: field_collection_item.field_updates_queue_home.field_updates_queue_locked
+field_name: field_updates_queue_locked
+entity_type: field_collection_item
+bundle: field_updates_queue_home
+label: Locked
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

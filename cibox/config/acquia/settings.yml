@@ -1,0 +1,12 @@
+---
+root_user: 'root'
+jenkins_user: 'jenkins'
+
+# ssh [PROJECT_NAME].[dev/test/prod/ra]@[SERVERS_VAR].[ACQUIA_CLOUD_HOSTING]
+project_name: 'ymcaseattle'
+acquia_git_url: 'ymcaseattle@svn-15800.prod.hosting.acquia.com:ymcaseattle.git'
+github_git_url: 'https://github.com/propeoplemd/ymcaseattle.git'
+acquia_user_email: 'alexander.schedrov@ffwagency.com'
+acquia_user_api_key: 'Kmb1vQE4ZCPmpoKKumWhckheDTJzsz1eSciToFRSkxFn0uQxj//91RpReIDNvbxxhPTI6z/1shKz'
+http_user: admin
+http_pass: propeople

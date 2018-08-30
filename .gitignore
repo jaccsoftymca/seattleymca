@@ -1,0 +1,11 @@
+# Ignore configuration files that may contain sensitive information.
+.idea
+.vagrant
+backup
+index.html
+docroot/build_reports
+docroot/commentinfo.md
+.DS_Store
+docroot/themes/custom/ymca_seattle/.sass-cache
+docroot/themes/custom/ymca_seattle/css/styles.css.map
+.docksal/docksal-local.env

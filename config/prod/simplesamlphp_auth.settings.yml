@@ -1,0 +1,30 @@
+langcode: en
+default_langcode: en
+activate: true
+mail_attr: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn'
+unique_id: uid
+user_name: uid
+auth_source: default-sp
+login_link_display_name: 'Login with your SSO account'
+role:
+  population: ''
+  eval_every_time: false
+register_users: true
+allow:
+  set_drupal_pwd: true
+  default_login: true
+  default_login_roles:
+    authenticated: authenticated
+    administrator: administrator
+    contributor: contributor
+    editor: editor
+  default_login_users: ''
+logout_goto_url: ''
+user_register_original: admin_only
+sync:
+  mail: false
+  user_name: false
+autoenablesaml: false
+debug: false
+_core:
+  default_config_hash: d48bA8oqiHEWJ7KlCbUjalXY2sEhFFaaobvOe3WXjUY

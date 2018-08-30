@@ -1,0 +1,24 @@
+uuid: 241050ef-6387-4422-b3f0-2762956d993f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: jn9adK1V0k-lkEDgpb0VUIJuHNEWuuJuzBBHkawVzds
+id: program_alias_pattern
+label: 'Program Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'programs/[node:title]'
+selection_criteria:
+  cc1f6959-de15-4a83-b876-c86c6e063747:
+    id: node_type
+    bundles:
+      program: program
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cc1f6959-de15-4a83-b876-c86c6e063747
+selection_logic: and
+weight: -5
+relationships: {  }

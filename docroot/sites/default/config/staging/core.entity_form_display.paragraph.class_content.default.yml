@@ -1,0 +1,29 @@
+uuid: 6b40aa82-0f8e-4ff7-8f30-62af938cff99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_content.field_collection_classes
+    - field.field.paragraph.class_content.field_style
+    - paragraphs.paragraphs_type.class_content
+  module:
+    - field_collection
+id: paragraph.class_content.default
+targetEntityType: paragraph
+bundle: class_content
+mode: default
+content:
+  field_collection_classes:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  field_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+hidden:
+  created: true
+  status: true
+  uid: true

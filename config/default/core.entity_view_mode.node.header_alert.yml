@@ -1,0 +1,12 @@
+uuid: 6c6a37dd-c281-4c3b-832d-7f1669a12648
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Wt1BIHOJYH4B4khKsGHhknUO65tNTFCgxduyfGWQPsk
+id: node.header_alert
+label: 'Header Alert'
+targetEntityType: node
+cache: true

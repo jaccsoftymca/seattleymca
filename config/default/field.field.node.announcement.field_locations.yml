@@ -1,0 +1,30 @@
+uuid: 0d655ba3-18cd-46fe-886d-16b464c2977c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_locations
+    - node.type.announcement
+    - node.type.branch
+    - node.type.camp
+id: node.announcement.field_locations
+field_name: field_locations
+entity_type: node
+bundle: announcement
+label: Location
+description: '<a id="select-all" href="#">Select all</a> locations.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      branch: branch
+      camp: camp
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

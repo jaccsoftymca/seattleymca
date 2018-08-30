@@ -1,0 +1,11 @@
+uuid: 7565bef2-35b3-45ed-8f02-f2a9bf872b3d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lvBkQVAwCp0VEc8Dt7gWrkVIMItm2ifnDMkXuEIYJ10
+name: Color
+vid: color
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,12 @@
+uuid: b81ed981-447f-43d8-b131-635469790ab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.archived
+    - workbench_moderation.moderation_state.needs_review
+id: needs_review_archived
+label: Archive
+stateFrom: needs_review
+stateTo: archived
+weight: -3

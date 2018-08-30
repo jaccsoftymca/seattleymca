@@ -1,0 +1,25 @@
+uuid: 4c057c27-ab7e-4d3e-9c03-b0a5775b33cb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block:ab07e632-5d5b-4874-a105-8036b5132a3f'
+  module:
+    - block_content
+  theme:
+    - openy_rose
+id: openy_rose_footersociallinks
+theme: openy_rose
+region: footer_social
+weight: 1
+provider: null
+plugin: 'block_content:ab07e632-5d5b-4874-a105-8036b5132a3f'
+settings:
+  id: 'block_content:ab07e632-5d5b-4874-a105-8036b5132a3f'
+  label: ''
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

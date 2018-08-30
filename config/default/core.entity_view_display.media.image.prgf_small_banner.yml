@@ -1,0 +1,38 @@
+uuid: c4aea2f3-77ca-4db0-ab87-1f7f117c5005
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.prgf_small_banner
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_media_tags
+    - image.style.prgf_small_banner
+    - media_entity.bundle.image
+  module:
+    - image
+_core:
+  default_config_hash: cD-npDrQnjZ9SVQGliCx_9z5GUEsPm6_PNxS3uIi8SM
+id: media.image.prgf_small_banner
+targetEntityType: media
+bundle: image
+mode: prgf_small_banner
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: prgf_small_banner
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  field_media_caption: true
+  field_media_in_library: true
+  field_media_tags: true
+  name: true
+  thumbnail: true
+  uid: true

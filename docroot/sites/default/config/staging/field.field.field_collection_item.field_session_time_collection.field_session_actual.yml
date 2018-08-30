@@ -1,0 +1,25 @@
+uuid: 7d3c36bc-9b14-4424-ae75-db5288ed9a6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_session_actual
+    - field_collection.field_collection.field_session_time_collection
+_core:
+  default_config_hash: VyahwSG5GZs9CkiCYRBYV3AHzs98ThQLxeKnmx8xDdU
+id: field_collection_item.field_session_time_collection.field_session_actual
+field_name: field_session_actual
+entity_type: field_collection_item
+bundle: field_session_time_collection
+label: 'Actual session'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

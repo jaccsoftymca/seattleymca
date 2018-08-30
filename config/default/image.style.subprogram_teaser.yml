@@ -1,0 +1,24 @@
+uuid: eceb7ed1-350b-403e-8529-c7a57e2a0708
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+_core:
+  default_config_hash: XyFhR6S4a7O7aNotLopDpuQraZEInRE3UkGVNaL9R2I
+name: subprogram_teaser
+label: 'Subprogram Teaser'
+effects:
+  43f4c63f-0519-44a2-bcb9-e667e4f74f2e:
+    uuid: 43f4c63f-0519-44a2-bcb9-e667e4f74f2e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: subprogram_teaser
+  25dc5025-85f9-40ff-9e1a-5aa4aa4b930d:
+    uuid: 25dc5025-85f9-40ff-9e1a-5aa4aa4b930d
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 260
+      height: 220

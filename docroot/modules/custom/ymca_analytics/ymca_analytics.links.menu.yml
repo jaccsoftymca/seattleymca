@@ -1,0 +1,5 @@
+ymca_analytics.settings:
+  title: OpenY Analytics
+  description: 'OpenY Analytics settings.'
+  route_name:  ymca_analytics.settings
+  parent: system.admin_config_services

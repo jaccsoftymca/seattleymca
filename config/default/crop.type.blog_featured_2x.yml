@@ -1,0 +1,12 @@
+uuid: 8bf88abd-92c8-4e72-91a8-e0522347fc6d
+langcode: en
+status: true
+dependencies: {  }
+label: 'Blog featured 2x'
+id: blog_featured_2x
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: 724
+soft_limit_height: 724
+hard_limit_width: null
+hard_limit_height: null

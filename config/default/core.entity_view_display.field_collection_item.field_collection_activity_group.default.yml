@@ -1,0 +1,31 @@
+uuid: 1bce5438-d967-4d2b-8952-cf729c4865fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_collection_activity_group.field_collection_activity_hours
+    - field.field.field_collection_item.field_collection_activity_group.field_headline
+    - field_collection.field_collection.field_collection_activity_group
+  module:
+    - field_collection
+id: field_collection_item.field_collection_activity_group.default
+targetEntityType: field_collection_item
+bundle: field_collection_activity_group
+mode: default
+content:
+  field_collection_activity_hours:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+    region: content
+  field_headline:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,119 @@
+uuid: 48985d33-621d-4ff6-8d8a-58762c42b73c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_content
+    - node.type.branch
+    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.blog_posts_listing
+    - paragraphs.paragraphs_type.branch_updates_queue
+    - paragraphs.paragraphs_type.dynamic_content
+    - paragraphs.paragraphs_type.featured_content
+    - paragraphs.paragraphs_type.form
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.grid_content
+    - paragraphs.paragraphs_type.latest_blog_posts
+    - paragraphs.paragraphs_type.latest_blog_posts_branch
+    - paragraphs.paragraphs_type.simple_content
+    - paragraphs.paragraphs_type.small_banner
+  module:
+    - datalayer
+    - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_bottom_content
+_core:
+  default_config_hash: 0nEMVK3dl5hQXiaPpdOvD-DOa7RQAocTWi1RYEeJmEs
+id: node.branch.field_bottom_content
+field_name: field_bottom_content
+entity_type: node
+bundle: branch
+label: 'Bottom Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      small_banner: small_banner
+      banner: banner
+      branch_updates_queue: branch_updates_queue
+      blog_posts_listing: blog_posts_listing
+      dynamic_content: dynamic_content
+      form: form
+      featured_content: featured_content
+      gallery: gallery
+      grid_content: grid_content
+      latest_blog_posts: latest_blog_posts
+      latest_blog_posts_branch: latest_blog_posts_branch
+      simple_content: simple_content
+    target_bundles_drag_drop:
+      story_card:
+        weight: -45
+        enabled: false
+      teaser:
+        weight: -45
+        enabled: false
+      small_banner:
+        enabled: true
+        weight: -45
+      banner:
+        enabled: true
+        weight: 25
+      branch_updates_queue:
+        enabled: true
+        weight: 25
+      category_content:
+        weight: 26
+        enabled: false
+      blog_posts_listing:
+        enabled: true
+        weight: 26
+      class_content:
+        weight: 27
+        enabled: false
+      dynamic_content:
+        enabled: true
+        weight: 28
+      form:
+        enabled: true
+        weight: 31
+      featured_content:
+        enabled: true
+        weight: 32
+      frontpage_updates_queue:
+        weight: 32
+        enabled: false
+      gallery:
+        enabled: true
+        weight: 33
+      grid_columns:
+        weight: 34
+        enabled: false
+      grid_content:
+        enabled: true
+        weight: 35
+      latest_blog_posts:
+        enabled: true
+        weight: 36
+      latest_blog_posts_branch:
+        enabled: true
+        weight: 37
+      latest_blog_posts_camp:
+        weight: 38
+        enabled: false
+      membership_info:
+        weight: 39
+        enabled: false
+      promo_card:
+        weight: 43
+        enabled: false
+      simple_content:
+        enabled: true
+        weight: 45
+field_type: entity_reference_revisions

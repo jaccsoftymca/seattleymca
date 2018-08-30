@@ -1,0 +1,9 @@
+uuid: 24982513-9cbd-4d0a-80c6-0473af3daad5
+langcode: en
+status: true
+dependencies: {  }
+name: Age
+vid: age
+description: 'Contains age categories.'
+hierarchy: 0
+weight: 0

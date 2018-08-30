@@ -1,0 +1,7 @@
+name: YGS Schedules
+type: module
+description: Provides Schedules specific functionallity.
+core: 8.x
+package: YGS
+dependencies:
+  - ygs_session_instance

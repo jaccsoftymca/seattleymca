@@ -1,0 +1,20 @@
+uuid: 055e03da-b6f1-49d3-bb46-402745811b81
+langcode: en
+status: true
+dependencies: {  }
+id: alert_manager
+label: 'Alert manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'create alert content'
+  - 'create field_alert_belongs'
+  - 'delete own alert content'
+  - 'edit field_alert_belongs'
+  - 'edit own alert content'
+  - 'edit own field_alert_belongs'
+  - 'revert alert revisions'
+  - 'view alert revisions'
+  - 'view any unpublished alert content'
+  - 'view field_alert_belongs'
+  - 'view own field_alert_belongs'

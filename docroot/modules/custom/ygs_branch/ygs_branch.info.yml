@@ -1,0 +1,7 @@
+name: YGS Branch
+type: module
+description: Provides Branch specific functionallity.
+core: 8.x
+package: YGS
+dependencies:
+  - ygs_session_instance

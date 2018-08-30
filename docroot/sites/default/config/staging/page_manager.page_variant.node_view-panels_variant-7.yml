@@ -1,0 +1,72 @@
+uuid: 8adae6af-0415-40a3-acb9-ead226d8095c
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - node
+    - panels
+_core:
+  default_config_hash: 9eK7MhGGgmmOXgF9TAh8TG2mxXITEXmXnDGw4bbxJ10
+id: node_view-panels_variant-7
+label: Facility
+variant: panels_variant
+variant_settings:
+  blocks:
+    c8046aed-948a-42ab-872b-60877fc40a42:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: full
+      region: main
+      weight: 0
+      uuid: c8046aed-948a-42ab-872b-60877fc40a42
+      context_mapping:
+        entity: node
+    482d3a11-311b-4216-a747-f850b481e45c:
+      id: 'entity_view:node'
+      label: 'Entity view (sidebar)'
+      provider: ctools
+      label_display: '0'
+      view_mode: sidebar
+      region: sidebar
+      weight: 0
+      uuid: 482d3a11-311b-4216-a747-f850b481e45c
+      context_mapping:
+        entity: node
+    f8114e2e-2ef1-4fa6-b024-4a6ca5f1cb02:
+      id: 'entity_view:node'
+      label: 'Page title'
+      provider: ctools
+      label_display: '0'
+      view_mode: title
+      region: header
+      weight: 0
+      uuid: f8114e2e-2ef1-4fa6-b024-4a6ca5f1cb02
+      context_mapping:
+        entity: node
+  id: panels_variant
+  label: null
+  weight: 0
+  layout: two_columns_container
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: node_view-panels_variant-7
+  builder: standard
+  uuid: f00cf378-5238-41fc-94d7-16dab6c86f7e
+page: node_view
+weight: -8
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      facility: facility
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+static_context: {  }

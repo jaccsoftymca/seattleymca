@@ -1,0 +1,49 @@
+uuid: 7a0bde89-e7ad-47dd-8dd9-79e47f3954a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.body_alert
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.field_body_no_summary
+    - field.field.node.alert.field_color
+    - field.field.node.alert.field_link
+    - field.field.node.alert.field_locations
+    - field.field.node.alert.field_placement
+    - node.type.alert
+  module:
+    - link
+    - text
+    - user
+_core:
+  default_config_hash: XY_4XupUFwbjjWaPh4ss0BQyJtWA_GenNyVsj4do2Ek
+id: node.alert.body_alert
+targetEntityType: node
+bundle: alert
+mode: body_alert
+content:
+  field_body_no_summary:
+    weight: 101
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_link:
+    weight: 104
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  workbench_moderation_control:
+    weight: -20
+hidden:
+  field_alert_type_switcher: true
+  field_color: true
+  field_locations: true
+  field_placement: true
+  links: true

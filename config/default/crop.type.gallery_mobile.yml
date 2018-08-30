@@ -1,0 +1,12 @@
+uuid: e5b6cd54-2bea-4761-8a4d-b539df7aed2d
+langcode: en
+status: true
+dependencies: {  }
+label: 'Gallery Mobile'
+id: gallery_mobile
+description: ''
+aspect_ratio: '750:510'
+soft_limit_width: 750
+soft_limit_height: 510
+hard_limit_width: null
+hard_limit_height: null

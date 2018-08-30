@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Provides custom filter.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function ygs_blog_views_data_alter(array &$data) {
+  $data['node_field_data']['related_content_titles'] = array(
+    'title' => t('Related content titles'),
+    'filter' => array(
+      'title' => t('Related content titles'),
+      'help' => t('Specify a list of titles a content node can have.'),
+      'field' => 'nid',
+      'id' => 'ygs_blog_related_content_titles',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ygs_blog_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'views_exposed_form') {
+    if ($form['#id'] == 'views-exposed-form-blog-blog-more-teaser-list') {
+      $form['combine']['#placeholder'] = t('Search the blog…');
+    }
+  }
+
+  $allowed_forms = [
+    'node_blog_form',
+    'node_blog_edit_form',
+    'node_announcement_form',
+    'node_announcement_edit_form',
+  ];
+  if (in_array($form_id, $allowed_forms)) {
+    $form['#attached']['library'][] = 'ygs_blog/ygs_blog_edit_form';
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ygs_blog_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == "field_updates_queue_item_collect" || "field_updates_queue_home") {
+    $current_uri = \Drupal::request()->getRequestUri();
+
+    $options = array(
+      'attributes' => ['class' => ['btn', 'btn-link', 'blue']],
+    );
+
+    if ($current_uri == "/blog") {
+      $link = Link::fromTextAndUrl(t('SEE ALL STORIES'), Url::fromUri('internal:/', $options))->toString();
+
+    }
+    else {
+      $node = \Drupal::routeMatch()->getParameter('node');
+
+      if ($node && \Drupal::service('path.matcher')->isFrontPage() != TRUE) {
+        $options['query'] = ['location' => $node->id()];
+      }
+
+      $link = Link::fromTextAndUrl(t('SEE ALL STORIES'), Url::fromUri('internal:/blog', $options))->toString();
+    }
+
+    $variables['blog_link_destination'] = $link;
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ymca_seattle_preprocess_field__node__field_blog_location(&$variables) {
+  if (function_exists('ygs_locations_get_all_locations')) {
+    $all_ids = ygs_locations_get_all_locations();
+    // Check if all fields are selected.
+    if (count($all_ids) == count($variables['items'])) {
+      $variables['all_selected'] = t("All");
+    }
+  }
+}

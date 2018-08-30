@@ -1,0 +1,26 @@
+uuid: 36871ba8-897e-44e7-af2f-ca8467d14cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ymca_seattle
+_core:
+  default_config_hash: il3PzfGOKGPtN9ogkmYEORKjzsJ-9uV0rODGIlJuuQI
+id: useraccountmenu
+theme: ymca_seattle
+region: secondary_menu
+weight: -4
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: a901aed6-fd84-4893-adf0-b57c549372e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.facility
+  module:
+    - telephone
+_core:
+  default_config_hash: GSrRoZJJBKopGTlsk-QsHJEvy1aqdgrTqOkzmNBcJx0
+id: node.facility.field_phone
+field_name: field_phone
+entity_type: node
+bundle: facility
+label: Phone
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

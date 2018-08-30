@@ -1,0 +1,20 @@
+uuid: 303c929c-fa2d-40a7-a088-7287d892c522
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: y6CIvaVMqceZdCrhBOBi4MtbXM6y8Jr5_zWq_JU14-U
+id: node.field_session_ticket
+field_name: field_session_ticket
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,12 @@
+uuid: f95be5e7-fd44-4b01-8dc5-7c794b172257
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: VllYGt2KJJEmyxEbjN64hK0T6K-xkdNhYZ4d0nQB0wY
+id: node.footer_alert
+label: 'Footer Alert'
+targetEntityType: node
+cache: true

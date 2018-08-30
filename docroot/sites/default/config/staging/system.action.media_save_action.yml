@@ -1,0 +1,13 @@
+uuid: 3a7d424f-9801-473b-8624-7e2691b4e962
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: ATyzEC6gqTcaUMiDdDH4lwFVatVnOx0RmQLn_iziQ70
+id: media_save_action
+label: 'Save media'
+type: media
+plugin: media_save_action
+configuration: {  }

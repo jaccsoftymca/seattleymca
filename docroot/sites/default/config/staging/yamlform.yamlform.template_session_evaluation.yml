@@ -1,0 +1,104 @@
+uuid: 3e2ebd53-c2db-4f48-ad06-cc0d3ffec039
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - yamlform_templates
+_core:
+  default_config_hash: Ofw8_zxZQ9CevU16YC3uv6H6ZOkDjr3t7PISTIJiHu0
+uid: null
+template: true
+id: template_session_evaluation
+title: 'Session Evaluation'
+description: 'A session evaluation form template.'
+elements: "overall:\n  '#type': radios\n  '#title': 'How was the session overall?'\n  '#options_display': side_by_side\n  '#options': likert_quality\n  '#required': true\nspeaker:\n  '#type': likert\n  '#title': 'Please rate the speaker''s...'\n  '#questions':\n    mastery: Mastery of this topic\n    presentation: Presentation skills\n    quality: Quality of slides and visual aids\n  '#answers': likert_quality\n  '#na_answer': true\n  '#required': true\nlearn:\n  '#type': radios\n  '#title': 'Did you learn something in this session you can use in real life?'\n  '#options_display': side_by_side\n  '#options':\n    Yes: Yes\n    No: No\n    N/A: N/A\n  '#required': true\ncomments:\n  '#type': textarea\n  '#title': 'Comments'\n  '#description': 'What did you like most? What would you change? Advice for the speaker to make this session better?'\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 1
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: 'Thank you for your feedback.'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_notification:
+    id: email
+    label: 'Email Notification'
+    handler_id: email_notification
+    status: true
+    weight: 1
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email:raw]'
+      from_name: '[yamlform-submission:values:first_name] [yamlform-submission:values:last_name]'
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

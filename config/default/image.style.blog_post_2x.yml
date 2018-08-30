@@ -1,0 +1,22 @@
+uuid: d5c97e84-64ff-4b40-9ff2-ace76d4d1e93
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: blog_post_2x
+label: 'Blog post 2x'
+effects:
+  715a9186-0cbb-4d46-adb4-e4f77d48f754:
+    uuid: 715a9186-0cbb-4d46-adb4-e4f77d48f754
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: blog_post_2x
+  de42e395-aa4a-4a65-9bf3-1835c139eb24:
+    uuid: de42e395-aa4a-4a65-9bf3-1835c139eb24
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1524
+      height: 902

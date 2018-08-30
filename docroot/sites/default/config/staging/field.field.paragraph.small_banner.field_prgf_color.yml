@@ -1,0 +1,30 @@
+uuid: 4f7c58f1-e59e-437c-812f-f56ac344f87a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_color
+    - paragraphs.paragraphs_type.small_banner
+    - taxonomy.vocabulary.color
+_core:
+  default_config_hash: 5Il1Ef-iwcHMpK65ZHyHFjbJo5b7c2FPGdb1xUc05WE
+id: paragraph.small_banner.field_prgf_color
+field_name: field_prgf_color
+entity_type: paragraph
+bundle: small_banner
+label: Color
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

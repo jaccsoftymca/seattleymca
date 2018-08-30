@@ -1,0 +1,30 @@
+uuid: 29788344-a79e-4ac6-b407-cf5f9fc8f44f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mbrshp_location
+    - node.type.branch
+    - paragraphs.paragraphs_type.membership_info
+_core:
+  default_config_hash: Yn_o7rCFcZBks_LbPk-X_1fQrOArDKJ9aC-_n0KEMkY
+id: paragraph.membership_info.field_mbrshp_location
+field_name: field_mbrshp_location
+entity_type: paragraph
+bundle: membership_info
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      branch: branch
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

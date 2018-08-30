@@ -1,0 +1,35 @@
+uuid: 5325ac5a-7653-4df0-93d0-2cb32af7fbe9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: 7kdwVF4oqqUQspghLuA3bOAHjkD8DTQUgB792WEROM0
+id: node.field_lp_layout
+field_name: field_lp_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: one_column_clean
+      label: 'One Column - Full width'
+    -
+      value: one_column
+      label: 'One Column'
+    -
+      value: two_column
+      label: 'Two Column'
+    -
+      value: two_column_fixed
+      label: 'Two column with fixed sidebar'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

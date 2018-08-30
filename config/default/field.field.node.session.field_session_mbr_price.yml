@@ -1,0 +1,25 @@
+uuid: 6dec0fe4-9749-4ae5-946f-0e676af1a915
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_mbr_price
+    - node.type.session
+_core:
+  default_config_hash: rHc6hjWqesL5y2qpwMvMQKrCZEoC-PzVzVnNz9lrsWk
+id: node.session.field_session_mbr_price
+field_name: field_session_mbr_price
+entity_type: node
+bundle: session
+label: 'Member price'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

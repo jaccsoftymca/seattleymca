@@ -1,0 +1,20 @@
+uuid: 194a9e28-bb6b-48a9-b424-7c32f160f13d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+    - node
+id: node.field_membership_info
+field_name: field_membership_info
+entity_type: node
+type: field_collection
+settings:
+  target_type: field_collection_item
+module: field_collection
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

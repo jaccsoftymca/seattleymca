@@ -1,0 +1,41 @@
+uuid: a91257be-af74-4aa7-95a0-db09aa29e5cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header_alert
+    - field.field.node.alert.field_alert_belongs
+    - field.field.node.alert.field_alert_color
+    - field.field.node.alert.field_alert_description
+    - field.field.node.alert.field_alert_icon_color
+    - field.field.node.alert.field_alert_link
+    - field.field.node.alert.field_alert_place
+    - field.field.node.alert.field_alert_text_color
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.scheduled_status
+    - field.field.node.alert.scheduled_update
+    - node.type.alert
+  module:
+    - user
+_core:
+  default_config_hash: Wl9oMK5Od56oVuGZGGAUJk35utMOg_TgvwCPsYQYyP4
+id: node.alert.header_alert
+targetEntityType: node
+bundle: alert
+mode: header_alert
+content:
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_alert_belongs: true
+  field_alert_color: true
+  field_alert_description: true
+  field_alert_icon_color: true
+  field_alert_link: true
+  field_alert_place: true
+  field_alert_text_color: true
+  field_alert_type_switcher: true
+  links: true
+  scheduled_status: true
+  scheduled_update: true

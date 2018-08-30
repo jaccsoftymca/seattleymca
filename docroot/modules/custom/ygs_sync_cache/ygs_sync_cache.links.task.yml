@@ -1,0 +1,22 @@
+# Sync Cache routing definition
+sync_cache.settings_tab:
+  route_name: sync_cache.settings
+  title: 'Settings'
+  base_route: sync_cache.settings
+
+entity.sync_cache.canonical:
+  route_name: entity.sync_cache.canonical
+  base_route: entity.sync_cache.canonical
+  title: 'View'
+
+entity.sync_cache.edit_form:
+  route_name: entity.sync_cache.edit_form
+  base_route: entity.sync_cache.canonical
+  title: 'Edit'
+
+entity.sync_cache.delete_form:
+  route_name:  entity.sync_cache.delete_form
+  base_route:  entity.sync_cache.canonical
+  title: Delete
+  weight: 10
+

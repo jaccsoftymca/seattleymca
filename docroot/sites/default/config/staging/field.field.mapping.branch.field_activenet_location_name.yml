@@ -1,0 +1,21 @@
+uuid: 085f3cab-7627-4694-bcc6-2ed47093c3ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_location_name
+    - ymca_mappings.mapping_type.branch
+_core:
+  default_config_hash: 3QM0y0IujxB9fjFP8-a16TnVBDB01EM3ej4vD_g6vQU
+id: mapping.branch.field_activenet_location_name
+field_name: field_activenet_location_name
+entity_type: mapping
+bundle: branch
+label: 'ActiveNet: Location Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

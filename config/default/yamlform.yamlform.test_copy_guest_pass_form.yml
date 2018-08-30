@@ -1,0 +1,99 @@
+uuid: 6fcd1915-09eb-4f16-8e30-8a97704e812b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ygs_salesforce_mc
+uid: 1
+template: false
+id: test_copy_guest_pass_form
+title: 'TEST COPY Guest pass form'
+description: ''
+elements: "email_address:\n  '#type': email\n  '#title': 'Email:'\n  '#title_display': before\n  '#required': true\npackage_site:\n  '#type': select\n  '#title': 'Find a location near you:'\n  '#options':\n    'Auburn Valley YMCA': 'Auburn Valley YMCA'\n    'Bellevue Family YMCA': 'Bellevue Family YMCA'\n    'Coal Creek Family YMCA': 'Coal Creek Family YMCA'\n    'Dale Turner Family YMCA': 'Dale Turner Family YMCA'\n    'Downtown Seattle YMCA': 'Downtown Seattle YMCA'\n    'Matt Griffin YMCA': 'Matt Griffin YMCA'\n    'Meredith Mathews East Madison YMCA': 'Meredith Mathews East Madison YMCA'\n    'Northshore YMCA': 'Northshore YMCA'\n    'Sammamish Community YMCA': 'Sammamish Community YMCA'\n    'Snoqualmie Valley YMCA': 'Snoqualmie Valley YMCA'\n    'University Family YMCA': 'University Family YMCA'\n    'West Seattle & Fauntleroy YMCA': 'West Seattle & Fauntleroy YMCA'\n  '#empty_option': 'Please select a branch'\n  '#required': true\ncaptcha:\n  '#type': captcha\n  '#captcha_type': recaptcha/reCAPTCHA\n"
+settings:
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: message
+  confirmation_message: 'Your guest pass is on its way, check your inbox. We look forward to seeing you soon at your local Y.'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  salesforce_mc_1:
+    id: salesforce_mc
+    label: 'SalesForce MC TESTING'
+    handler_id: salesforce_mc_1
+    status: false
+    weight: 1
+    settings:
+      add_to_list: 0
+      list: ''
+      add_to_trigger: true
+      triggered_definition: '734'
+      mapping:
+        email_address: EmailAddress
+        package_site: ''
+        captcha: ''
+      excluded_elements: {  }

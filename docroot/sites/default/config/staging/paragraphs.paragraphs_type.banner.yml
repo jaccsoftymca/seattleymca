@@ -1,0 +1,8 @@
+uuid: 48752746-35e0-4119-b294-2d3eb826be20
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: V8HQnXlAoYxKqSjoFzCV-3myOhVl2K5rQOf0WwefP-4
+id: banner
+label: Banner

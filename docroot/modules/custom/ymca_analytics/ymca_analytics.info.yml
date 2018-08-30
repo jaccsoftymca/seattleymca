@@ -1,0 +1,6 @@
+name: OpenY Analytics
+type: module
+description: Provides connection to GTM and a simple datalayer.
+core: 8.x
+dependencies:
+  - google_tag

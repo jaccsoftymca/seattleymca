@@ -1,0 +1,8 @@
+uuid: c8e4500a-736b-432f-a576-f156267be262
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PFHSYOVuErQmPwu1SEKEIh_fF4uynm9-qBCzbvkb6DQ
+id: grid_content
+label: 'Grid Content'

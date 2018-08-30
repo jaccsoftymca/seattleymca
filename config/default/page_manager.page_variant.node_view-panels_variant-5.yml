@@ -1,0 +1,61 @@
+uuid: 8adae6af-0415-40a3-acb9-ead226d8095f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - node
+    - panels
+    - ygs_article_pager
+_core:
+  default_config_hash: 9eK7MhGGgmmOXgF9TAh8TG2mxXITEXmXnDGw4bbxJ10
+id: node_view-panels_variant-5
+label: 'Blog Post'
+variant: panels_variant
+variant_settings:
+  blocks:
+    c8046aed-948a-42ab-872b-60877fc40a41:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: full
+      region: main
+      weight: 0
+      uuid: c8046aed-948a-42ab-872b-60877fc40a41
+      context_mapping:
+        entity: node
+    821a6b55-9bba-408d-8b29-9dcbcbf388ca:
+      id: blog_pager_block
+      label: 'Blog pager block'
+      provider: ygs_article_pager
+      label_display: '0'
+      region: main
+      weight: 1
+      uuid: 821a6b55-9bba-408d-8b29-9dcbcbf388ca
+      context_mapping:
+        node: node
+  id: panels_variant
+  label: null
+  weight: 0
+  layout: two_columns_container
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: node_view-panels_variant-5
+  builder: standard
+  uuid: f00cf378-5238-41fc-94d7-16dab6c86f7e
+page: node_view
+weight: -6
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      blog: blog
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+static_context: {  }

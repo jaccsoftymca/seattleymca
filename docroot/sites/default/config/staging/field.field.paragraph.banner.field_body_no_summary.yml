@@ -1,0 +1,23 @@
+uuid: 6d267f97-b6dc-4f62-8831-e1fbea3f7cd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_no_summary
+    - paragraphs.paragraphs_type.banner
+  module:
+    - text
+_core:
+  default_config_hash: FkXp-PGTqN9K_7bmww3tF9vmP9G9Iw6ZhbDF1Tu_r7c
+id: paragraph.banner.field_body_no_summary
+field_name: field_body_no_summary
+entity_type: paragraph
+bundle: banner
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

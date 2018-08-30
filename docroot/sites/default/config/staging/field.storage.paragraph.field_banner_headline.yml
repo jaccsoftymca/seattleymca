@@ -1,0 +1,23 @@
+uuid: 20b1754a-403b-487c-806d-99d302376591
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: JrESczrVArIH8VZZFfbqHLHLzn4V6RU5Sep61j0ID6w
+id: paragraph.field_banner_headline
+field_name: field_banner_headline
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: 963603bb-5bbe-4a68-8a35-cae3983695f5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: uE3CWvTqxPpx3_7wTqxVfKUgcCacdFsLydVCY7DtroU
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  0: 'access content'
+  2: 'restful get class_upcoming_sessions'
+  4: 'restful get class_available_locations'
+  5: 'access branch selector'
+  6: 'access popups'
+  7: 'restful get class_session'
+  8: 'view media'
+  9: 'access protected page password screen'
+  10: 'access toolbar'
+  13: 'use needs_review_draft transition'
+  14: 'use published_draft transition'
+  15: 'use draft_draft transition'
+  16: 'use needs_review_needs_review transition'
+  17: 'use draft_needs_review transition'
+  21: 'use archived_draft transition'
+  22: 'view any unpublished content'
+  23: 'view latest version'
+  24: 'view own unpublished content'
+  25: 'view the administration theme'

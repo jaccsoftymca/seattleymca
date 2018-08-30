@@ -1,0 +1,23 @@
+uuid: 89597abe-91ff-417f-b2f2-5bc3fcea8a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_max_age
+    - taxonomy.vocabulary.age
+id: taxonomy_term.age.field_max_age
+field_name: field_max_age
+entity_type: taxonomy_term
+bundle: age
+label: 'Max Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,28 @@
+uuid: 11eae43a-94b7-4846-b8d7-f7cc7507f8d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: NVXUUyrS6sT-he4Jff1cWDYod237m-iCaFAeatYXFDI
+name: Alert
+type: alert
+description: 'Alert content type is used for adding alerts on the site.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

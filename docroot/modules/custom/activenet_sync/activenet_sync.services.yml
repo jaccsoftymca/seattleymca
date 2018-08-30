@@ -1,0 +1,49 @@
+services:
+  activenet_sync.activenet.wrapper:
+    class: Drupal\activenet_sync\ActivenetSyncActivenetWrapper
+    arguments: ['@config.factory']
+  activenet_sync.flexreg.wrapper:
+    class: Drupal\activenet_sync\ActivenetSyncFlexregWrapper
+    arguments: ['@config.factory']
+  activenet_sync.activenet.fetcher:
+    class: Drupal\activenet_sync\ActivenetSyncActivenetFetcher
+    arguments: ['@activenet_sync.activenet.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@activenet.client', '@datawarehouse.client', '@lock', '@activenet_sync.repository']
+  activenet_sync.flexreg.fetcher:
+    class: Drupal\activenet_sync\ActivenetSyncFlexregFetcher
+    arguments: ['@activenet_sync.flexreg.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@datawarehouse.client', '@lock', '@activenet_sync.repository']
+  activenet_sync.activenet.proxy:
+    class: Drupal\activenet_sync\ActivenetSyncActivenetProxy
+    arguments: ['@activenet_sync.activenet.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@serializer', '@typed_data_manager', '@activenet_sync.repository']
+  activenet_sync.flexreg.proxy:
+    class: Drupal\activenet_sync\ActivenetSyncFlexregProxy
+    arguments: ['@activenet_sync.flexreg.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@typed_data_manager', '@activenet_sync.repository']
+  activenet_sync.activenet.pusher:
+    class: Drupal\activenet_sync\ActivenetSyncActivenetPusher
+    arguments: ['@activenet_sync.activenet.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@entity_type.manager', '@activenet_sync.repository', '@queue', '@lock']
+  activenet_sync.flexreg.pusher:
+    class: Drupal\activenet_sync\ActivenetSyncFlexregPusher
+    arguments: ['@activenet_sync.flexreg.wrapper', '@config.factory', '@logger.channel.activenet_sync', '@entity_type.manager', '@activenet_sync.repository', '@queue', '@lock']
+  activenet_sync.activenet.syncer:
+    class: Drupal\ymca_sync\Syncer
+    arguments: ['@config.factory']
+    calls:
+      - [addStep, ['@activenet_sync.activenet.fetcher', 'fetch']]
+      - [addStep, ['@activenet_sync.activenet.proxy', 'saveEntities']]
+      - [addStep, ['@activenet_sync.activenet.pusher', 'push']]
+    tags:
+      - { name: syncer }
+  activenet_sync.flexreg.syncer:
+    class: Drupal\ymca_sync\Syncer
+    arguments: ['@config.factory']
+    calls:
+      - [addStep, ['@activenet_sync.flexreg.fetcher', 'fetch']]
+      - [addStep, ['@activenet_sync.flexreg.proxy', 'saveEntities']]
+      - [addStep, ['@activenet_sync.flexreg.pusher', 'push']]
+    tags:
+      - { name: syncer }
+  logger.channel.activenet_sync:
+    parent: logger.channel_base
+    arguments: ['activenet_sync']
+  activenet_sync.repository:
+    class: Drupal\activenet_sync\ActivenetSyncRepository
+    arguments: ['@entity_type.manager', '@language_manager']

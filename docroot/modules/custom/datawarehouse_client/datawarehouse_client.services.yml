@@ -1,0 +1,7 @@
+services:
+  datawarehouse.client:
+    class: Drupal\datawarehouse_client\DatawarehouseClient
+    arguments: ['@config.factory', '@logger.channel.activenet_client']
+  logger.channel.datawarehouse_client:
+    parent: logger.channel_base
+    arguments: ['datawarehouse_client']

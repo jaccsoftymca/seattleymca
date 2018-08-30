@@ -1,0 +1,21 @@
+uuid: d09addff-4e30-4126-9d67-3a23035a5935
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_headline
+    - paragraphs.paragraphs_type.gallery
+_core:
+  default_config_hash: hM5kQDAGIeFyt-7udYhUyh-p0H8uA2z2euxGPMFdU50
+id: paragraph.gallery.field_prgf_headline
+field_name: field_prgf_headline
+entity_type: paragraph
+bundle: gallery
+label: Headline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

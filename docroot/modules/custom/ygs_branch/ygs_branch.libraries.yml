@@ -1,0 +1,9 @@
+ygs_branch_sessions:
+  version: VERSION
+  js:
+    js/ygs_branch_sessions.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

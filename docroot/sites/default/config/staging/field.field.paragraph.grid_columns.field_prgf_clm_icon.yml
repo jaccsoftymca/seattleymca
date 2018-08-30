@@ -1,0 +1,31 @@
+uuid: 0f16519d-7ffb-4a01-9c1e-4e8585296e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_clm_icon
+    - media_entity.bundle.image
+    - paragraphs.paragraphs_type.grid_columns
+_core:
+  default_config_hash: BtWbYALaXJc_8f5diyPqFYsC11598RnCwNWh5YGhMWk
+id: paragraph.grid_columns.field_prgf_clm_icon
+field_name: field_prgf_clm_icon
+entity_type: paragraph
+bundle: grid_columns
+label: Icon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

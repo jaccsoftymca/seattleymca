@@ -1,0 +1,24 @@
+uuid: dfd5a4bd-fd87-4d6d-91d2-93bc147a86bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: N24V2_XL2_Tlsbi3mfEb_oJ-5hbt44IUzCxwd4SOaX4
+id: class_alias_pattern
+label: 'Class Alias Pattern'
+type: 'canonical_entities:node'
+pattern: '/programs/[node:field_class_activity:0:entity:field_activity_category:entity:field_category_program:entity:title]/[node:field_class_activity:0:entity:field_activity_category:entity:title]/[node:field_class_activity:0:entity:title]/[node:title]'
+selection_criteria:
+  5b2521d3-c829-48bb-99a0-29d79fa5ad67:
+    id: node_type
+    bundles:
+      class: class
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5b2521d3-c829-48bb-99a0-29d79fa5ad67
+selection_logic: and
+weight: -5
+relationships: {  }

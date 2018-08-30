@@ -1,0 +1,27 @@
+uuid: 5dcc218f-6735-412e-8744-136489ae366b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_updates_queue_item_collect.field_updates_queue_locked
+    - field.field.field_collection_item.field_updates_queue_item_collect.field_updates_queue_update
+    - field_collection.field_collection.field_updates_queue_item_collect
+  module:
+    - ygs_blog
+_core:
+  default_config_hash: 6c3h4h_5NBrDnb0wiftROie_fkY9Gz-8S9VJ6Fda8Jw
+id: field_collection_item.field_updates_queue_item_collect.default
+targetEntityType: field_collection_item
+bundle: field_updates_queue_item_collect
+mode: default
+content:
+  field_updates_queue_update:
+    type: entity_reference_entity_draft_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_updates_queue_locked: true

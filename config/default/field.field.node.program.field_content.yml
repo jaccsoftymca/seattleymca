@@ -1,0 +1,26 @@
+uuid: 57970101-9cc1-4891-97d2-8af5a69a8663
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.program
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: d2ZvBYMCMmh9mQokEo02MvYrwFvyhb3zQpK-TcqZlt8
+id: node.program.field_content
+field_name: field_content
+entity_type: node
+bundle: program
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+field_type: entity_reference_revisions

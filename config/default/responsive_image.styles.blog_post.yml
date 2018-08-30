@@ -1,0 +1,54 @@
+uuid: bcde2858-5349-463c-aa3d-6c0d661132aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.blog_post
+    - image.style.blog_post_2x
+  theme:
+    - ymca_seattle
+id: blog_post
+label: 'Blog Post'
+image_style_mappings:
+  -
+    breakpoint_id: ymca_seattle.desktop
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: blog_post
+  -
+    breakpoint_id: ymca_seattle.desktop
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: blog_post_2x
+  -
+    breakpoint_id: ymca_seattle.tablet_landscape
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: blog_post
+  -
+    breakpoint_id: ymca_seattle.tablet_landscape
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: blog_post_2x
+  -
+    breakpoint_id: ymca_seattle.tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: blog_post
+  -
+    breakpoint_id: ymca_seattle.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: blog_post_2x
+  -
+    breakpoint_id: ymca_seattle.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: blog_post
+  -
+    breakpoint_id: ymca_seattle.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: blog_post_2x
+breakpoint_group: ymca_seattle
+fallback_image_style: blog_post

@@ -1,0 +1,14 @@
+uuid: ee3c7a8b-1ee6-4e0f-8416-b23f0a7dd5e3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2QmwGpsXmtLavrQnYs2H5ZdsFs5OPlnzMIqlSxPMzc0
+label: 'Media Crop'
+id: media_crop
+description: 'Crop used for image media bundle.'
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

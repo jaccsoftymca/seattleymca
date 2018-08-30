@@ -1,0 +1,6 @@
+uuid: b2828a8a-eb67-465d-b164-3a4950e8d35f
+langcode: en
+status: true
+dependencies: {  }
+id: field_updates_queue_home
+label: field_updates_queue_home

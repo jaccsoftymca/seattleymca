@@ -1,0 +1,25 @@
+uuid: baca59bc-d6fb-446e-bf8f-2473ed2af30e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VIzfDVxBoCTckpLP5AXuafGkReLeGBkZ83BcHYS-FTE
+name: node_program_header
+label: 'Node Program Header (500×260)'
+effects:
+  0b3240a9-c6f7-4dc3-b893-12ac75ac1d7e:
+    uuid: 0b3240a9-c6f7-4dc3-b893-12ac75ac1d7e
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: null
+      upscale: true
+  e51f262f-bb51-4daf-8f4f-79ba24bbd3a3:
+    uuid: e51f262f-bb51-4daf-8f4f-79ba24bbd3a3
+    id: image_crop
+    weight: 3
+    data:
+      width: 500
+      height: 260
+      anchor: center-top

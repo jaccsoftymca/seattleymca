@@ -1,0 +1,23 @@
+uuid: ecce0637-52d6-45ea-b27a-45eb1490b884
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: v8EB9XNfkLJ39fLgXs1ojYifnbVgJ0cgdS9b-NpjOuw
+id: media.field_media_video_id
+field_name: field_media_video_id
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,99 @@
+uuid: 67812e82-ec2b-41b7-bb7a-13fc099583c8
+langcode: en
+status: true
+dependencies: {  }
+uid: 19061
+template: false
+id: impact_visits
+title: 'Impact Visits'
+description: 'Form to pick your impact visit'
+elements: "first_name:\n  '#type': textfield\n  '#title': 'First Name'\nlast_name:\n  '#type': textfield\n  '#title': 'Last Name'\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\nphone:\n  '#type': tel\n  '#title': Phone\nwhich_impact_visit_would_you_like_to_attend:\n  '#type': textarea\n  '#title': 'Which Impact Visit(s) Would You Like To Attend'\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: url_message
+  confirmation_message: "<h2>Thank you for your interest in our Impact Visits.</h2>\r\nA member of staff will be in touch with you soon."
+  confirmation_url: 'https://www.seattleymca.org/blog/impact-visits'
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_events:
+    id: email
+    label: 'Email Events'
+    handler_id: email_events
+    status: true
+    weight: 0
+    settings:
+      to_mail: events@seattleymca.org
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email_address:raw]'
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

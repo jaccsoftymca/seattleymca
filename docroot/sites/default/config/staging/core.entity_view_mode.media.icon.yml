@@ -1,0 +1,12 @@
+uuid: fd5aefb5-d92b-413e-a989-27db134e7513
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: 0x2j4LYGAoW3BuqiRKdfDcEjwUywyhdcI-tUDtUM-TI
+id: media.icon
+label: Icon
+targetEntityType: media
+cache: true

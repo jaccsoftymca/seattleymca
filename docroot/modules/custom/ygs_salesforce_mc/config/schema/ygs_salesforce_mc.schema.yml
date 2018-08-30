@@ -1,0 +1,10 @@
+ygs_salesforce_mc.config:
+  type: config_object
+  label: 'Salesforce MC config'
+  mapping:
+    clientid:
+      type: text
+      label: 'Client ID'
+    clientsecret:
+      type: text
+      label: 'Client secret Key'

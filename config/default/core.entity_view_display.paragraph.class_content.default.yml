@@ -1,0 +1,35 @@
+uuid: 7d080059-81e7-451c-9685-2da96242a7ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_content.field_collection_classes
+    - field.field.paragraph.class_content.field_style
+    - paragraphs.paragraphs_type.class_content
+  module:
+    - field_collection
+    - options
+id: paragraph.class_content.default
+targetEntityType: paragraph
+bundle: class_content
+mode: default
+content:
+  field_collection_classes:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: field_collection_items
+    region: content
+  field_style:
+    type: list_key
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  uid: true

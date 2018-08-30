@@ -1,0 +1,12 @@
+uuid: 75992317-e911-4384-8a89-cb34b28d6090
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: fBWTwxhJIvVKSnj0kBVs0LrMQgGb64xEAAaQjyfOgqk
+id: media.calc_summary
+label: 'Calc summary'
+targetEntityType: media
+cache: true

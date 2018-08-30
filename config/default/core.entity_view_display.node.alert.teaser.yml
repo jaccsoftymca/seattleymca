@@ -1,0 +1,40 @@
+uuid: 1b19d78a-f687-4a9c-b085-d9de61808e36
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.field_alert_belongs
+    - field.field.node.alert.field_alert_color
+    - field.field.node.alert.field_alert_description
+    - field.field.node.alert.field_alert_icon_color
+    - field.field.node.alert.field_alert_link
+    - field.field.node.alert.field_alert_place
+    - field.field.node.alert.field_alert_text_color
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.scheduled_status
+    - field.field.node.alert.scheduled_update
+    - node.type.alert
+  module:
+    - user
+_core:
+  default_config_hash: p_H1wSAAJGtgt1tD4rqzWHBgYa2tejR4wFfMVunGRGo
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_alert_belongs: true
+  field_alert_color: true
+  field_alert_description: true
+  field_alert_icon_color: true
+  field_alert_link: true
+  field_alert_place: true
+  field_alert_text_color: true
+  field_alert_type_switcher: true
+  scheduled_status: true
+  scheduled_update: true

@@ -1,0 +1,5 @@
+name: YGS Facility
+type: module
+description: Provides custom block and form related to facility.
+core: 8.x
+package: YGS

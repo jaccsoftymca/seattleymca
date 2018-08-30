@@ -1,0 +1,28 @@
+---
+backup_folder: /var/www/backup
+backup_capacity: 20
+mysql_user: root
+mysql_pass: root
+sanitize_db_name: 'temp_backup'
+revisions_pattern: '^node_revision__'
+truncate_tables:
+  - 'cachetags'
+  - 'cache_bootstrap'
+  - 'cache_config'
+  - 'cache_discovery'
+  - 'cache_data'
+  - 'cache_default'
+  - 'cache_dynamic_page_cache'
+  - 'cache_entity'
+  - 'cache_menu'
+  - 'cache_render'
+  - 'captcha_sessions'
+  - 'sync_cache'
+  - 'sync_cache__field_external_id'
+  - 'sync_cache__field_raw_data_hash'
+  - 'sync_cache__field_updated_date'
+  - 'sync_cache__field_sync_errors'
+  - 'search_api_db_content_text'
+  - 'search_api_db_content'
+  - 'search_api_db_content_changed'
+  - 'search_api_item'

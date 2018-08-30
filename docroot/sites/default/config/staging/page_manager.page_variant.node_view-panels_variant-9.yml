@@ -1,0 +1,55 @@
+uuid: ed2c2f38-4254-4a40-8987-9f36a668a60f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - panels
+    - user
+id: node_view-panels_variant-9
+label: Announcement
+variant: panels_variant
+variant_settings:
+  blocks:
+    8131e7eb-73e3-4b38-a6aa-69118b4a58a9:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: default
+      region: header
+      weight: 0
+      uuid: 8131e7eb-73e3-4b38-a6aa-69118b4a58a9
+      context_mapping:
+        entity: node
+  id: panels_variant
+  uuid: 0c9c86d1-0762-41a3-8018-e7d18cf43a3e
+  label: null
+  weight: 0
+  layout: two_columns_container
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: node_view-panels_variant-9
+  builder: standard
+page: node_view
+weight: 0
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      announcement: announcement
+    negate: false
+    context_mapping:
+      node: node
+  -
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }

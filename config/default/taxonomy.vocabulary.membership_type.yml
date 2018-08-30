@@ -1,0 +1,9 @@
+uuid: f530f71d-69f3-4aac-beab-5f6a91ee1dbd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Membership Type'
+vid: membership_type
+description: 'Tags to differentiate membership types from one another.'
+hierarchy: 0
+weight: 0

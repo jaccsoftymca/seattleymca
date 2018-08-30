@@ -1,0 +1,12 @@
+uuid: 962f60f3-450a-44b1-b268-b3041d079eef
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: YwBAw-i7ec5E5ZvjE7alM4ZZggwHpKg9QMtYWGgxqgo
+id: node.registration
+label: Registration
+targetEntityType: node
+cache: true

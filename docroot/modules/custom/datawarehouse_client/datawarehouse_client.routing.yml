@@ -1,0 +1,7 @@
+datawarehouse_client.settings:
+  path: '/admin/config/system/datawarehouse-client-settings'
+  defaults:
+    _form: '\Drupal\datawarehouse_client\Form\SettingsForm'
+    _title: 'Datawarehouse Client settings'
+  requirements:
+    _permission: 'administer site configuration'

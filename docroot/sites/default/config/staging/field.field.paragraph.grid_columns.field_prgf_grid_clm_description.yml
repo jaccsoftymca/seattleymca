@@ -1,0 +1,23 @@
+uuid: 5df6b82e-96eb-4106-900a-0e3d367fcf66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_grid_clm_description
+    - paragraphs.paragraphs_type.grid_columns
+  module:
+    - text
+_core:
+  default_config_hash: 6fkwsICB8LDsj47bIzF9uDT86wNCZwf6IuU-uZw2ynE
+id: paragraph.grid_columns.field_prgf_grid_clm_description
+field_name: field_prgf_grid_clm_description
+entity_type: paragraph
+bundle: grid_columns
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

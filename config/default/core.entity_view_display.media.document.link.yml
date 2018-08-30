@@ -1,0 +1,37 @@
+uuid: 79e7cf80-ea3c-4913-982d-e27daf80b510
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.link
+    - field.field.media.document.field_media_document
+    - field.field.media.document.field_media_in_library
+    - field.field.media.document.field_media_mime
+    - field.field.media.document.field_media_size
+    - field.field.media.document.field_media_tags
+    - media_entity.bundle.document
+  module:
+    - ymca_media
+_core:
+  default_config_hash: SVEwF2y7Ur81NZBpWPJv-d8zyi5r-pdaWQ1FifeyxJY
+id: media.document.link
+targetEntityType: media
+bundle: document
+mode: link
+content:
+  field_media_document:
+    type: ygs_file_link
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  field_media_mime: true
+  field_media_size: true
+  field_media_tags: true
+  name: true
+  thumbnail: true
+  uid: true

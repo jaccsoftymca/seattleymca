@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains ygs_moderation_wrapper specific functions.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+// Active module - workbench_moderation|content_moderation.
+define('YGS_MODERATION_WRAPPER_MODULE', 'workbench_moderation');
+
+/**
+ * Check entity moderation status.
+ *
+ * This is helper function with content moderation status checking.
+ * If in the future content moderation will be replaced by workbench_moderation,
+ * please update function logic.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   Entity.
+ *
+ * @return bool
+ *   TRUE if entity is published.
+ */
+function ygs_moderation_wrapper_entity_moderation_status(EntityInterface $entity) {
+  $moderation_info = \Drupal::service(YGS_MODERATION_WRAPPER_MODULE . '.moderation_information');
+  // Contains checking: isLatestRevision, isDefaultRevision, isPublishedState.
+  return $moderation_info->isLiveRevision($entity);
+}
+
+/**
+ * Get active moderation module.
+ */
+function ygs_moderation_wrapper_active_module() {
+  return YGS_MODERATION_WRAPPER_MODULE;
+}

@@ -1,0 +1,38 @@
+uuid: 8bb08566-6342-4a43-9a0b-935c15925350
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: 6k-J0yldWl58_QUktEfVN62KFpXdRnAHBAL3eJ91sEc
+id: node.field_blog_color
+field_name: field_blog_color
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: story
+      label: 'Story Card'
+    -
+      value: photo
+      label: 'Photo Card'
+    -
+      value: news
+      label: 'News Card'
+    -
+      value: fuchsia
+      label: 'Fuchsia Card'
+    -
+      value: green
+      label: 'Green Card'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

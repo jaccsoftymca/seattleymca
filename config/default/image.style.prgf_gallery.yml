@@ -1,0 +1,16 @@
+uuid: 98f68338-973c-4d22-9b45-b4d72f9bca3f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: e_iiTFfW2wAVpRAHtwmwxnPNHgrbphuSt8BUw2V1bV8
+name: prgf_gallery
+label: 'Paragraph gallery'
+effects:
+  23d66472-fd6f-4949-b1b2-e88cf360da4f:
+    uuid: 23d66472-fd6f-4949-b1b2-e88cf360da4f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 700

@@ -1,0 +1,12 @@
+uuid: 029bbf96-395e-48ec-8a7a-86dfcd5a3019
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: zvPolZCt0uVLOIP7qAxbTGuMXaIMHdYuvCAjT-t7_tg
+id: taxonomy_term.color
+label: Color
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,196 @@
+<?php
+
+/**
+ * @file
+ * Contains ygs_session_instance module hooks.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function ygs_session_instance_entity_insert(EntityInterface $entity) {
+  global $_activenet_sync_disable_entity_hooks;
+  if (!$_activenet_sync_disable_entity_hooks && $entity->getEntityTypeId() == 'node' && $entity->bundle() == 'session') {
+    \Drupal::service('session_instance.manager')->recreateSessionInstances($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function ygs_session_instance_entity_update(EntityInterface $entity) {
+  global $_activenet_sync_disable_entity_hooks;
+  if (!$_activenet_sync_disable_entity_hooks && $entity->getEntityTypeId() == 'node') {
+    $bundle = $entity->bundle();
+    switch ($bundle) {
+      case 'session':
+        \Drupal::service('session_instance.manager')->recreateSessionInstances($entity);
+        break;
+
+      case 'class':
+      case 'activity':
+      case 'program_subcategory':
+      case 'program':
+        ygs_session_instance_actualize_sessions($entity, $bundle);
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function ygs_session_instance_entity_delete(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'session') {
+    \Drupal::service('session_instance.manager')->deleteSessionInstancesBySession($entity);
+  }
+  // TODO: delete sessions instances in case other nodes deleted.
+}
+
+/**
+ * Actualize session instances.
+ */
+function ygs_session_instance_actualize_sessions($entity, $bundle) {
+  // A Draft has been created – ignore.
+  if (!$entity->isDefaultRevision()) {
+    return;
+  }
+
+  $session_ids = [];
+  $state_changed = _ygs_session_instance_state_changed($entity);
+  if ($state_changed) {
+    // Get all related sessions.
+    $session_ids = \Drupal::service('session_instance.manager')
+      ->getSessionsByParams([
+        $entity->bundle() => [$entity->id()],
+      ]);
+  }
+  elseif ($bundle != 'program') {
+    $map_compare = [
+      'class' => 'field_class_activity',
+      'activity' => 'field_activity_category',
+      'program_subcategory' => 'field_category_program',
+    ];
+
+    if (isset($entity->original)) {
+      $original = $entity->original;
+      $new = $entity->{$map_compare[$bundle]}->getValue();
+      $old = $original->{$map_compare[$bundle]}->getValue();
+    }
+
+    // The entity hasn't been significantly changed.
+    if (isset($old) && isset($new) && $new == $old) {
+      return;
+    }
+
+    $map_select = [
+      'class' => 'class',
+      'activity' => 'field_activity',
+      'program_subcategory' => 'field_program_category',
+      'program' => 'field_program',
+    ];
+
+    $params = [
+      $map_select[$bundle] => [$entity->id()],
+    ];
+
+    $session_instances = \Drupal::service('session_instance.manager')
+      ->getSessionInstancesByParams($params);
+
+    if (!$session_instances) {
+      return;
+    }
+
+    foreach ($session_instances as $session_instance) {
+      $session_ids[$session_instance->session->target_id] = $session_instance->session->target_id;
+    }
+  }
+
+  if (!$session_ids) {
+    return;
+  }
+  batch_set([
+    'operations' => [
+      ['ygs_session_instance_actualize_sessions_batch_callback', [$session_ids]],
+    ],
+    'title' => t('Actualizing schedule'),
+    'finished' => 'ygs_session_instance_actualize_sessions_batch_finished',
+  ]);
+}
+
+/**
+ * Custom batch operation callback.
+ */
+function ygs_session_instance_actualize_sessions_batch_callback($params, &$context) {
+  if (empty($context['sandbox'])) {
+    // Perform set-up steps here.
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['max'] = count($params);
+  }
+  $items_per_iteration = 1;
+
+  $nids = array_slice($params, $context['sandbox']['progress'], $items_per_iteration);
+  $sessions = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+  foreach ($sessions as $session) {
+    \Drupal::service('session_instance.manager')->recreateSessionInstances($session);
+    $context['sandbox']['progress']++;
+    $context['results'][] = $session->id();
+  }
+
+  $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+}
+
+/**
+ * Custom batch finished callback.
+ */
+function ygs_session_instance_actualize_sessions_batch_finished($success, $results, $operations) {
+  if ($success) {
+    $message = t('@count sessions were processed.', ['@count' => count($results)]);
+    drupal_set_message($message);
+  }
+  else {
+    // An error occurred.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array(
+      '%error_operation' => $error_operation[0],
+      '@arguments' => print_r($error_operation[1], TRUE)
+    ));
+    drupal_set_message($message, 'error');
+  }
+}
+
+/**
+ * Helper function; returns true if the entity has changed its state.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The entity.
+ *
+ * @return bool|void
+ *   Flag indicated the entity has changed its state.
+ */
+function _ygs_session_instance_state_changed(EntityInterface $entity) {
+  if (!$original = $entity->original) {
+    return FALSE;
+  }
+
+  $moderation_module = ygs_moderation_wrapper_active_module();
+  // The entity got archived.
+  if (
+    $original->moderation_state->entity &&
+    $original->moderation_state->entity->isPublishedState() &&
+    !\Drupal::service($moderation_module . '.moderation_information')->isLiveRevision($entity)
+  ) {
+    return TRUE;
+  }
+
+  // The entity got published.
+  if ((!$original->moderation_state->entity || !$original->moderation_state->entity->isPublishedState()) &&
+    \Drupal::service($moderation_module . '.moderation_information')->isLiveRevision($entity)
+  ) {
+    return TRUE;
+  }
+
+  return FALSE;
+}

@@ -1,0 +1,8 @@
+uuid: bfb770a2-df75-4300-be81-c632b699dc96
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: frZKcRJ314Unu8zZKRFlVgEd2TdhkWWNSWyfl0uvrGQ
+id: field_updates_queue_item_collect
+label: field_updates_queue_item_collect

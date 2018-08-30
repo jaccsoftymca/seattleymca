@@ -1,0 +1,5 @@
+entity.sync_cache.add_form:
+  route_name: entity.sync_cache.add_form
+  title: 'Add Sync Cache'
+  appears_on:
+    - entity.sync_cache.collection

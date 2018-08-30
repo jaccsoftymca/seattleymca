@@ -1,0 +1,13 @@
+ygs_membership.config:
+  type: config_object
+  label: 'YGS membership config'
+  mapping:
+    img:
+      type: text
+      label: 'Image'
+    description:
+      type: text
+      label: 'Description'
+    title:
+      type: text
+      label: 'Title'

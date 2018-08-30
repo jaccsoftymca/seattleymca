@@ -1,0 +1,8 @@
+name: YGS locations Data Wrapper
+type: module
+description: Provide data for membership calculator and location finder.
+core: 8.x
+package: YGS
+dependencies:
+  - openy_map
+  - openy_socrates

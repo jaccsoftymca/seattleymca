@@ -1,0 +1,4 @@
+allow_cli: false
+user: ''
+pass: propeople
+print: 'Hello, user: [user], pass: [pass]!'

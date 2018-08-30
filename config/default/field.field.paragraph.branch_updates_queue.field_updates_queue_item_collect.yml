@@ -1,0 +1,32 @@
+uuid: 76808519-bd5a-41f8-82c5-b3ca6e7d5985
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_updates_queue_item_collect
+    - field_collection.field_collection.field_updates_queue_item_collect
+    - paragraphs.paragraphs_type.branch_updates_queue
+  module:
+    - field_collection
+_core:
+  default_config_hash: h-RaZiRC7R3sQ8LcSXe7vVPhac_umz12hmDBv_-_phA
+id: paragraph.branch_updates_queue.field_updates_queue_item_collect
+field_name: field_updates_queue_item_collect
+entity_type: paragraph
+bundle: branch_updates_queue
+label: 'Queue item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_updates_queue_item_collect: field_updates_queue_item_collect
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

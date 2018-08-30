@@ -1,0 +1,23 @@
+uuid: ae0564f8-9752-4fbe-891c-e8a50b89e301
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_grid_style
+    - paragraphs.paragraphs_type.grid_content
+  module:
+    - options
+_core:
+  default_config_hash: v144CQTnyTR9nce2FNMJfnDcDIziH5IQOm5txpc_CNg
+id: paragraph.grid_content.field_prgf_grid_style
+field_name: field_prgf_grid_style
+entity_type: paragraph
+bundle: grid_content
+label: Style
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

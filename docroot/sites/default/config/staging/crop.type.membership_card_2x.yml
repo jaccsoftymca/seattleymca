@@ -1,0 +1,12 @@
+uuid: b4c1e09b-b653-434d-b7cc-93e5601dc054
+langcode: en
+status: true
+dependencies: {  }
+label: 'Membership Card 2x'
+id: membership_card_2x
+description: ''
+aspect_ratio: '524:466'
+soft_limit_width: 524
+soft_limit_height: 466
+hard_limit_width: null
+hard_limit_height: null

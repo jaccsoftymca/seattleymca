@@ -1,0 +1,320 @@
+uuid: 3314d987-70fb-4675-8638-4cf0466cc75e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.branch.field_bottom_content
+    - field.field.node.branch.field_branch_hours
+    - field.field.node.branch.field_collection_activity_group
+    - field.field.node.branch.field_content
+    - field.field.node.branch.field_header_content
+    - field.field.node.branch.field_headline
+    - field.field.node.branch.field_location_address
+    - field.field.node.branch.field_location_area
+    - field.field.node.branch.field_location_coordinates
+    - field.field.node.branch.field_location_directions
+    - field.field.node.branch.field_location_email
+    - field.field.node.branch.field_location_fax
+    - field.field.node.branch.field_location_phone
+    - field.field.node.branch.field_location_state
+    - field.field.node.branch.field_location_temp_url
+    - field.field.node.branch.field_metatags
+    - field.field.node.branch.field_show_br_hours_schedule
+    - field.field.node.branch.field_ticket_required_info
+    - field.field.node.branch.scheduled_update
+    - node.type.branch
+  module:
+    - address
+    - field_collection
+    - field_group
+    - geolocation
+    - inline_entity_form
+    - link
+    - metatag
+    - openy_field_custom_hours
+    - paragraphs
+    - path
+    - telephone
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_contact_info:
+      children:
+        - field_location_address
+        - field_location_coordinates
+        - field_location_phone
+        - field_location_fax
+        - field_location_email
+        - field_location_directions
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Contact Info'
+    group_general_info:
+      children:
+        - title
+        - field_headline
+        - field_location_area
+        - field_location_state
+        - field_show_br_hours_schedule
+        - field_ticket_required_info
+        - field_location_temp_url
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'General Info'
+    group_branch_hours:
+      children:
+        - field_branch_hours
+        - field_collection_activity_group
+      parent_name: ''
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Branch Hours'
+    group_header_area:
+      children:
+        - field_header_content
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Header Area'
+    group_content_area:
+      children:
+        - field_content
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Content Area'
+    group_bottom_area:
+      children:
+        - field_bottom_content
+      parent_name: ''
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Bottom Area'
+_core:
+  default_config_hash: f3wP28ao8Nbg07L2bJLJ7zGdofXM1p0o-WUMuzKsJY4
+id: node.branch.default
+targetEntityType: node
+bundle: branch
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_bottom_content:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_branch_hours:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: openy_custom_hours_default
+  field_collection_activity_group:
+    type: field_collection_embed
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  field_content:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_header_content:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_headline:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location_address:
+    weight: 10
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+  field_location_area:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_location_coordinates:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+  field_location_directions:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_location_email:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_location_fax:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_location_phone:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_location_state:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_location_temp_url:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_metatags:
+    type: metatag_firehose
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  field_show_br_hours_schedule:
+    type: boolean_checkbox
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_ticket_required_info:
+    type: text_textarea
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    third_party_settings: {  }
+  scheduled_update:
+    type: inline_entity_form_complex
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_collection_activity_group: true
+  field_collection_hours: true
+  field_headline: true
+  field_latitude: true
+  field_longitude: true
+  field_metatags: true
+  field_show_br_hours_schedule: true
+  field_ticket_required_info: true
+  scheduled_update: true

@@ -1,0 +1,20 @@
+uuid: c123590b-61eb-4708-a313-3473ccf0b794
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - yamlform
+id: paragraph.field_paragraph_form
+field_name: field_paragraph_form
+entity_type: paragraph
+type: yamlform
+settings:
+  target_type: yamlform
+module: yamlform
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

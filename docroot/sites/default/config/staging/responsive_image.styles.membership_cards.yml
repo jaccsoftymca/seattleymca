@@ -1,0 +1,24 @@
+uuid: bb12c46c-f508-454e-bb8a-40dded6bf89c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.membership_card
+    - image.style.membership_card_2x
+  theme:
+    - ymca_seattle
+id: membership_cards
+label: 'Membership Cards'
+image_style_mappings:
+  -
+    breakpoint_id: ymca_seattle.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: membership_card
+  -
+    breakpoint_id: ymca_seattle.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: membership_card_2x
+breakpoint_group: ymca_seattle
+fallback_image_style: membership_card

@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Class page module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ygs_class_page_theme($existing, $type, $theme, $path) {
+  return [
+    'class_page_schedule' => [
+      'variables' => [
+        'base_path' => base_path(),
+        'description' => '',
+      ],
+      'template' => 'class-page-schedule',
+    ],
+    'class_page_other_sessions' => [
+      'variables' => [
+        'base_path' => base_path(),
+        'description' => '',
+      ],
+      'template' => 'class-page-other-sessions',
+    ],
+  ];
+}

@@ -1,0 +1,10 @@
+alerts:
+  version: VERSION
+  js:
+    js/ygs_alerts.js: {}
+  css:
+    component:
+      css/ygs_alerts.css: {}
+  dependencies:
+    - core/jquery.cookie
+    - core/jquery.once

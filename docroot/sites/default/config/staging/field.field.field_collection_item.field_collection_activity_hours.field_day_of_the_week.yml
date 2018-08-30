@@ -1,0 +1,23 @@
+uuid: 34e7e8a8-efff-4d95-ac86-d02355d51032
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_day_of_the_week
+    - field_collection.field_collection.field_collection_activity_hours
+  module:
+    - options
+id: field_collection_item.field_collection_activity_hours.field_day_of_the_week
+field_name: field_day_of_the_week
+entity_type: field_collection_item
+bundle: field_collection_activity_hours
+label: 'Day of the week'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: sunday
+default_value_callback: ''
+settings: {  }
+field_type: list_string

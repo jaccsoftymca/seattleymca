@@ -1,0 +1,24 @@
+uuid: 047cffcf-c5ad-45ee-838a-b04b9f9d82b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.branch
+_core:
+  default_config_hash: ilAlZ3_k_bdUzUwHII3hm5JlNJ0kzh8wiDbVkIAPobI
+id: node.branch.promote
+field_name: promote
+entity_type: node
+bundle: branch
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

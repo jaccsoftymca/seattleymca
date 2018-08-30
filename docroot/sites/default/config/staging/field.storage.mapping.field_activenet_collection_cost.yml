@@ -1,0 +1,20 @@
+uuid: 3b5848d1-3466-4fb4-a104-e21246dce331
+langcode: en
+status: true
+dependencies:
+  module:
+    - ymca_mappings
+_core:
+  default_config_hash: T2Fyx_8Me--vZCCzzsIIjW4GvvNInTVXHwihMt0kfac
+id: mapping.field_activenet_collection_cost
+field_name: field_activenet_collection_cost
+entity_type: mapping
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

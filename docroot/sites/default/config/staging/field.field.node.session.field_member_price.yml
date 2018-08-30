@@ -1,0 +1,25 @@
+uuid: 7c694cec-c6b1-4f78-a015-0c8cdd37a5ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_price
+    - node.type.session
+_core:
+  default_config_hash: W0wXQKIw8sT3Xt8HoAViJwMRiPtNls4A4VZZf-6yVXQ
+id: node.session.field_member_price
+field_name: field_member_price
+entity_type: node
+bundle: session
+label: 'Activity Member Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

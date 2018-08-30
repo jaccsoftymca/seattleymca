@@ -1,0 +1,16 @@
+diff --git a/core/modules/views/src/ViewExecutable.php b/core/modules/views/src/ViewExecutable.php
+index b1861f7..d897f56 100644
+--- a/core/modules/views/src/ViewExecutable.php
++++ b/core/modules/views/src/ViewExecutable.php
+@@ -2490,8 +2490,9 @@ public function unserialize($serialized) {
+     list($storage, $current_display, $args, $current_page, $exposed_input, $exposed_raw_input, $exposed_data, $dom_id, $executed) = unserialize($serialized);
+ 
+     // There are cases, like in testing, where we don't have a container
+-    // available.
+-    if (\Drupal::hasContainer()) {
++    // available. The currently active request object is not available if the
++    // views ajax response is cached.
++    if (\Drupal::hasContainer() && \Drupal::request()) {
+       $this->setRequest(\Drupal::request());
+       $this->user = \Drupal::currentUser();
+ 

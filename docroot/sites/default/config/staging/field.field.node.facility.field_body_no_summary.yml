@@ -1,0 +1,21 @@
+uuid: 1e924b5b-1e49-4883-9070-f4d18c341ac6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_no_summary
+    - node.type.facility
+  module:
+    - text
+id: node.facility.field_body_no_summary
+field_name: field_body_no_summary
+entity_type: node
+bundle: facility
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

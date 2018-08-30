@@ -1,0 +1,36 @@
+uuid: dd081228-96aa-40fa-812e-fc55b30ed003
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.link
+    - field.field.media.video.field_media_in_library
+    - field.field.media.video.field_media_source
+    - field.field.media.video.field_media_tags
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_video_id
+    - media_entity.bundle.video
+  module:
+    - ymca_media
+_core:
+  default_config_hash: BbU25j_nofXBzCTCJloQimX1ykyElI7n5HMdJD5v44Y
+id: media.video.link
+targetEntityType: media
+bundle: video
+mode: link
+content:
+  field_media_video_embed_field:
+    type: ygs_video_link
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_in_library: true
+  field_media_source: true
+  field_media_tags: true
+  field_media_video_id: true
+  name: true
+  thumbnail: true
+  uid: true

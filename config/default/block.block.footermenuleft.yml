@@ -1,0 +1,26 @@
+uuid: 27c481a5-7a47-4be1-848c-2343ba69de94
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-menu-left
+  module:
+    - system
+  theme:
+    - ymca_seattle
+_core:
+  default_config_hash: bRiXZwDtmYavt3hkTmr1VUlWAm0taLHN3sqzsL6GCGo
+id: footermenuleft
+theme: ymca_seattle
+region: footer_menus
+weight: -1
+provider: null
+plugin: 'system_menu_block:footer-menu-left'
+settings:
+  id: 'system_menu_block:footer-menu-left'
+  label: 'Footer menu left'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: 0ebc7395-3740-4496-83c1-c7e118043c78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_description
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - text
+_core:
+  default_config_hash: xt98qd3edx6z0H44Y-R9nUhz2Oi4nzWSQeCxVICPaHs
+id: paragraph.teaser.field_prgf_description
+field_name: field_prgf_description
+entity_type: paragraph
+bundle: teaser
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,22 @@
+uuid: bca93455-2625-47f6-b62d-20c2753479b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: XrDsGhlgHb_VDum9pyGMoTWkHfVO2p1uGId9oDgJiOM
+id: node.field_branch_area
+field_name: field_branch_area
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

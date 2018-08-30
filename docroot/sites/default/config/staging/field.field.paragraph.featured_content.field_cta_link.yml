@@ -1,0 +1,25 @@
+uuid: dc013fc3-ad3c-49f6-b081-dd11c5fb25d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_link
+    - paragraphs.paragraphs_type.featured_content
+  module:
+    - link
+_core:
+  default_config_hash: zHPnk9-jLv5W7ltEBwYSFtvWfM4CPvr5e_3Z56X_v_k
+id: paragraph.featured_content.field_cta_link
+field_name: field_cta_link
+entity_type: paragraph
+bundle: featured_content
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

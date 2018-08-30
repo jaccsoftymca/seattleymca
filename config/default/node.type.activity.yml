@@ -1,0 +1,28 @@
+uuid: eea6de96-c9e0-4c6f-bf66-56a98b0dc21a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: Z-i2zFSAXDKy_-EH-2Y8wdX5ylsBTYR-az0e5x_tRh8
+name: Activity
+type: activity
+description: 'Activity content type is used for adding Activities on the site.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,30 @@
+uuid: f9e94d1f-453f-4bb5-9d9a-05ec49be6f84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection_activity_group
+    - field_collection.field_collection.field_collection_activity_group
+    - node.type.branch
+  module:
+    - field_collection
+id: node.branch.field_collection_activity_group
+field_name: field_collection_activity_group
+entity_type: node
+bundle: branch
+label: 'Hours group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_collection_activity_group: field_collection_activity_group
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

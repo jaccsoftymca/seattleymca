@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains ymca_hours_formatter.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ymca_hours_formatter_theme() {
+  return array(
+    'ymca_hours_formatter' => array(
+      'variables' => array(
+        'hours' => '',
+        'week' => [],
+      ),
+    ),
+    'ymca_branch_hours_formatter' => array(
+      'variables' => array(
+        'week' => [],
+      ),
+    ),
+  );
+}

@@ -1,0 +1,25 @@
+uuid: cda1c283-901a-4e98-bdf6-d603efdcc176
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_spots_available
+    - node.type.session
+_core:
+  default_config_hash: v5OcPd1azvZ5IJd8sy20NIkMCBOLa9X6HagahBJtxpE
+id: node.session.field_spots_available
+field_name: field_spots_available
+entity_type: node
+bundle: session
+label: 'Spots available'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

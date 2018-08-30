@@ -1,0 +1,12 @@
+uuid: 69f05009-e354-43b3-9227-c7a7500a685c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: DhW8fE7289BXdfJL_65Us4Vw3zEOUCqk5RB6Oxe1Rtc
+id: media.embedded_link
+label: Link
+targetEntityType: media
+cache: true

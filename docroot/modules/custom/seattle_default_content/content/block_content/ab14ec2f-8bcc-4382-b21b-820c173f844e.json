@@ -1,0 +1,73 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic_block"
+        }
+    },
+    "id": [
+        {
+            "value": "1"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ab14ec2f-8bcc-4382-b21b-820c173f844e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic_block"
+        }
+    ],
+    "info": [
+        {
+            "value": "Footer social",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1473332746",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1473276789"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<ul class=\"list-inline\">\n\t<li><a class=\"fa fa-facebook\" href=\"\">facebook<\/a><\/li>\n\t<li><a class=\"fa fa-twitter\" href=\"\">twitter<\/a><\/li>\n\t<li><a class=\"fa fa-youtube\" href=\"\">youtube<\/a><\/li>\n<\/ul>\n\n<form action=\"\/\" class=\"clearfix\">\n<div><label for=\"edit-email\">Sign up for email updates!<\/label><input class=\"form-control\" placeholder=\"Your email address:\" type=\"text\" \/> <input class=\"btn btn-default blue\" type=\"submit\" value=\"Sign up\"  \/><\/div>\n<\/form>\n\n<p>\u00a9 2016 Greater Seattle YMCA<\/p>\n\n<p>The YMCA is a 501(c)(3) not-for-profit social services organization dedicated to Youth Development, Healthy Living, and Social Responsibility.<\/p>\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

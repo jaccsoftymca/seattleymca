@@ -1,0 +1,22 @@
+uuid: d07a37af-faa6-411d-879e-2d1d2ffbae4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: banner_image_2x
+label: 'Banner image 2x'
+effects:
+  af0d23da-0415-4216-958c-f4d7311d8509:
+    uuid: af0d23da-0415-4216-958c-f4d7311d8509
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1920
+      height: 1708
+  cf523803-3e39-411c-8784-6ef48b493858:
+    uuid: cf523803-3e39-411c-8784-6ef48b493858
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: banner_image_2x

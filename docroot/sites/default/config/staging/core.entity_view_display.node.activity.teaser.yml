@@ -1,0 +1,23 @@
+uuid: aea8a078-5dbc-4160-bcb2-e345a3e327e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.activity.field_body_no_summary
+    - field.field.node.activity.field_program_subcategory
+    - node.type.activity
+  module:
+    - user
+_core:
+  default_config_hash: bvS4cot95Ev2EQbtTsYaN3SjpXiVdo028nDEZLmBoes
+id: node.activity.teaser
+targetEntityType: node
+bundle: activity
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_body_no_summary: true
+  field_program_subcategory: true

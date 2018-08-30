@@ -1,0 +1,22 @@
+uuid: 12db157d-2f83-447f-a5be-e36c0ba5a5d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ymca_mappings
+_core:
+  default_config_hash: zWDhD7WeHj5I2ukUyCrKgUa0F2HOlNPo4-GmyI0VPSU
+id: mapping.field_activenet_program_id
+field_name: field_activenet_program_id
+entity_type: mapping
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

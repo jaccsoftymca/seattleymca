@@ -1,0 +1,31 @@
+uuid: c78c7090-daac-4174-8a92-4cd15943289f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.facility_sessions_search_block.field_button_url
+    - field.field.paragraph.facility_sessions_search_block.field_custom_block_reference
+    - paragraphs.paragraphs_type.facility_sessions_search_block
+  module:
+    - custom_block_reference
+id: paragraph.facility_sessions_search_block.default
+targetEntityType: paragraph
+bundle: facility_sessions_search_block
+mode: default
+content:
+  field_button_url:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_custom_block_reference:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: custom_block_reference_formatter
+hidden:
+  created: true
+  uid: true

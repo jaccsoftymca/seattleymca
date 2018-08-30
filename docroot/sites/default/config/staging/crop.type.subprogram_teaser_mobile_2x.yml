@@ -1,0 +1,12 @@
+uuid: 0095155d-4ec7-401a-9f51-27bcff834cf3
+langcode: en
+status: true
+dependencies: {  }
+label: 'Subprogram Teaser Mobile 2x'
+id: subprogram_teaser_mobile_2x
+description: ''
+aspect_ratio: '670:500'
+soft_limit_width: 670
+soft_limit_height: 500
+hard_limit_width: null
+hard_limit_height: null

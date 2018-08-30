@@ -1,0 +1,4 @@
+services:
+  ymca_hours_formatter.hours_today:
+    class: Drupal\ymca_hours_formatter\HoursToday
+    arguments: []

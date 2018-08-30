@@ -1,0 +1,21 @@
+uuid: 200e6a35-43cd-4873-9e21-71a7dec7050d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_assetguid
+    - ymca_mappings.mapping_type.class
+_core:
+  default_config_hash: YBv1yUPziK8qgy-XD6aWQrQ0akWpz7MOey3DKTm5DFM
+id: mapping.class.field_activenet_assetguid
+field_name: field_activenet_assetguid
+entity_type: mapping
+bundle: class
+label: 'ActiveNet: AssetGUID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

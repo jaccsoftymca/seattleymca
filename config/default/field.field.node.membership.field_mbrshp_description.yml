@@ -1,0 +1,28 @@
+uuid: 2f37acf9-e7ae-408c-9180-1ea2dd502c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbrshp_description
+    - node.type.membership
+  module:
+    - datalayer
+    - text
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_mbrshp_description
+_core:
+  default_config_hash: n6AQhxJAU6QaqoRKD_VS-KGi8G58yQ0_AcRgVhSlLXI
+id: node.membership.field_mbrshp_description
+field_name: field_mbrshp_description
+entity_type: node
+bundle: membership
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

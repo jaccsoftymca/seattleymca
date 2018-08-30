@@ -1,0 +1,8 @@
+uuid: 5ce80301-d3a3-4bae-9d83-4b7218993b1d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nTEkeTtk7cE90D-qzyWJBYuCTn-qR-HeO2imhDGLv_o
+id: session_time
+label: 'Session Time'

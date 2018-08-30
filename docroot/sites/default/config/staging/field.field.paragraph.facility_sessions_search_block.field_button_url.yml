@@ -1,0 +1,19 @@
+uuid: d50642d9-530b-48a5-9724-a5a7c32c3e9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_url
+    - paragraphs.paragraphs_type.facility_sessions_search_block
+id: paragraph.facility_sessions_search_block.field_button_url
+field_name: field_button_url
+entity_type: paragraph
+bundle: facility_sessions_search_block
+label: 'Button Url'
+description: "E.g.: /programs/kid-and-family-activities/kids-university-enrichment-classes?location=<b>[location]</b>&program=all&category=all&age=All <br>\r\n[location] - will be replaced with the location set to the Location of the Facility. "
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,111 @@
+uuid: c1594fc9-728a-4a7c-9df8-d870316ad50a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.mapping.class.field_activenet_assetguid
+    - field.field.mapping.class.field_activenet_class_category
+    - field.field.mapping.class.field_activenet_class_id
+    - field.field.mapping.class.field_activenet_class_location
+    - field.field.mapping.class.field_activenet_class_sub_cat
+    - field.field.mapping.class.field_activenet_class_subsub_cat
+    - field.field.mapping.class.field_activenet_collection_cost
+    - field.field.mapping.class.field_activenet_parentasset
+    - field.field.mapping.class.field_activenet_registration_fee
+    - field.field.mapping.class.field_activenet_url_info
+    - ymca_mappings.mapping_type.class
+_core:
+  default_config_hash: JXpwAdIWV3UNWYiP2v8wb-2rA5bWKcAJUzVvMdT6_Gk
+id: mapping.class.default
+targetEntityType: mapping
+bundle: class
+mode: default
+content:
+  field_activenet_assetguid:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_class_category:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_class_id:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_activenet_class_location:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_class_sub_cat:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_class_subsub_cat:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_collection_cost:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_activenet_parentasset:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_activenet_registration_fee:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_activenet_url_info:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  langcode:
+    type: language_select
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

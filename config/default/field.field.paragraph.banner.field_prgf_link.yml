@@ -1,0 +1,25 @@
+uuid: 0c7a4bcd-b1f2-4683-baac-2c8da2661f8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_link
+    - paragraphs.paragraphs_type.banner
+  module:
+    - link
+_core:
+  default_config_hash: BV13vlM46CyIu9ydxFENiycdp9FidTXK-9O0L2MyIWM
+id: paragraph.banner.field_prgf_link
+field_name: field_prgf_link
+entity_type: paragraph
+bundle: banner
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

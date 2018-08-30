@@ -1,0 +1,22 @@
+uuid: 88ccd77a-1232-4e10-a8c1-9cf3972347a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+_core:
+  default_config_hash: dBfibKA6kwWUkmXjlcxuneDv_YkZ3lDRnFqojUju0CM
+id: node.field_session_exclude_date
+field_name: field_session_exclude_date
+entity_type: node
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

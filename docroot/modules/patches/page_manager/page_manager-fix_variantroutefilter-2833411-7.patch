@@ -1,0 +1,112 @@
+diff --git a/page_manager.services.yml b/page_manager.services.yml
+index 43f99ab..7976e50 100644
+--- a/page_manager.services.yml
++++ b/page_manager.services.yml
+@@ -19,7 +19,7 @@ services:
+       - { name: 'event_subscriber' }
+   page_manager.variant_route_filter:
+     class: Drupal\page_manager\Routing\VariantRouteFilter
+-    arguments: ['@entity_type.manager', '@path.current']
++    arguments: ['@entity_type.manager', '@path.current', '@request_stack']
+     tags:
+       - { name: route_filter }
+       - { name: service_collector, tag: non_lazy_route_enhancer, call: addRouteEnhancer }
+diff --git a/src/Routing/VariantRouteFilter.php b/src/Routing/VariantRouteFilter.php
+index 6d2abcc..387e476 100644
+--- a/src/Routing/VariantRouteFilter.php
++++ b/src/Routing/VariantRouteFilter.php
+@@ -13,6 +13,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Path\CurrentPathStack;
+ use Drupal\Core\Routing\RouteFilterInterface;
+ use Symfony\Component\HttpFoundation\Request;
++use Symfony\Component\HttpFoundation\RequestStack;
+ use Symfony\Component\Routing\Route;
+ use Symfony\Component\Routing\RouteCollection;
+ 
+@@ -42,6 +43,13 @@ class VariantRouteFilter implements RouteFilterInterface {
+   protected $currentPath;
+ 
+   /**
++   * The request stack.
++   *
++   * @var \Symfony\Component\HttpFoundation\RequestStack
++   */
++  protected $requestStack;
++
++  /**
+    * Constructs a new VariantRouteFilter.
+    *
+    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+@@ -49,9 +57,10 @@ class VariantRouteFilter implements RouteFilterInterface {
+    * @param \Drupal\Core\Path\CurrentPathStack $current_path
+    *   The current path stack.
+    */
+-  public function __construct(EntityTypeManagerInterface $entity_type_manager, CurrentPathStack $current_path) {
++  public function __construct(EntityTypeManagerInterface $entity_type_manager, CurrentPathStack $current_path, RequestStack $request_stack) {
+     $this->pageVariantStorage = $entity_type_manager->getStorage('page_variant');
+     $this->currentPath = $current_path;
++    $this->requestStack = $request_stack;
+   }
+ 
+   /**
+@@ -90,15 +99,23 @@ class VariantRouteFilter implements RouteFilterInterface {
+       $attributes = $this->getRequestAttributes($route, $name, $request);
+       // Add the enhanced attributes to the request.
+       $request->attributes->add($attributes);
++      // Put the request to the stack.
++      $this->requestStack->push($request);
+       if ($page_variant_id = $route->getDefault('page_manager_page_variant')) {
+         if ($this->checkPageVariantAccess($page_variant_id)) {
+           // Access granted, use this route. Do not restore request attributes
+           // but keep those from this route by breaking out.
+           $accessible_route_name = $name;
++
++          // Remove the current checked request from the stack.
++          $this->requestStack->pop();
+           break;
+         }
+       }
+ 
++      // Remove the current checked request from the stack.
++      $this->requestStack->pop();
++
+       // Restore the original request attributes, this must be done in the loop
+       // or the request attributes will not be calculated correctly for the
+       // next route.
+diff --git a/tests/src/Unit/VariantRouteFilterTest.php b/tests/src/Unit/VariantRouteFilterTest.php
+index dbcf0f3..74fdd71 100644
+--- a/tests/src/Unit/VariantRouteFilterTest.php
++++ b/tests/src/Unit/VariantRouteFilterTest.php
+@@ -16,6 +16,7 @@ use Drupal\page_manager\Routing\VariantRouteFilter;
+ use Drupal\Tests\UnitTestCase;
+ use Symfony\Cmf\Component\Routing\Enhancer\RouteEnhancerInterface;
+ use Symfony\Component\HttpFoundation\Request;
++use Symfony\Component\HttpFoundation\RequestStack;
+ use Symfony\Component\Routing\Route;
+ use Symfony\Component\Routing\RouteCollection;
+ 
+@@ -47,6 +48,13 @@ class VariantRouteFilterTest extends UnitTestCase {
+   protected $currentPath;
+ 
+   /**
++   * The mocked request stack.
++   *
++   * @var \Symfony\Component\HttpFoundation\RequestStack|\Prophecy\Prophecy\ProphecyInterface
++   */
++  protected $requestStack;
++
++  /**
+    * The route filter under test.
+    *
+    * @var \Drupal\page_manager\Routing\VariantRouteFilter
+@@ -63,8 +71,9 @@ class VariantRouteFilterTest extends UnitTestCase {
+     $this->entityTypeManager->getStorage('page_variant')
+       ->willReturn($this->pageVariantStorage);
+     $this->currentPath = $this->prophesize(CurrentPathStack::class);
++    $this->requestStack = $this->prophesize(RequestStack::class);
+ 
+-    $this->routeFilter = new VariantRouteFilter($this->entityTypeManager->reveal(), $this->currentPath->reveal());
++    $this->routeFilter = new VariantRouteFilter($this->entityTypeManager->reveal(), $this->currentPath->reveal(), $this->requestStack->reveal());
+   }
+ 
+   /**

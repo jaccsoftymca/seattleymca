@@ -1,0 +1,25 @@
+uuid: 612a2f35-4722-445a-81a3-23b83f408b49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_link
+    - paragraphs.paragraphs_type.story_card
+  module:
+    - link
+_core:
+  default_config_hash: nOjxMC64rJ_Zw3ng4SWh5Ks1NbLZ7id5AhePcbTmPv0
+id: paragraph.story_card.field_prgf_link
+field_name: field_prgf_link
+entity_type: paragraph
+bundle: story_card
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,99 @@
+uuid: 39b394f4-bab4-4792-b49e-a3ef4f54fcf4
+langcode: en
+status: true
+dependencies: {  }
+uid: 19061
+template: false
+id: kids_u
+title: 'Kids U'
+description: 'Contact for going to Joleen for Kids U'
+elements: "first_name:\n  '#type': textfield\n  '#title': 'First Name'\nlast_name:\n  '#type': textfield\n  '#title': 'Last Name'\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\nphone:\n  '#type': tel\n  '#title': Phone\nschool:\n  '#type': textfield\n  '#title': School\nwhat_is_your_question:\n  '#type': textarea\n  '#title': 'What is your question'\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: url
+  confirmation_message: 'Thank you for contacting the Kids U team. We will be in touch shortly.'
+  confirmation_url: 'https://www.seattleymca.org/blog/how-y-afterschool-programs-make-bright-future'
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  kids_u_contact:
+    id: email
+    label: 'Kids U Contact'
+    handler_id: kids_u_contact
+    status: true
+    weight: 0
+    settings:
+      to_mail: jpost@seattleymca.org
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: KidsUniversity@seattleymca.org
+      from_name: default
+      subject: 'Kids U Question'
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

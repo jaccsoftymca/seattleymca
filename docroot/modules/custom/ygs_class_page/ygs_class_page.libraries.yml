@@ -1,0 +1,22 @@
+angular:
+  version: VERSION
+  js:
+    //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js: { type: external, minified: true }
+    //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.js: { type: external, minified: true }
+
+angular-promise-tracker:
+  version: VERSION
+  js:
+    js/promise-tracker.js: {}
+  dependencies:
+    - ygs_class_page/angular
+
+app:
+  version: VERSION
+  js:
+    js/ygs_class_page.js: {}
+  dependencies:
+    - ygs_class_page/angular-promise-tracker
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.cookie

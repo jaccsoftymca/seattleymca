@@ -1,0 +1,21 @@
+uuid: 0f5cee96-af85-4fdf-a0ae-ff115dbb2d25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_headline
+    - paragraphs.paragraphs_type.small_banner
+_core:
+  default_config_hash: 4QBBl14KSkRyV_wAn4fxmCqSwUnzz5GC2Y8J9u0iv1E
+id: paragraph.small_banner.field_prgf_headline
+field_name: field_prgf_headline
+entity_type: paragraph
+bundle: small_banner
+label: Headline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

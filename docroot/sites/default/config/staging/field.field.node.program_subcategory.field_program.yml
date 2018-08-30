@@ -1,0 +1,30 @@
+uuid: 8f116063-fcd7-4d2a-8bec-b14a7678bd43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program
+    - node.type.program
+    - node.type.program_subcategory
+_core:
+  default_config_hash: gKQV0pGCZaMwDNWbQrCyjooYuCVkOp3Fu1fTFHE0hRE
+id: node.program_subcategory.field_program
+field_name: field_program
+entity_type: node
+bundle: program_subcategory
+label: Program
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      program: program
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

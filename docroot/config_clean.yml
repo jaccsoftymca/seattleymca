@@ -1,0 +1,58 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - devops/reinstall/vars/global_settings.yml
+    - devops/reinstall/vars/environments/global_env.yml
+  vars:
+    profile: openy
+    staging: sites/default/config/staging
+    exclude:
+    # We should manually take care about core.extension.yml. It shouldn't contain
+    # config_devel, devel, stage_file_proxy
+      # Core modules configuration files:
+      - { name: 'stage_file_proxy.settings.yml', status: true }
+      - { name: 'system.menu.devel.yml', status: true }
+      - { name: 'devel.settings.yml', status: true }
+      - { name: 'config_devel.settings.yml', status: true }
+      - { name: 'shield.settings.yml', status: true }
+      - { name: 'syslog.settings.yml', status: true }
+      - { name: 'xmlsitemap.xmlsitemap.NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM.yml', status: true }
+
+  tasks:
+    - name: Export config
+      shell: drush config-export staging -y --skip-modules=devel,config_devel,stage_file_proxy
+
+    - name: Remove excluded config files
+      file:
+        path: '{{ staging }}/{{ item.name }}'
+        state: absent
+      with_items: exclude
+      when: true == {{ item.status }}
+
+    - name: Copy config to profile
+      when: workflow_type == 'profile'
+      synchronize:
+        src: '{{ staging }}/'
+        dest: profiles/{{ profile }}/config/install
+        delete: yes
+        rsync_opts:
+          - '--exclude=.htaccess'
+
+    - name: Collect a list of config files inside install directory
+      when: workflow_type == 'profile'
+      shell: 'grep -rl "default_config_hash" profiles/{{ profile }}/config/install | grep yml'
+      register: files
+
+    - name: Loop through the list of configs and replace hash string
+      when: workflow_type == 'profile'
+      lineinfile: "dest=\"{{ item }}\" regexp='^  default_config_hash:' line='  default_config_hash: null'"
+      with_items: files.stdout_lines
+
+    - name: Clean staging directory
+      when: workflow_type == 'profile'
+      shell: 'rm *.yml'
+      args:
+        chdir: '{{ staging }}'

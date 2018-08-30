@@ -1,0 +1,27 @@
+uuid: 25ff6067-256f-4ab0-9120-fcc8a856bf67
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_session_time_frequency
+field_name: field_session_time_frequency
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: daily
+      label: Daily
+    -
+      value: weekly
+      label: Weekly
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

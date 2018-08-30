@@ -1,0 +1,30 @@
+uuid: 527d667c-d0c3-4393-8701-53ebb9d720a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.facility
+  module:
+    - datalayer
+    - metatag
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_meta_tags
+_core:
+  default_config_hash: Iija_Tn9_4d7zZ0HmBbOuwrqVxU9PuSGTwJej-MzSPU
+id: node.facility.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: facility
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

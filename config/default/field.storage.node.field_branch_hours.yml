@@ -1,0 +1,21 @@
+uuid: 04fe5024-e442-4483-a1f4-c75a800c1c45
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - openy_field_custom_hours
+_core:
+  default_config_hash: 6Uev14AbQrJlx_0SRVz5m8fbafhfXWdwEh_aQEb098I
+id: node.field_branch_hours
+field_name: field_branch_hours
+entity_type: node
+type: openy_custom_hours
+settings: {  }
+module: openy_field_custom_hours
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

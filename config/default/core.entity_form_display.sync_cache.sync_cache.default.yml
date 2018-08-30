@@ -1,0 +1,100 @@
+uuid: feb0fb05-b726-4a13-bce8-7d806090ac01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.sync_cache.sync_cache.field_external_id
+    - field.field.sync_cache.sync_cache.field_raw_data_hash
+    - field.field.sync_cache.sync_cache.field_sync_errors
+    - field.field.sync_cache.sync_cache.field_updated_date
+  module:
+    - datetime
+    - ygs_sync_cache
+id: sync_cache.sync_cache.default
+targetEntityType: sync_cache
+bundle: sync_cache
+mode: default
+content:
+  class:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_external_id:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_raw_data_hash:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sync_errors:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_updated_date:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  raw_data:
+    type: string_textarea
+    weight: 5
+    settings:
+      rows: 4
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  session:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  status:
+    type: options_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  type:
+    type: options_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

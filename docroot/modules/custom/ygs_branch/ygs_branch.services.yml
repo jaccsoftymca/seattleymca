@@ -1,0 +1,5 @@
+services:
+  ygs_branch.request_subscriber:
+    class: Drupal\ygs_branch\EventSubscriber\YgsBranchRequestSubscriber
+    tags:
+      - { name: event_subscriber }

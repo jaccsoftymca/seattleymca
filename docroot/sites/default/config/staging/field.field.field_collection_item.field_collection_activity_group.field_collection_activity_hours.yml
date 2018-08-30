@@ -1,0 +1,30 @@
+uuid: 3721ad56-ee6b-49e6-8104-ce0b0ff7808e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_collection_activity_hours
+    - field_collection.field_collection.field_collection_activity_group
+    - field_collection.field_collection.field_collection_activity_hours
+  module:
+    - field_collection
+id: field_collection_item.field_collection_activity_group.field_collection_activity_hours
+field_name: field_collection_activity_hours
+entity_type: field_collection_item
+bundle: field_collection_activity_group
+label: Hours
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_collection_activity_hours: field_collection_activity_hours
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

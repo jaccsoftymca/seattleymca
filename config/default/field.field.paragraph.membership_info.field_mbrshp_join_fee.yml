@@ -1,0 +1,25 @@
+uuid: a2645bd0-67a1-4e4a-a780-92a09d167efb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mbrshp_join_fee
+    - paragraphs.paragraphs_type.membership_info
+_core:
+  default_config_hash: LMRCZhM4d0K_LuunAPY3PP3c9hXJqa-VZjqya6eTA4I
+id: paragraph.membership_info.field_mbrshp_join_fee
+field_name: field_mbrshp_join_fee
+entity_type: paragraph
+bundle: membership_info
+label: 'Join Fee'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

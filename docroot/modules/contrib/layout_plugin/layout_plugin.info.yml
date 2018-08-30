@@ -1,0 +1,11 @@
+name: Layout Plugin
+type: module
+description: 'Provides a way for modules or themes to register layouts.'
+# core: 8.x
+package: Layout
+
+# Information added by Drupal.org packaging script on 2016-07-23
+version: '8.x-1.0-alpha22+8-dev'
+core: '8.x'
+project: 'layout_plugin'
+datestamp: 1469275740

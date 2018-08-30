@@ -1,0 +1,8 @@
+uuid: 61874a2b-4e7d-4976-a7c2-c654d46bf0dd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eavnv6oaJAtqt1O6jX-PkASCC1VjjhEpyAzIWERfGeg
+id: openy_prgf_mbrshp_calc
+label: 'Membership calculator'

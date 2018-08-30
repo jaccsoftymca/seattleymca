@@ -1,0 +1,26 @@
+uuid: 7c0cb8d2-857f-4b8e-bcf9-ac60e18ec559
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.latest_blog_posts.field_prgf_block
+    - paragraphs.paragraphs_type.latest_blog_posts
+  module:
+    - plugin
+_core:
+  default_config_hash: j7Pqrji0QV04CxYFMUUwTypaIuOi7MCHcXO3KjeLMgQ
+id: paragraph.latest_blog_posts.default
+targetEntityType: paragraph
+bundle: latest_blog_posts
+mode: default
+content:
+  field_prgf_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_block_built
+    region: content
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,104 @@
+uuid: 973f4e3c-ea33-4da2-96f2-b5c31992226a
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - yamlform_templates
+_core:
+  default_config_hash: jcJwnIEbIS0UqwSwb_jTyBYpdexQsA4yAYoJ2hoPZrc
+uid: null
+template: true
+id: template_user_profile
+title: 'User Profile'
+description: 'A user profile form template.'
+elements: "account_information:\n  '#title': 'Your Account Information'\n  '#type': fieldset\n  user_name:\n    '#type': textfield\n    '#title': 'User Name'\n  picture:\n    '#type': managed_file\n    '#title': 'Picture'\n    '#description': 'Your virtual face or picture. Pictures larger than 1024x1024 pixels will be scaled down.'\n    '#max_filesize': '2'\n    '#file_extensions': 'gif jpg png svg'\npersonal_information:\n  '#title': 'Your Personal Information'\n  '#type': fieldset\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n    '#required': true\n  last_name:\n    '#type': textfield\n    '#title': 'Last Name'\n    '#required': true\n  country:\n    '#type': select\n    '#title': 'Country'\n    '#options': country_names\n  location:\n    '#type': location\n    '#title': 'Location'\n    '#title_display': invisible\n    '#description': 'Your location will be saved and may be shared.'\n    '#geolocation': true\n    '#address__title': 'Locations'\n  languages:\n    '#type': select\n    '#title': 'Languages Spoken'\n    '#description': 'Select one or more languages you speak.'\n    '#multiple': true\n    '#select2': true\n    '#options': languages\n  gender:\n    '#type': radios\n    '#title': 'Gender'\n    '#options': gender\n  biography:\n    '#type': text_format\n    '#title': 'Biography'\n    '#description': 'Please include a short blurb about yourself to let us know who you are outside of Drupal.'\n  website:\n    '#type': url\n    '#title': 'Website'\n  irc:\n    '#type': textfield\n    '#title': 'IRC'\n    '#description': 'The nickname you use on various channels of irc.freenode.net'\n  twitter:\n    '#type': textfield\n    '#title': 'Twitter'\n    '#description': 'Your Twitter handle.'\n  github:\n    '#type': textfield\n    '#title': 'GitHub'\n    '#description': 'Your GitHub user name.'\nwork_information:\n  '#title': 'Your Work Information'\n  '#type': fieldset\n  current_organization:\n    '#type': textfield\n    '#title': 'Current Organization'\n  current_title:\n    '#type': textfield\n    '#title': 'Current Job Title'\n  organizations:\n    '#type': textarea\n    '#title': 'Past Organizations'\n    '#description': 'List companies or institutions you have worked for.'\n  industries:\n    '#type': select_other\n    '#title': 'Industries Worked In'\n    '#options': industry\n    '#multiple': true\n    '#select2': true\nemail_settings:\n  '#title': 'E-mail addresses'\n  '#type': fieldset\n  email:\n    '#type': email\n    '#title': 'Primary E-mall Address'\n    '#description': 'Enter your primary e-mail addresses, which will be used for all e-mail communications.'\n  emails:\n    '#type': email_multiple\n    '#title': 'Secondary E-mall Addresses'\n    '#description': 'Enter multiple e-mail addresses seperated by commas.'\nregional_settings:\n  '#title': 'Regional Settings'\n  '#type': fieldset\n  time_zone:\n    '#type': select\n    '#title': 'Timezone'\n    '#options': time_zones\n  language:\n    '#type': select\n    '#title': 'Preferred Language'\n    '#description': 'This account''s default language for e-mails, and preferred language for site presentation.'\n    '#options': languages\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: Register
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: ''
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_notification:
+    id: email
+    label: 'Email Notification'
+    handler_id: email_notification
+    status: true
+    weight: 1
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email:raw]'
+      from_name: '[yamlform-submission:values:first_name] [yamlform-submission:values:last_name]'
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

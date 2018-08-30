@@ -1,0 +1,26 @@
+uuid: 2d888e4a-7741-4176-ab64-dbb36fc8a154
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: T2MvmS1Uz07zwNTbNifQjcKQFrbeL6JMNi2Yp9CEUtg
+id: node.landing_page.field_content
+field_name: field_content
+entity_type: node
+bundle: landing_page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+field_type: entity_reference_revisions

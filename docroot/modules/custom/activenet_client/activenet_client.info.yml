@@ -1,0 +1,5 @@
+name: Activenet Client
+type: module
+description: Activenet Client services.
+core: 8.x
+package: YGS

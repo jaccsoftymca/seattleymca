@@ -1,0 +1,25 @@
+uuid: 0c76e47e-2f4e-44b7-81a9-392b066bc43c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openy_rose
+_core:
+  default_config_hash: 29eRB45dc7zM9qpNpAd8F4kUnRHTrLQaVlv_M34EGV4
+id: openy_rose_sitebranding
+theme: openy_rose
+region: logo
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

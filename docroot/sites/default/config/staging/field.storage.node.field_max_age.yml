@@ -1,0 +1,22 @@
+uuid: ece9f6bd-2d3c-4ff4-a7c4-770c8a443c3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Hu7NdRCcsTxSykw_Z-HSHQc-kBz_VSJRDOQtPmjucZY
+id: node.field_max_age
+field_name: field_max_age
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

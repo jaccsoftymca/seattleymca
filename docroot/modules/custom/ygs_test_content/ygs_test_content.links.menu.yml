@@ -1,0 +1,5 @@
+ygs_test_content.create:
+  title: YGS Test Content
+  description: 'Create test content.'
+  route_name: ygs_test_content.create
+  parent: system.admin_config_system

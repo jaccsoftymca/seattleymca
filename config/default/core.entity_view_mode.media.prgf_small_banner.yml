@@ -1,0 +1,12 @@
+uuid: 0e2af7a4-b6d0-4a96-8b31-3979571fc6c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: Qj-son1yCUQDuf7UNxnh4etHXhbqeMJQ2xujPMkzQb0
+id: media.prgf_small_banner
+label: 'Paragraph small banner'
+targetEntityType: media
+cache: true

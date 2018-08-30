@@ -1,0 +1,21 @@
+uuid: 2d52c247-7d48-416f-87d6-7d19ff6d3596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.logger_entity.field_config_path
+    - logger_entity.logger_entity_type.openy_config_upgrade_logs
+_core:
+  default_config_hash: IhrjdGAiCweiweGpSolQmj0fJ8HIYjTat6iTrvlIoEA
+id: logger_entity.openy_config_upgrade_logs.field_config_path
+field_name: field_config_path
+entity_type: logger_entity
+bundle: openy_config_upgrade_logs
+label: 'Config path'
+description: 'Path to original config from drupal docroot'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

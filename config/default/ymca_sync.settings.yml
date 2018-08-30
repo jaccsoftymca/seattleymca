@@ -1,0 +1,3 @@
+active_syncers:
+  - activenet_sync.activenet.syncer
+  - activenet_sync.flexreg.syncer

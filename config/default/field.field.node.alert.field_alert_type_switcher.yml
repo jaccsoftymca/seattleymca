@@ -1,0 +1,23 @@
+uuid: 9303a86e-0f15-4608-b743-8c4e7ff76f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_type_switcher
+    - node.type.alert
+  module:
+    - options
+id: node.alert.field_alert_type_switcher
+field_name: field_alert_type_switcher
+entity_type: node
+bundle: alert
+label: 'Alert Type Switcher'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: global
+default_value_callback: ''
+settings: {  }
+field_type: list_string

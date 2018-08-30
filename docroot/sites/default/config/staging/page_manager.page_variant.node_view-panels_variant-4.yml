@@ -1,0 +1,102 @@
+uuid: 14bfeadd-8b3d-4207-b744-fe446ecdebff
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - node
+    - panels
+    - ygs_class_page
+    - ygs_popups
+_core:
+  default_config_hash: S-qJM2aD0STtr2oq9BrnpYNqr_AfWFoasDH84Y-yqfI
+id: node_view-panels_variant-4
+label: Class
+variant: panels_variant
+variant_settings:
+  blocks:
+    8f1c7213-7d5f-4a64-9fcc-72e4c7818b0e:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: default
+      region: main
+      weight: 0
+      uuid: 8f1c7213-7d5f-4a64-9fcc-72e4c7818b0e
+      context_mapping:
+        entity: node
+    8087f2be-1fd9-47a4-bd70-6eec764e3ddd:
+      id: 'entity_view:node'
+      label: 'Entity view (Sidebar)'
+      provider: ctools
+      label_display: '0'
+      view_mode: sidebar
+      region: sidebar
+      weight: -1
+      uuid: 8087f2be-1fd9-47a4-bd70-6eec764e3ddd
+      context_mapping:
+        entity: node
+    8cf89a73-bdb9-4588-814f-eba86330d8c1:
+      id: 'entity_view:node'
+      label: Title
+      provider: ctools
+      label_display: '0'
+      view_mode: title
+      region: header
+      weight: -1
+      uuid: 8cf89a73-bdb9-4588-814f-eba86330d8c1
+      context_mapping:
+        entity: node
+    8907439c-6bdc-42a3-9e14-6306c59bae9a:
+      id: class_page_schedule_block
+      label: 'YGS Class page Schedule block'
+      provider: ygs_class_page
+      label_display: '0'
+      region: sidebar
+      weight: -2
+      uuid: 8907439c-6bdc-42a3-9e14-6306c59bae9a
+      context_mapping: {  }
+    dc8fda67-4775-41c2-a375-b0ebd94b516b:
+      id: class_page_other_sssions_block
+      label: 'YGS Class page Other sessions block'
+      provider: ygs_class_page
+      label_display: '0'
+      region: main
+      weight: 0
+      uuid: dc8fda67-4775-41c2-a375-b0ebd94b516b
+      context_mapping: {  }
+    44a991c0-41b6-47e3-8ab5-bd1b1232ce41:
+      id: location_popup_link_block
+      label: 'YGS location popup link'
+      provider: ygs_popups
+      label_display: '0'
+      filter: by_class
+      region: sidebar
+      weight: 0
+      uuid: 44a991c0-41b6-47e3-8ab5-bd1b1232ce41
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 360abad7-29e6-43ba-923c-beddf04641b0
+  label: null
+  weight: 0
+  layout: class_page
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: node_view-panels_variant-4
+  builder: standard
+page: node_view
+weight: 0
+selection_criteria:
+  -
+    id: node_type
+    bundles:
+      class: class
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+static_context: {  }

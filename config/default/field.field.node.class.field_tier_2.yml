@@ -1,0 +1,23 @@
+uuid: bd4e50d3-6f94-4aa3-9807-aef575b5bac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tier_2
+    - node.type.class
+id: node.class.field_tier_2
+field_name: field_tier_2
+entity_type: node
+bundle: class
+label: 'Tier II'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

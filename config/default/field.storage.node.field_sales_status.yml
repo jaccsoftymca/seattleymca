@@ -1,0 +1,27 @@
+uuid: 2b2a15d3-4e6d-4287-bc4b-c2a555c33213
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sales_status
+field_name: field_sales_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: open
+      label: Open
+    -
+      value: close
+      label: Close
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

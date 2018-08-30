@@ -1,0 +1,7 @@
+ygs_membership.settings:
+  path: '/admin/config/content/membership'
+  defaults:
+    _form: '\Drupal\ygs_membership\Form\SettingsForm'
+    _title: 'Membership settings'
+  requirements:
+    _permission: 'administer membership'

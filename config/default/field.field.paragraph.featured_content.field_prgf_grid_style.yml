@@ -1,0 +1,23 @@
+uuid: dedc08cc-752c-4a3e-b94d-c7939f7f8884
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_grid_style
+    - paragraphs.paragraphs_type.featured_content
+  module:
+    - options
+_core:
+  default_config_hash: I9dqWUsq1TZQUU9FnfXOyQE1LmJbcVTYhCKp5qCj58w
+id: paragraph.featured_content.field_prgf_grid_style
+field_name: field_prgf_grid_style
+entity_type: paragraph
+bundle: featured_content
+label: Style
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

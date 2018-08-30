@@ -1,0 +1,13 @@
+activenet_client.config:
+  type: config_object
+  label: 'Activenet client config'
+  mapping:
+    endpoint_url:
+      type: text
+      label: 'Endpoint URL'
+    api_key:
+      type: text
+      label: 'API Key'
+    org_guid:
+      type: text
+      label: 'Organization Guid'

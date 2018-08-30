@@ -1,0 +1,20 @@
+uuid: c68da61e-5525-4d1d-ba0b-de3004cd45db
+langcode: en
+status: true
+dependencies:
+  module:
+    - ygs_salesforce_mc
+  theme:
+    - ymca_seattle
+id: footersubscribeform
+theme: ymca_seattle
+region: footer_social
+weight: 10
+provider: null
+plugin: footer_subscribe_block
+settings:
+  id: footer_subscribe_block
+  label: 'Footer subscribe form'
+  provider: ygs_salesforce_mc
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 678addcc-798e-4035-8174-aaa6658a0e0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - plugin
+_core:
+  default_config_hash: ndNJFWg4uEjbpNWmgyMehJRHM1AhP815NbMFUNcnal8
+id: paragraph.field_prgf_location_finder
+field_name: field_prgf_location_finder
+entity_type: paragraph
+type: 'plugin:block'
+settings: {  }
+module: plugin
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

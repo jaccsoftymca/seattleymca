@@ -1,0 +1,23 @@
+uuid: 8ec08512-0845-43cd-a9d3-cdadbe29104d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.session
+  module:
+    - options
+_core:
+  default_config_hash: 04dV6-AveGNgLofa00QOYX0JyCz3X_sJUV8hZ0xIe2g
+id: node.session.field_gender
+field_name: field_gender
+entity_type: node
+bundle: session
+label: Gender
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

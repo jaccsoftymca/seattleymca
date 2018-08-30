@@ -1,0 +1,93 @@
+uuid: 8b397afc-698f-4033-abd3-c529d6673d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.schedule
+    - field.field.node.session.field_allow_waitlist
+    - field.field.node.session.field_external_id
+    - field.field.node.session.field_online_registration_date
+    - field.field.node.session.field_physical_location_text
+    - field.field.node.session.field_prerequisite
+    - field.field.node.session.field_sales_date
+    - field.field.node.session.field_sales_status
+    - field.field.node.session.field_session_class
+    - field.field.node.session.field_session_description
+    - field.field.node.session.field_session_exclusions
+    - field.field.node.session.field_session_gender
+    - field.field.node.session.field_session_in_mbrsh
+    - field.field.node.session.field_session_location
+    - field.field.node.session.field_session_max_age
+    - field.field.node.session.field_session_mbr_price
+    - field.field.node.session.field_session_min_age
+    - field.field.node.session.field_session_nmbr_price
+    - field.field.node.session.field_session_online
+    - field.field.node.session.field_session_plocation
+    - field.field.node.session.field_session_reg_link
+    - field.field.node.session.field_session_ticket
+    - field.field.node.session.field_session_time
+    - field.field.node.session.field_spots_allowed
+    - field.field.node.session.field_spots_available
+    - field.field.node.session.field_standard_registration_date
+    - node.type.session
+  module:
+    - user
+_core:
+  default_config_hash: tV9QVxwPm9IXBJw85Jld22QgzslAmlJsZ_NWg9WWn8A
+id: node.session.schedule
+targetEntityType: node
+bundle: session
+mode: schedule
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_prerequisite:
+    weight: 104
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_spots_available:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_allow_waitlist: true
+  field_external_id: true
+  field_online_registration_date: true
+  field_physical_location_text: true
+  field_sales_date: true
+  field_sales_status: true
+  field_session_class: true
+  field_session_description: true
+  field_session_exclusions: true
+  field_session_gender: true
+  field_session_in_mbrsh: true
+  field_session_location: true
+  field_session_max_age: true
+  field_session_mbr_price: true
+  field_session_min_age: true
+  field_session_nmbr_price: true
+  field_session_online: true
+  field_session_plocation: true
+  field_session_reg_link: true
+  field_session_ticket: true
+  field_session_time: true
+  field_spots_allowed: true
+  field_standard_registration_date: true

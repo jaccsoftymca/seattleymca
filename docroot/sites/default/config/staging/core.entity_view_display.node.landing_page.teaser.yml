@@ -1,0 +1,36 @@
+uuid: 85336a88-7570-4838-b6ff-890e49b9b82a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.landing_page.field_bottom_content
+    - field.field.node.landing_page.field_content
+    - field.field.node.landing_page.field_header_content
+    - field.field.node.landing_page.field_location
+    - field.field.node.landing_page.field_lp_layout
+    - field.field.node.landing_page.field_meta_tags
+    - field.field.node.landing_page.field_sidebar_content
+    - field.field.node.landing_page.scheduled_update
+    - node.type.landing_page
+  module:
+    - user
+_core:
+  default_config_hash: T9xGOj_HYVXX12VcY44_CSnHLDtAubQ_nuilYAPQTNU
+id: node.landing_page.teaser
+targetEntityType: node
+bundle: landing_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_bottom_content: true
+  field_content: true
+  field_header_content: true
+  field_location: true
+  field_lp_layout: true
+  field_meta_tags: true
+  field_sidebar_content: true
+  scheduled_update: true

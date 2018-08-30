@@ -1,0 +1,25 @@
+uuid: 38346923-d536-4d06-b7a5-9a3cf978f467
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_size
+    - media_entity.bundle.document
+_core:
+  default_config_hash: 1KoxEPqs9mTty16fFh18R9jzu1H66d_FbRFtgJ5QMTI
+id: media.document.field_media_size
+field_name: field_media_size
+entity_type: media
+bundle: document
+label: Size
+description: 'This field stores the size of the document file.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: byte|bytes
+field_type: integer

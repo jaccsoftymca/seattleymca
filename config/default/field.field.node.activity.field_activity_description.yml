@@ -1,0 +1,23 @@
+uuid: dbfc70d8-20d3-458c-9437-7badbf9ea970
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity_description
+    - node.type.activity
+  module:
+    - text
+_core:
+  default_config_hash: HtFKIJs4NnMDmsboZ1JHVPpr_5qo0wE2QksF2OKAl3M
+id: node.activity.field_activity_description
+field_name: field_activity_description
+entity_type: node
+bundle: activity
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

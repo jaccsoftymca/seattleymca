@@ -1,0 +1,30 @@
+uuid: 3d09c1a9-07bb-42c9-a9dc-01d8e9f1b161
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_collection_classes
+    - field_collection.field_collection.field_collection_classes
+    - paragraphs.paragraphs_type.class_content
+  module:
+    - field_collection
+id: paragraph.class_content.field_collection_classes
+field_name: field_collection_classes
+entity_type: paragraph
+bundle: class_content
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:field_collection_item'
+  handler_settings:
+    target_bundles:
+      field_collection_classes: field_collection_classes
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: field_collection

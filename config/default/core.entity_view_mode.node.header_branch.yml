@@ -1,0 +1,12 @@
+uuid: 79dbeb85-9273-4f31-98ca-190ea248e527
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: uO61nTpHd2VTJ7RAIrt6qVCRwxVkRbVB-pun5gZ4knM
+id: node.header_branch
+label: 'Header Branch'
+targetEntityType: node
+cache: true

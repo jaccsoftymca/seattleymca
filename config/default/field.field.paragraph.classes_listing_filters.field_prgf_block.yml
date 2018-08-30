@@ -1,0 +1,32 @@
+uuid: 47c709d6-dd9a-4db6-8f7c-a68ae41c50bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_block
+    - paragraphs.paragraphs_type.classes_listing_filters
+  module:
+    - plugin
+_core:
+  default_config_hash: zJv3UJo78HmC3R-PiM9_4_ahEN_otZgNjVORKNBwHL0
+id: paragraph.classes_listing_filters.field_prgf_block
+field_name: field_prgf_block
+entity_type: paragraph
+bundle: classes_listing_filters
+label: Block
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    plugin_id: 'views_exposed_filter_block:classes_listing-search_form'
+    plugin_configuration:
+      id: 'views_exposed_filter_block:classes_listing-search_form'
+      label: Block
+      provider: null
+      label_display: null
+      views_label: ''
+    plugin_configuration_schema_id: 'block.settings.views_exposed_filter_block:classes_listing-search_form'
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:block'

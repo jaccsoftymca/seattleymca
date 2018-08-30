@@ -1,0 +1,8 @@
+ygs_alters:
+  version: VERSION
+  js:
+    js/ygs_alters.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.cookie

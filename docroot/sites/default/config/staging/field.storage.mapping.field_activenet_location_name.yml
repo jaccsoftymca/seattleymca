@@ -1,0 +1,23 @@
+uuid: 20280bec-c17f-4142-b210-6716285b7921
+langcode: en
+status: true
+dependencies:
+  module:
+    - ymca_mappings
+_core:
+  default_config_hash: pd4K_7hUs5StgskIltFzjPHfAziGTIJnukqy0T58UZM
+id: mapping.field_activenet_location_name
+field_name: field_activenet_location_name
+entity_type: mapping
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: d931ec69-a115-46f2-9703-3e5d146fdca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.color
+    - field.field.taxonomy_term.color.field_color
+    - taxonomy.vocabulary.color
+  module:
+    - jquery_colorpicker
+_core:
+  default_config_hash: Z6vduwKqMPmDLz95JvI6Afer-HYjk1-tzs98gRAvPto
+id: taxonomy_term.color.color
+targetEntityType: taxonomy_term
+bundle: color
+mode: color
+content:
+  field_color:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: jquery_colorpicker_raw_hex_display
+hidden:
+  description: true

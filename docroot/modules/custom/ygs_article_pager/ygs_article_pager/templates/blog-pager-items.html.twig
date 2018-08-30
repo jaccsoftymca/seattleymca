@@ -1,0 +1,21 @@
+
+{% if previous is not empty and next is not empty %}
+  {% set both = "both" %}
+{% else %}
+  {% set both = "" %}
+{% endif %}
+
+<div class="clearfix blog-pager--items {{ both }}">
+  {% if previous is not empty %}
+    <div class="blog-pager--previous blog-pager--section">
+      <div class="blog-pager--header">PREVIOUS STORY</div>
+      <div class="blog-pager--content">{{ previous }}</div>
+    </div>
+  {% endif %}
+  {% if next is not empty %}
+    <div class="blog-pager--next">
+      <div class="blog-pager--header">NEXT STORY</div>
+      <div class="blog-pager--content">{{ next }}</div>
+    </div>
+  {% endif %}
+</div>

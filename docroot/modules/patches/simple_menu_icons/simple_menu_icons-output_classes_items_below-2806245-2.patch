@@ -1,0 +1,47 @@
+diff --git a/simple_menu_icons.module b/simple_menu_icons.module
+index 0fd74e1..86a3621 100755
+--- a/simple_menu_icons.module
++++ b/simple_menu_icons.module
+@@ -181,17 +181,33 @@ function simple_menu_icons_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInt
+  */
+ function simple_menu_icons_preprocess_menu(&$variables) {
+   foreach ($variables['items'] as &$item) {
+-    if (empty($item['original_link'])) {
+-      continue;
+-    }
++    _simple_menu_icons_preprocess_menu_item_recursive($item);
++  }
++}
++
++/**
++ * Helper function to recursively preprocess hierarchical menus.
++ *
++ * @param array $item
++ *   Menu item array.
++ */
++function _simple_menu_icons_preprocess_menu_item_recursive(&$item) {
++  if (empty($item['original_link'])) {
++    return;
++  }
+ 
+-    $link_plugin = $item['original_link']->getPluginDefinition();
++  $link_plugin = $item['original_link']->getPluginDefinition();
+ 
+-    if (empty($link_plugin) || empty($link_plugin['metadata']['entity_id'])) {
+-      continue;
+-    }
++  if (empty($link_plugin) || empty($link_plugin['metadata']['entity_id'])) {
++    return;
++  }
++
++  $mlid = $link_plugin['metadata']['entity_id'];
++  $item['attributes']->addClass('menu-icon-' . $mlid);
+ 
+-    $mlid = $link_plugin['metadata']['entity_id'];
+-    $item['attributes']->addClass('menu-icon-' . $mlid);
++  if (!empty($item['below'])) {
++    foreach ($item['below'] as $key => &$value) {
++      _simple_menu_icons_preprocess_menu_item_recursive($value);
++    }
+   }
+ }

@@ -1,0 +1,25 @@
+uuid: 3274555e-a779-4805-910a-f5075fb09902
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directions
+    - node.type.facility
+  module:
+    - link
+_core:
+  default_config_hash: UykWpPH57xyIS-Rl_UJYL8P7tS1UnLkVTJSuqjeCC24
+id: node.facility.field_directions
+field_name: field_directions
+entity_type: node
+bundle: facility
+label: Directions
+description: 'Directions link is used on <a href="[site:url]locations">locations page</a> in location teasers.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

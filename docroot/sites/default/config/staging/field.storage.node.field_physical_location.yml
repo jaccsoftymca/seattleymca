@@ -1,0 +1,21 @@
+uuid: 6ac16b35-8b9a-443a-9c85-b714af376747
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: oZ3vcfK4l5Ka-PYhFY2fajp2p1RBY3vWoKp6HH9Me6g
+id: node.field_physical_location
+field_name: field_physical_location
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

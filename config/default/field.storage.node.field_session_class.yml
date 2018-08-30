@@ -1,0 +1,21 @@
+uuid: cd6062d8-ec1d-498a-b75d-4b8a73058f38
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: bspvYTYt0IhuYp5tCy6VTK9j6ONcdhcSu0YT7Qmt4N8
+id: node.field_session_class
+field_name: field_session_class
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

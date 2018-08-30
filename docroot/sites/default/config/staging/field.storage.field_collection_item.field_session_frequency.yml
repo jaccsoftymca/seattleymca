@@ -1,0 +1,29 @@
+uuid: 27cc9465-7480-4f51-927a-47849e772422
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+    - options
+_core:
+  default_config_hash: i_qn_qfGe2ZY917hanujsGxmBPteYv6XUpTuTsyDBmk
+id: field_collection_item.field_session_frequency
+field_name: field_session_frequency
+entity_type: field_collection_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: daily
+      label: Daily
+    -
+      value: weekly
+      label: Weekly
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: e71b62c1-cf0d-46e3-b7e9-638d8137818a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: KdzlGl-H0PpMFzHqtuNNEC6SlEyPc4KA6aCxoQEQXs4
+id: program_category
+label: 'Program Category'

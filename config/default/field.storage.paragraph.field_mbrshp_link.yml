@@ -1,0 +1,21 @@
+uuid: 68b26f3f-e5e3-4760-a955-dd9b21f0031d
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: icA5Kv3IuwpiBr7X1a0CtD0burtwfK2RybfHsbP_P38
+id: paragraph.field_mbrshp_link
+field_name: field_mbrshp_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

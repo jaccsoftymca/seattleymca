@@ -1,0 +1,23 @@
+activenet_sync.settings:
+  path: '/admin/config/system/activenet-sync-settings'
+  defaults:
+    _form: '\Drupal\activenet_sync\Form\SettingsForm'
+    _title: 'Activenet sync settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+activenet_sync.importers_run:
+  path: '/admin/config/system/activenet-sync-importers-run'
+  defaults:
+    _form: '\Drupal\activenet_sync\Form\ImportersRunForm'
+    _title: 'Importers Run'
+  requirements:
+    _permission: 'administer site configuration'
+
+activenet_sync.single_item_import:
+  path: '/admin/config/system/activenet-sync-single-item-import'
+  defaults:
+    _form: '\Drupal\activenet_sync\Form\SingleItemImportForm'
+    _title: 'Single Item import'
+  requirements:
+    _permission: 'administer site configuration'

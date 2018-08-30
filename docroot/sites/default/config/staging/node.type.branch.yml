@@ -1,0 +1,28 @@
+uuid: ffa02ce1-2d14-453a-be95-c437fd408e39
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: mPNppgqICYgmoYD7e5RuaUzM6htSTFfykXvW0ePTXwo
+name: Branch
+type: branch
+description: 'Branch content type is used for adding Branches on the site.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

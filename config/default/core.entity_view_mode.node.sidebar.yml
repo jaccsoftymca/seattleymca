@@ -1,0 +1,12 @@
+uuid: 6c1d85f7-a50d-4251-a0f3-a0c50fa5c46e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: '-ig2F4KEJJesOZlQIbihpuZXCslv1UA0NVrJkzsjLvQ'
+id: node.sidebar
+label: Sidebar
+targetEntityType: node
+cache: true

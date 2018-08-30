@@ -1,0 +1,56 @@
+uuid: 25c117c3-fda3-4699-abc6-53998c36ff05
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.content_gallery
+    - field.field.paragraph.gallery.field_body_no_summary
+    - field.field.paragraph.gallery.field_gallery_headline
+    - field.field.paragraph.gallery.field_gallery_link
+    - field.field.paragraph.gallery.field_images
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - link
+    - text
+_core:
+  default_config_hash: tZrisMOQoSMOL0if9uOEHJg0sxY4bg42pxMOBTDX93E
+id: paragraph.gallery.content_gallery
+targetEntityType: paragraph
+bundle: gallery
+mode: content_gallery
+content:
+  field_body_no_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_gallery_headline:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_gallery_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_images:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: blog_page
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,36 @@
+uuid: b25097f2-3d24-4835-884b-756eb4ea073e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prgf_color
+    - paragraphs.paragraphs_type.banner
+    - taxonomy.vocabulary.color
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_prgf_color
+_core:
+  default_config_hash: IEpwkmA4rLHwlWT5qLDM0AfSZyJk46XTqNYuXy1vX7s
+id: paragraph.banner.field_prgf_color
+field_name: field_prgf_color
+entity_type: paragraph
+bundle: banner
+label: Color
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

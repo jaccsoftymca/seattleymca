@@ -1,0 +1,25 @@
+uuid: ae215c53-e217-4cdd-9f2a-efe80ca075d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mapping.field_activenet_program_subc_id
+    - ymca_mappings.mapping_type.program_category
+_core:
+  default_config_hash: '-WXrwv1_2WrX0qKdKZq6awNHfx0o7Odqtd8gShmRHMY'
+id: mapping.program_category.field_activenet_program_subc_id
+field_name: field_activenet_program_subc_id
+entity_type: mapping
+bundle: program_category
+label: 'ActiveNet: Program Subcategory ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

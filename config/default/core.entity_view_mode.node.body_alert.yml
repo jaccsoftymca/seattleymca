@@ -1,0 +1,12 @@
+uuid: 397c935c-a677-403a-9b8e-d984e263e0b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: HdHkOIRB3mbyRpFxzbu3i-DreuSkhSVeEJMFVwUFujM
+id: node.body_alert
+label: 'Body Alert'
+targetEntityType: node
+cache: true

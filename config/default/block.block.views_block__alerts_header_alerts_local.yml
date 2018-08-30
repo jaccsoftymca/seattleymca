@@ -1,0 +1,36 @@
+uuid: 6a86aa3a-5b11-4f2c-a472-18a3abbff780
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.alerts
+  module:
+    - ctools
+    - views
+  theme:
+    - ymca_seattle
+_core:
+  default_config_hash: x1O9YHlUZnE1m6RRmzn6nK3mhhvM20HMZsJfMAXsJDM
+id: views_block__alerts_header_alerts_local
+theme: ymca_seattle
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:alerts-header_alerts_local'
+settings:
+  id: 'views_block:alerts-header_alerts_local'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      branch: branch
+      camp: camp
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

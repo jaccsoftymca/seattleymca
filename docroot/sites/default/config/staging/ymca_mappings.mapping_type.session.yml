@@ -1,0 +1,8 @@
+uuid: eadfadfb-b464-4e47-a3b1-dcb428c7fc51
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HbxISCeEvavyG0unW9h5oeNgY-1ncNwTLQSe9maQEW4
+id: session
+label: Session

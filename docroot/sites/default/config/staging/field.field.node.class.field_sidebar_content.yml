@@ -1,0 +1,71 @@
+uuid: 0100c035-a7bc-488f-9f2c-d567e18d7437
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_content
+    - node.type.class
+    - paragraphs.paragraphs_type.dynamic_content
+    - paragraphs.paragraphs_type.promo_card
+    - paragraphs.paragraphs_type.simple_content
+    - paragraphs.paragraphs_type.story_card
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: QXH2njIOLG4qV4HSZEelFCmBfrkU36OTWn6vFCUWgQM
+id: node.class.field_sidebar_content
+field_name: field_sidebar_content
+entity_type: node
+bundle: class
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      dynamic_content: dynamic_content
+      promo_card: promo_card
+      story_card: story_card
+      simple_content: simple_content
+    target_bundles_drag_drop:
+      column_in_a_grid:
+        weight: 6
+        enabled: false
+      dynamic_content:
+        enabled: true
+        weight: 7
+      gallery:
+        weight: 8
+        enabled: false
+      promo_card:
+        enabled: true
+        weight: 9
+      story_card:
+        enabled: true
+        weight: 10
+      banner:
+        weight: 14
+        enabled: false
+      branch_updates_queue:
+        weight: 15
+        enabled: false
+      category_content:
+        weight: 16
+        enabled: false
+      class_content:
+        weight: 17
+        enabled: false
+      featured_content:
+        weight: 21
+        enabled: false
+      simple_content:
+        enabled: true
+        weight: 24
+      small_banner:
+        weight: 25
+        enabled: false
+field_type: entity_reference_revisions

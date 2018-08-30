@@ -1,0 +1,25 @@
+uuid: 7b2fa440-606f-449d-a88c-04578ee8e62e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_promo_link
+    - paragraphs.paragraphs_type.promo_card
+  module:
+    - link
+_core:
+  default_config_hash: ok8nP54Vjrgm88hzJxvcb8F7shNmgaoWCMUemP9xQRo
+id: paragraph.promo_card.field_promo_link
+field_name: field_promo_link
+entity_type: paragraph
+bundle: promo_card
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

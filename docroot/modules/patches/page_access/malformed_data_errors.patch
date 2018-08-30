@@ -1,0 +1,27 @@
+diff --git a/docroot/modules/patched/page_access/page_access.module b/docroot/modules/patched/page_access/page_access.module
+index 6dc4cff..17ec89d 100644
+--- a/docroot/modules/patched/page_access/page_access.module
++++ b/docroot/modules/patched/page_access/page_access.module
+@@ -95,6 +95,9 @@ function page_access_form_node_form_alter(&$form, FormStateInterface &$form_stat
+       unset($form['page_access']['list'][$i]);
+       continue;
+     }
++    if (!empty($defaults['page_access']['users']) && !is_array($defaults['page_access']['users'][$i])) {
++      break;
++    }
+     $user_reference = _get_user_reference_default_value($defaults['page_access']['users'][$i]['user_autocomplete']);
+     $form['page_access']['list'][$i]['user_autocomplete'] = [
+       '#type' => 'entity_autocomplete',
+diff --git a/docroot/modules/patched/page_access/src/DefaultService.php b/docroot/modules/patched/page_access/src/DefaultService.php
+index d58b38e..c839a8c 100644
+--- a/docroot/modules/patched/page_access/src/DefaultService.php
++++ b/docroot/modules/patched/page_access/src/DefaultService.php
+@@ -34,7 +34,7 @@ function get_user_node_access(NodeInterface $node, AccountInterface $account) {
+
+       $uid = $account->id();
+       foreach ($page_access_settings['page_access']['users'] as $access) {
+-        if ($access['user_autocomplete'] === $uid) {
++        if (is_array($access) && $access['user_autocomplete'] === $uid) {
+           $user_has_access[] = 'view';
+           if ($access['edit_permission']) {
+             $user_has_access[] = 'update';

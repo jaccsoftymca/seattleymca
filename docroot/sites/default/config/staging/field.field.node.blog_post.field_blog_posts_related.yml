@@ -1,0 +1,27 @@
+uuid: 28098c8a-fcb9-4b9d-b599-92acf29fc892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_posts_related
+    - node.type.blog_post
+_core:
+  default_config_hash: oEypsYdKOtEgjWGme_7GhdMH2eJhYjQUyPIr50YH7IY
+id: node.blog_post.field_blog_posts_related
+field_name: field_blog_posts_related
+entity_type: node
+bundle: blog_post
+label: 'Related Blog posts'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_reference_views
+      display_name: entity_reference_2
+      arguments: {  }
+field_type: entity_reference

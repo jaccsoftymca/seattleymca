@@ -1,0 +1,50 @@
+uuid: 524840ce-e033-4ea8-b2e8-c827c3b68a82
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.footer_alert
+    - field.field.node.alert.field_alert_type_switcher
+    - field.field.node.alert.field_body_no_summary
+    - field.field.node.alert.field_color
+    - field.field.node.alert.field_link
+    - field.field.node.alert.field_locations
+    - field.field.node.alert.field_placement
+    - node.type.alert
+  module:
+    - text
+    - user
+    - ymca_link_formatter
+_core:
+  default_config_hash: WOoOjw6vlEs0S6orMYONibK-ra5jz6C-H28Sv51ve0c
+id: node.alert.footer_alert
+targetEntityType: node
+bundle: alert
+mode: footer_alert
+content:
+  field_body_no_summary:
+    weight: 101
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_link:
+    weight: 104
+    label: hidden
+    settings:
+      trim_length: '80'
+      classes: 'btn  btn-outline-inverse btn-lg'
+      url_only: false
+      url_plain: false
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    type: link_advanced_formatter
+  workbench_moderation_control:
+    weight: -20
+hidden:
+  field_alert_type_switcher: true
+  field_color: true
+  field_locations: true
+  field_placement: true
+  links: true

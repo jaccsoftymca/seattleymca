@@ -1,0 +1,30 @@
+uuid: 88203d47-1a0d-4a9f-8cbe-5984a858cc83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facility_type
+    - node.type.facility
+    - taxonomy.vocabulary.facility_type
+_core:
+  default_config_hash: VxRtNGcZW_R8mMshMn8jNau3X3u11GmBJGW03Susicc
+id: node.facility.field_facility_type
+field_name: field_facility_type
+entity_type: node
+bundle: facility
+label: Type
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      facility_type: facility_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

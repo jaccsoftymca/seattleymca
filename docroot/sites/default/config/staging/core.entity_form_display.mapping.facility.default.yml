@@ -1,0 +1,38 @@
+uuid: 950a64a7-2cc1-4ac1-bc5b-95ea296798e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.mapping.facility.field_facility_ct
+    - field.field.mapping.facility.field_flexreg_facility_name
+    - ymca_mappings.mapping_type.facility
+id: mapping.facility.default
+targetEntityType: mapping
+bundle: facility
+mode: default
+content:
+  field_facility_ct:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_flexreg_facility_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  user_id: true

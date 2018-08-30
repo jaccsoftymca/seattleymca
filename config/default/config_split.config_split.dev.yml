@@ -1,0 +1,22 @@
+uuid: 318e11e0-c0e0-4af7-9247-51e2320a41d7
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: dev
+folder: ../config/dev
+module:
+  dblog: 0
+  shield: 0
+  recaptcha: 0
+  simplesamlphp_auth: 0
+  views_ui: 0
+theme: {  }
+blacklist:
+  - recaptcha.settings
+  - shield.settings.settings
+  - simplesamlphp_auth.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
