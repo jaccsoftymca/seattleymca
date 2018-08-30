@@ -1,5 +1,0 @@
-activenet_sync.settings:
-  title: Activenet sync Settings
-  route_name: activenet_sync.settings
-  parent: system.admin_config_system
-  description: 'Activenet sync configuration.'

@@ -1,8 +1,0 @@
-uuid: 9ded613a-cc6e-4546-9e78-be6d65df76e6
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: 3dtprwJG6rD6fY7NRuIRPRMzWgzanQ0i0v3blUvswGg
-id: story_card
-label: 'Story Card'

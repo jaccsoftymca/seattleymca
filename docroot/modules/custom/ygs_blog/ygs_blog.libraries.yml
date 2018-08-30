@@ -1,7 +1,0 @@
-ygs_blog_edit_form:
-  version: VERSION
-  js:
-    js/ygs_blog_edit_form.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once

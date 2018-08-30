@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Membership Type'
-vid: membership_type
-description: 'Tags to differentiate membership types from one another.'
-hierarchy: 0
-weight: 0

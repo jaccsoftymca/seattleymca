@@ -1,8 +1,0 @@
-uuid: 44fb9c49-4dd2-4de4-877e-9aec0b93bf8e
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: GwD_qv8siXibwCh4-OCc11USYvOe1ztAqF48H127l6E
-id: field_session_time_collection
-label: field_session_time_collection

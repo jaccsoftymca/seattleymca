@@ -1,8 +1,0 @@
-uuid: 8bd6441b-02c2-470c-af5a-053c220f93f5
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: wUvF9VbFAu2S4HHOohEZTwsg19yhR7TaZWdjyx-mvvs
-id: field_collection_hours
-label: field_collection_hours

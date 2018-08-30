@@ -1,7 +1,0 @@
-name: 'Seattle Default content'
-type: module
-description: 'Seattle Default content'
-package: Web services
-core: 8.x
-dependencies:
-  - default_content

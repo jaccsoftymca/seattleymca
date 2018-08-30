@@ -1,8 +1,0 @@
-name: YGS Class page
-type: module
-description: Class page related customizations.
-core: 8.x
-package: YGS
-dependencies:
-  - rest
-  - ygs_session_instance

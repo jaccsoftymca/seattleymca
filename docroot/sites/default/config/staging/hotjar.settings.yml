@@ -1,7 +1,0 @@
-account: '373698'
-visibility_pages: 0
-pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
-visibility_roles: 0
-roles: {  }
-_core:
-  default_config_hash: XZVveqrSHdGWzmMdaVO8BNxvb4lTfr5EVnatLOVAxNY

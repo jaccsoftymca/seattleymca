@@ -1,5 +1,0 @@
-name: YGS Salesforce MC
-type: module
-description: Implements YGS Salesforce MC.
-core: 8.x
-package: YGS

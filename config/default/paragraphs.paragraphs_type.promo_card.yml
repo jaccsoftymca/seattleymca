@@ -1,8 +1,0 @@
-uuid: bd222439-e54a-4843-8d01-59bd22cbfbbe
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: eqlzBYcHnDd_FFgBh2IFWk3EBv310QNNHHyRj7MxK0E
-id: promo_card
-label: 'Promo Card'

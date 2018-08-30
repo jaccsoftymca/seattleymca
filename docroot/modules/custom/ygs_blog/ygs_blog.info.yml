@@ -1,5 +1,0 @@
-name: YGS Blog
-type: module
-description: Provides custom views filter.
-core: 8.x
-package: YGS

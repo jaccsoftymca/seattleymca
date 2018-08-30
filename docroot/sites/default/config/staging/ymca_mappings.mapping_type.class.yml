@@ -1,8 +1,0 @@
-uuid: 0a5a002b-e43a-445d-855c-8f8ca3524e62
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: VcF0yEZdPMnQ8ualbl_wntE5kIFy8HEZCjbhIL5leds
-id: class
-label: Class

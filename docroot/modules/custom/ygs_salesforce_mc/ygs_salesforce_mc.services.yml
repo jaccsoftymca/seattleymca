@@ -1,7 +1,0 @@
-services:
-  salesforce_mc.client:
-    class: Drupal\ygs_salesforce_mc\SalesForceMcClient
-    arguments: ['@config.factory', '@logger.channel.salesforce_mc_client', '@file_system']
-  logger.channel.salesforce_mc_client:
-    parent: logger.channel_base
-    arguments: ['ygs_salesforce_mc']

@@ -1,8 +1,0 @@
-uuid: d9ac16d2-a47d-48bd-8595-8a7c55c5a36a
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: H5bnUhznZW6bXbzrq6l1zwSh0xs3SvX6eAIk9VWklmQ
-id: prgf_location_finder_filters
-label: 'Location finder filters'

@@ -1,8 +1,0 @@
-name: YGS Sync Cache
-type: module
-description: Provide Cache entity, that store all temporary data for integration with ActiveNet and DW.
-core: 8.x
-package: YGS
-dependencies:
-  - entity_reference
-  - views

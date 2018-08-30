@@ -1,7 +1,0 @@
-ygs_test_content.create:
- path: '/admin/config/system/ygs_test_content'
- defaults:
-   _title: 'YGS Test Content'
-   _form: 'Drupal\ygs_test_content\Form\YgsTestContentCreateForm'
- requirements:
-   _permission: 'administer site configuration'

@@ -1,4 +1,0 @@
-services:
-  page_access.default:
-    class: Drupal\page_access\DefaultService
-    arguments: []

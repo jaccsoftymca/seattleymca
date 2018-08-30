@@ -1,6 +1,0 @@
-uuid: 62caad77-2af9-4eb8-8450-86bc496ca560
-langcode: en
-status: true
-dependencies: {  }
-id: frontpage_updates_queue
-label: 'Frontpage updates'

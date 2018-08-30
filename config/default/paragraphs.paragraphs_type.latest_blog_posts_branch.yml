@@ -1,8 +1,0 @@
-uuid: c6a0a8e6-b8bc-4ea9-b839-23865d00d14f
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: 4bEO07rgm-6CugmOHcfGJE6tUr6YROPdfW-Kqw8VHjY
-id: latest_blog_posts_branch
-label: 'Latest blog posts (branch)'

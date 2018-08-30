@@ -1,8 +1,0 @@
-uuid: 0c96b8cb-7191-4c82-a449-645920f947b1
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: hCIqV1A6PogfU8GyCM6Mbaarc0Bi0NZW5gCcye8xc_c
-id: membership_info
-label: 'Membership info'

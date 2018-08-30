@@ -1,7 +1,0 @@
-name: YGS Test Content
-type: module
-description: Create content for testing
-core: 8.x
-package: YGS
-
-configure: ygs_test_content.create

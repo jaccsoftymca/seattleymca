@@ -1,5 +1,0 @@
-name: YGS Blocks
-type: module
-description: Provides custom blocks.
-core: 8.x
-package: YGS

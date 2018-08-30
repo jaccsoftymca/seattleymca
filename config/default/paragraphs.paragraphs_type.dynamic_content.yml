@@ -1,8 +1,0 @@
-uuid: 36de7939-b491-41fd-8391-dfb7a114b29e
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: OiWdN5FOP55HLmrsyzoj9txrq4pjP0UlwX84tyg06lM
-id: dynamic_content
-label: 'Dynamic content'

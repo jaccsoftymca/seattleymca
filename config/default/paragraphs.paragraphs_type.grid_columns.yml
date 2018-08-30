@@ -1,8 +1,0 @@
-uuid: 3d9e2ae7-b181-4b05-bb40-1273c5f9c7ec
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: ZnIPDL9oCu0JhXN6PG6k9XC6rFPQj9NHFIfPIn6s6JI
-id: grid_columns
-label: 'Grid columns'

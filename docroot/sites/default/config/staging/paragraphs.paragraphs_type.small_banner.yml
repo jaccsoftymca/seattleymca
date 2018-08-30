@@ -1,8 +1,0 @@
-uuid: ef97eaa0-8004-41cd-82fc-bc78b4b0e941
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: 5qsNMNGIzb-uweLo-AF1TnkaWDK9jZuWrcvRPmpRbeM
-id: small_banner
-label: 'Small Banner'

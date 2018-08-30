@@ -1,8 +1,0 @@
-uuid: 39ce9423-24c9-486e-a422-cc91f9abcff4
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: TCV08P4_R8em5u3e8aYepjqwNVXyaTAo0BUg8vwxa90
-id: teaser
-label: Teaser

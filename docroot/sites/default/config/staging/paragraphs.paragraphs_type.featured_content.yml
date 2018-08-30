@@ -1,8 +1,0 @@
-uuid: 02595a61-f739-4f5c-8039-7f8b662d99ec
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: pviEgpUHaFc8uKznYrl4J3r1axdnKNk6NrVI_JIfMEY
-id: featured_content
-label: 'Featured Content'

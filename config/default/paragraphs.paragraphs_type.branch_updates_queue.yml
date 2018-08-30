@@ -1,8 +1,0 @@
-uuid: 7852a83f-cc95-45eb-9630-cc8b79a13d86
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: FunBtdshL5dtqKS-CAqV0r6PQwjfNeMj6BJ-cvumk9A
-id: branch_updates_queue
-label: 'Branch/Camp updates queue'

@@ -1,7 +1,0 @@
-name: YGS Datetime Range
-type: module
-description: Datetime Range cusomizations.
-core: 8.x
-package: YGS
-dependencies:
-  - datetime_range

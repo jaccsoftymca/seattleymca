@@ -1,8 +1,0 @@
-uuid: 9baa7360-d3df-4560-adf1-dd1adb95d639
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: Q7OcRgJYBCmXL8zIHUqQfwqcb49uoF6yT_6zosFhMn0
-id: addthis
-label: 'Social share icons'

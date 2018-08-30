@@ -1,7 +1,0 @@
-name: YGS Internal Page Cache
-type: module
-description: 'Modifies page_cache service to respect the "Page cache maximum" age setting.'
-core: 8.x
-package: YGS
-dependencies:
-  - page_cache

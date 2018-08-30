@@ -1,8 +1,0 @@
-uuid: 8c7e01e3-063f-48d9-a591-ae88fa4bbe46
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: gVcW4D8A5o9yDYxWClcqjMjdOhrkHsnM4Ht_dc41yb4
-id: classes_listing
-label: 'Classes Listing'

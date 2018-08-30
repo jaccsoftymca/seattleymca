@@ -1,6 +1,0 @@
-uuid: a216d02c-b71c-4689-932e-db879f62cc39
-langcode: en
-status: true
-dependencies: {  }
-id: facility_sessions_search_block
-label: 'Facility Sessions Search Block'

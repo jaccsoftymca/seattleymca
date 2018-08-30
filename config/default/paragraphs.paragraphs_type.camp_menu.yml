@@ -1,8 +1,0 @@
-uuid: 926b0629-276a-4947-8986-7b3233b25dde
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: UBb11gNNOccWlG2gPQryrEDchntSBcIv7Mxlh1ymxL0
-id: camp_menu
-label: 'Camp menu'

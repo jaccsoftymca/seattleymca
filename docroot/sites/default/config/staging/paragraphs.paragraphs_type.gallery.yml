@@ -1,8 +1,0 @@
-uuid: 3a626402-1f69-4ee5-8515-ee60c552ce31
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: rgrYklOD_A52JdHoEzS5cqEz1MFL1Ha6Tnz9RNS1AlA
-id: gallery
-label: Gallery

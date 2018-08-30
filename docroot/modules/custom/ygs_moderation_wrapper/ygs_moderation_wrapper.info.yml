@@ -1,5 +1,0 @@
-name: YGS Moderation wrapper
-type: module
-description: Content moderation functionality wrapper
-core: 8.x
-package: YGS

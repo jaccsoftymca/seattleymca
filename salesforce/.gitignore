@@ -1,6 +1,0 @@
-# Ignore vendor libraries.
-vendor
-artifact
-
-# Ignore ExactTargetWSDL.xml that is coming from API.
-ExactTargetWSDL.xml

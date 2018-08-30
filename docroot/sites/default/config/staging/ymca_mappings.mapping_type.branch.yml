@@ -1,8 +1,0 @@
-uuid: 10827bf6-9221-456b-a8af-06d4a3025a96
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: h-50B18U5okxjSVjoO1iVams-grLi2FaGrxUGcoK8yM
-id: branch
-label: Branch

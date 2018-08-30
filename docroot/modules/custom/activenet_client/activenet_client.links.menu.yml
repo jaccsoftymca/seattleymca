@@ -1,5 +1,0 @@
-activenet_client.settings:
-  title: Activenet Settings
-  route_name: activenet_client.settings
-  parent: system.admin_config_system
-  description: 'Activenet Client configuration.'

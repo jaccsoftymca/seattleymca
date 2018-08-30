@@ -1,5 +1,0 @@
-name: YMCA Alerts permissions
-type: module
-description: Provides Alerts permissions specific functionallity.
-core: 8.x
-package: YGS

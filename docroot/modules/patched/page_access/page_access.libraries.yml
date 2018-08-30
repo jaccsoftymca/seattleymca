@@ -1,4 +1,0 @@
-drupal.page_access.adminforms:
-  css:
-    theme:
-      css/page_access.admin.css: {}

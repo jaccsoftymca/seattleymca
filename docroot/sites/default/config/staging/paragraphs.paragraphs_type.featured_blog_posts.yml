@@ -1,8 +1,0 @@
-uuid: 158492e3-541a-4c6e-9350-5b1246ac3b8b
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: 9gpuEy1e3g7HLqTU31uGS0MqLWFuVRjJmOAsdzf6VgU
-id: featured_blog_posts
-label: 'Featured Blog Posts'

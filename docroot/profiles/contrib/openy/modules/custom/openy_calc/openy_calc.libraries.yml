@@ -1,5 +1,0 @@
-calc-block:
-  version: VERSION
-  css:
-    theme:
-      css/calc-block.css: {}

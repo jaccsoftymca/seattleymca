@@ -1,6 +1,0 @@
-ygs_alters.media.add:
-  route_name: entity.media.add_page
-  title: 'Add media'
-  weight: 10
-  appears_on:
-    - view.media_library.global_media_library_page
